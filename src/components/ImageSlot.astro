@@ -19,7 +19,9 @@ const { src, alt = '', placeholder = 'Photo needed', credit, creditHref, class: 
 {
   src ? (
     <figure class:list={['relative m-0 h-full w-full overflow-hidden', className]}>
-      <img src={src} alt={alt} loading="lazy" class="h-full w-full object-cover" />
+      {/* Absolutely positioned: percentage heights on <img> don't reliably resolve
+          through a %-height parent chain, which let images escape their boxes. */}
+      <img src={src} alt={alt} loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
       {credit &&
         (creditHref ? (
           <a
