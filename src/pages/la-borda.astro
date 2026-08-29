@@ -1,0 +1,135 @@
+---
+import CaseStudy from '../layouts/CaseStudy.astro';
+
+const facts = [
+  { k: 'City', v: 'Barcelona' },
+  { k: 'Year', v: '2018' },
+  { k: 'Height', v: '6 stories' },
+  { k: 'Homes', v: '28' },
+  { k: 'Architect', v: 'Lacol' },
+  { k: 'Structure', v: 'Timber' },
+  { k: 'Tenure', v: 'Co-op, cession of use' },
+  { k: 'Land', v: '75-yr public lease' },
+];
+
+const gallery = [
+  { placeholder: 'Patio looking up — photo needed', cap: 'The full-height patio — corrala tradition, glazed above' },
+  { placeholder: 'Gallery walkway — photo needed', cap: 'Access galleries: every front door faces the shared middle' },
+  {
+    placeholder: 'Rear facade — photo needed',
+    cap: 'The rear facade, facing the Can Batlló grounds',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/La%20Borda%20building%20-%20rear%20facade%20in%20context.jpg?width=1400',
+    credit: 'via Wikimedia Commons',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:La_Borda_building_-_rear_facade_in_context.jpg',
+  },
+  {
+    placeholder: 'Street facade — photo needed',
+    cap: 'Six timber stories meeting Carrer Constitució',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/La%20Borda%20building%20-%20front%20facade%201.jpg?width=1400',
+    credit: 'via Wikimedia Commons',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:La_Borda_building_-_front_facade_1.jpg',
+  },
+];
+---
+
+<CaseStudy
+  title="La Borda"
+  subtitle="The closest single-building match to this brief."
+  heroSrc="https://commons.wikimedia.org/wiki/Special:FilePath/La%20Borda%20building%20-%20front%20facade%202.jpg?width=1400"
+  heroPlaceholder="La Borda hero"
+  heroCredit="via Wikimedia Commons"
+  heroCreditHref="https://commons.wikimedia.org/wiki/File:La_Borda_building_-_front_facade_2.jpg"
+  facts={facts}
+  gallery={gallery}
+  next={{ href: '/kalkbreite/', label: 'Kalkbreite, Zürich' }}
+>
+  <section class="mx-auto max-w-[760px] px-6 pt-16 sm:px-12">
+    <p class="text-[21px] leading-[1.62]">
+      Twenty-eight households on Can Batlló land the city leases for 75 years, organized as a
+      cooperative in <em>cession of use</em>: nobody owns a unit, nobody can flip one, everyone owns
+      the building together. Lacol — a cooperative of architects, several of them residents —
+      stacked six timber stories around a full-height central patio in the Barcelona
+      <em>corrala</em> tradition. Access is by open galleries around the patio; the glazed roof
+      turns it into a winter greenhouse and, opened in summer, a ventilation chimney. The building
+      is a climate machine and a social machine with the same part.
+    </p>
+    <p class="mt-6 text-[21px] leading-[1.62]">
+      What to steal: the ground floor. Street-facing commercial space plus the cooperative's own
+      shared kitchen-dining room, laundry, and guest rooms — so the building's cheapest square
+      meters carry its social life, and private units can stay modest.
+    </p>
+  </section>
+
+  <figure class="mx-auto mt-18 max-w-[1000px] px-6 sm:px-12">
+    <svg viewBox="0 0 900 480" class="block h-auto w-full" role="img" aria-label="Section through a La Borda–style atrium: glazed roof, galleries, patio, shared ground floor">
+      <line x1="40" y1="420" x2="860" y2="420" stroke="#1c1915" stroke-width="2.5"></line>
+      <g fill="none" stroke="#1c1915" stroke-width="2.5">
+        <rect x="180" y="100" width="150" height="320"></rect>
+        <rect x="570" y="100" width="150" height="320"></rect>
+      </g>
+      <g stroke="#1c1915" stroke-width="1.5">
+        <line x1="180" y1="360" x2="330" y2="360"></line><line x1="180" y1="310" x2="330" y2="310"></line><line x1="180" y1="260" x2="330" y2="260"></line><line x1="180" y1="210" x2="330" y2="210"></line><line x1="180" y1="155" x2="330" y2="155"></line>
+        <line x1="570" y1="360" x2="720" y2="360"></line><line x1="570" y1="310" x2="720" y2="310"></line><line x1="570" y1="260" x2="720" y2="260"></line><line x1="570" y1="210" x2="720" y2="210"></line><line x1="570" y1="155" x2="720" y2="155"></line>
+      </g>
+      <g stroke="#b44a2f" stroke-width="2" fill="none">
+        <line x1="330" y1="155" x2="368" y2="155"></line><line x1="330" y1="210" x2="368" y2="210"></line><line x1="330" y1="260" x2="368" y2="260"></line><line x1="330" y1="310" x2="368" y2="310"></line><line x1="330" y1="360" x2="368" y2="360"></line>
+        <line x1="532" y1="155" x2="570" y2="155"></line><line x1="532" y1="210" x2="570" y2="210"></line><line x1="532" y1="260" x2="570" y2="260"></line><line x1="532" y1="310" x2="570" y2="310"></line><line x1="532" y1="360" x2="570" y2="360"></line>
+        <line x1="368" y1="155" x2="368" y2="143"></line><line x1="368" y1="210" x2="368" y2="198"></line><line x1="368" y1="260" x2="368" y2="248"></line><line x1="368" y1="310" x2="368" y2="298"></line><line x1="368" y1="360" x2="368" y2="348"></line>
+        <line x1="532" y1="155" x2="532" y2="143"></line><line x1="532" y1="210" x2="532" y2="198"></line><line x1="532" y1="260" x2="532" y2="248"></line><line x1="532" y1="310" x2="532" y2="298"></line><line x1="532" y1="360" x2="532" y2="348"></line>
+      </g>
+      <path d="M180 100 L 450 48 L 720 100" fill="none" stroke="#1c1915" stroke-width="2.5"></path>
+      <g stroke="rgba(28,25,21,0.45)" stroke-width="1.5" fill="none">
+        <line x1="250" y1="87" x2="250" y2="72"></line><line x1="330" y1="72" x2="330" y2="57"></line><line x1="410" y1="57" x2="410" y2="42"></line><line x1="490" y1="57" x2="490" y2="42"></line><line x1="570" y1="72" x2="570" y2="57"></line><line x1="650" y1="87" x2="650" y2="72"></line>
+      </g>
+      <g stroke="#3f5c45" stroke-width="2" fill="none">
+        <path d="M430 400 C 424 386, 436 378, 444 386"></path>
+        <path d="M450 108 C 450 160, 450 320, 450 396" stroke-dasharray="3 8"></path>
+        <path d="M438 130 L 450 110 L 462 130"></path>
+      </g>
+      <rect x="330" y="380" width="202" height="40" fill="rgba(180,74,47,0.12)" stroke="#1c1915" stroke-width="2"></rect>
+      <g font-family="'Source Sans 3',sans-serif" font-size="13" letter-spacing="2" fill="#1c1915">
+        <text x="300" y="30">GLAZED PATIO ROOF — WINTER GREENHOUSE, SUMMER CHIMNEY</text>
+        <text x="384" y="132" fill="#b44a2f">GALLERIES</text>
+        <text x="398" y="298" fill="#3f5c45">STACK AIR</text>
+        <text x="336" y="406" fill="#b44a2f">SHARED KITCHEN–DINING</text>
+        <text x="120" y="450">STREET</text>
+        <text x="186" y="450">HOMES</text>
+        <text x="410" y="450" fill="#3f5c45">PATIO</text>
+        <text x="576" y="450">HOMES</text>
+      </g>
+    </svg>
+    <figcaption class="mt-3.5 font-sans text-xs uppercase tracking-[0.16em] text-ink/55">
+      Fig. 04 — Section through a La Borda–style atrium. Illustrative, drawn from published
+      descriptions.
+    </figcaption>
+  </figure>
+
+  <Fragment slot="lessons">
+    <li>
+      Public land on a long lease removes the land cost that kills Bay Area co-ops — look for city
+      or district parcels first.
+    </li>
+    <li>
+      One patio can be the circulation, the climate system, and the social room. Don't buy three
+      systems where one section works.
+    </li>
+    <li>
+      Shared kitchen, laundry, and guest rooms let private units shrink honestly — affordability by
+      design, not subsidy alone.
+    </li>
+    <li>
+      Cession of use is the tenure translation target: limited-equity co-op plus a land trust gets
+      closest under California law.
+    </li>
+    <li>
+      Residents in the design team (Lacol's model) is a process, not a luxury — it is how the
+      building stayed cheap and specific.
+    </li>
+  </Fragment>
+
+  <Fragment slot="sources">
+    Sources: project publications by Lacol and the La Borda cooperative —
+    <a href="http://www.laborda.coop" target="_blank" rel="noopener">laborda.coop</a> ·
+    <a href="https://www.lacol.coop" target="_blank" rel="noopener">lacol.coop</a>
+  </Fragment>
+</CaseStudy>

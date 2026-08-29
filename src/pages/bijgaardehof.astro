@@ -1,0 +1,54 @@
+---
+import CaseStudy from '../layouts/CaseStudy.astro';
+
+const facts = [
+  { k: 'City', v: 'Ghent' },
+  { k: 'Year', v: 'c. 2022' },
+  { k: 'Groups', v: 'Three cohousing groups' },
+  { k: 'Original', v: 'Factory reuse' },
+  { k: 'Architect', v: 'BOGDAN & VAN BROECK' },
+  { k: 'Ground floor', v: 'Neighborhood health center' },
+];
+
+const gallery = [
+  { placeholder: 'Courtyard rooms — photo needed', cap: 'Planted courtyard rooms between the wings' },
+  { placeholder: 'Common house — photo needed', cap: 'One of the three common houses' },
+  { placeholder: 'Health center — photo needed', cap: 'The health center at the ground floor' },
+];
+---
+
+<CaseStudy
+  title="Bijgaardehof"
+  subtitle="Three communities, one factory, one shared middle."
+  heroPlaceholder="Bijgaardehof hero — courtyard in the factory shell (photo needed)"
+  facts={facts}
+  gallery={gallery}
+  prev={{ href: '/brutopia/', label: 'Brutopia' }}
+  next={{ href: '/village-homes/', label: 'Village Homes' }}
+>
+  <section class="mx-auto max-w-[760px] px-6 pt-16 sm:px-12">
+    <p class="text-[21px] leading-[1.62]">
+      On a former factory site in Ghent, three separate cohousing groups built side by side around
+      planted courtyard rooms — each group with its own common house, all of them sharing the green
+      middle. At the ground floor sits a neighborhood health center: the building's public face is a
+      service everyone in the quarter uses.
+    </p>
+    <p class="mt-6 text-[21px] leading-[1.62]">
+      What to steal: the federation. Three groups, each small enough to govern itself, sharing one
+      courtyard and one construction contract — a way to reach block scale without one group having
+      to be enormous.
+    </p>
+  </section>
+
+  <Fragment slot="lessons">
+    <li>Several small groups can share one site and one contractor — Spreefeld logic, Flemish accent.</li>
+    <li>A public health center is a stronger ground-floor anchor than retail in a quiet location.</li>
+    <li>Each community keeps its own common house; the courtyard is the federation's parliament.</li>
+    <li>City land-development agencies (Ghent's sogent) can broker sites groups never could alone.</li>
+  </Fragment>
+
+  <Fragment slot="sources">
+    Sources: project publications by BOGDAN &amp; VAN BROECK and the City of Ghent (sogent). Details
+    approximate.
+  </Fragment>
+</CaseStudy>

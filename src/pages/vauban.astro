@@ -1,0 +1,71 @@
+---
+import CaseStudy from '../layouts/CaseStudy.astro';
+
+const facts = [
+  { k: 'City', v: 'Freiburg' },
+  { k: 'Built', v: '1998–2010s' },
+  { k: 'Scale', v: 'A district, ~5,000 residents' },
+  { k: 'Transit', v: 'Tram in the street' },
+  { k: 'Parking', v: 'Pushed to the edge' },
+  { k: 'Method', v: 'Many Baugruppen' },
+];
+
+const gallery = [
+  {
+    placeholder: 'Green spine — photo needed',
+    cap: 'The green spine between the blocks',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Gr%C3%BCnspange%20mit%20Backhaus%20in%20Freiburg-Vauban.jpg?width=1400',
+    credit: 'via Wikimedia Commons',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Gr%C3%BCnspange_mit_Backhaus_in_Freiburg-Vauban.jpg',
+  },
+  {
+    placeholder: 'Street with tram — photo needed',
+    cap: "The tram street: the district's largest shared room",
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Vauban%20Gr%C3%BCnspange%201.jpg?width=1400',
+    credit: 'via Wikimedia Commons',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Vauban_Gr%C3%BCnspange_1.jpg',
+  },
+  { placeholder: 'Baugruppe facades — photo needed', cap: 'Many small buildings, many small clients' },
+];
+---
+
+<CaseStudy
+  title="Vauban"
+  subtitle="What a whole street of these buildings feels like."
+  heroSrc="https://commons.wikimedia.org/wiki/Special:FilePath/Freiburg%20-%20Vauban.jpg?width=1400"
+  heroPlaceholder="Vauban hero"
+  heroCredit="via Wikimedia Commons"
+  heroCreditHref="https://commons.wikimedia.org/wiki/File:Freiburg_-_Vauban.jpg"
+  facts={facts}
+  gallery={gallery}
+  prev={{ href: '/swans-market/', label: "Swan's Market" }}
+  next={{ href: '/hunziker-areal/', label: 'Hunziker Areal' }}
+>
+  <section class="mx-auto max-w-[760px] px-6 pt-16 sm:px-12">
+    <p class="text-[21px] leading-[1.62]">
+      Vauban is not one building — it is what happens when a city lets dozens of building groups
+      fill a district with mid-rise blocks: tram down the main street, shops at the ground floors,
+      children owning the pavement, cars parked in garages at the edge. A former barracks site
+      became the standing proof that the type, repeated, makes a neighborhood and not a project.
+    </p>
+    <p class="mt-6 text-[21px] leading-[1.62]">
+      What to steal: the parceling. Freiburg sold small lots to many Baugruppen instead of large
+      lots to few developers — variety, affordability, and speed came from the plural, not from any
+      single design.
+    </p>
+  </section>
+
+  <Fragment slot="lessons">
+    <li>Sell small parcels to many groups: variety and affordability come from the plural.</li>
+    <li>Parking at the district edge is what gives every block its courtyard back.</li>
+    <li>
+      The tram is the spine — Berkeley's corridors already have the transit; they lack the street
+      walls.
+    </li>
+    <li>One building first; Vauban is what the tenth one adds up to.</li>
+  </Fragment>
+
+  <Fragment slot="sources">
+    Sources: City of Freiburg and Forum Vauban publications. Resident figure approximate.
+  </Fragment>
+</CaseStudy>

@@ -1,0 +1,92 @@
+---
+import Base from '../layouts/Base.astro';
+
+const items = [
+  {
+    n: '01',
+    t: "Don't buy land first",
+    b: 'Land bought before the group, the charter, and the numbers exist becomes a mortgage that designs the building for you. Every case study in the atlas got its land late — often leased, not bought.',
+  },
+  {
+    n: '02',
+    t: 'A core group of 8–15 households',
+    b: 'Small enough to decide, large enough to survive departures. Recruit for commitment, not headcount; the mailing list comes later.',
+  },
+  {
+    n: '03',
+    t: 'The charter before the architecture',
+    b: 'Money, exit, kids, cars, conflict, commerce — written down while everyone still likes each other. The document is cheap; the fights it prevents are not.',
+  },
+  {
+    n: '04',
+    t: 'Two entities',
+    b: 'A community land trust (or an existing one) holds the land permanently; a development cooperative builds and owns the building. Separating them is what keeps the homes affordable past the founders.',
+  },
+  {
+    n: '05',
+    t: 'The Baugruppe model',
+    b: 'Residents are the client; the architect runs the process; the 10–20% developer margin stays in the building. This is the single biggest lever in the pro forma — it is how R50 and Spreefeld penciled.',
+  },
+  {
+    n: '06',
+    t: 'Capture vs. build',
+    b: 'An existing building (Scenario 3) is faster, cheaper, and teaches governance; a new court (Scenario 1) is the full brief. Strong groups do the first while preparing the second.',
+  },
+  {
+    n: '07',
+    t: 'Single-stair and gallery access: a research item',
+    b: 'The gallery-access mid-rise needs egress code work in most US cities. Reform is moving in several states, and the question is live in California — put a code consultant on it in month one, not year three.',
+  },
+  {
+    n: '08',
+    t: 'Retail is pro forma, not amenity',
+    b: 'Ground-floor leases — to member businesses and neighborhood ones — carry real rent and real street life. A courtyard block with a dead ground floor is a gated community lying about it.',
+  },
+  {
+    n: '09',
+    t: 'Open-source the brief',
+    b: 'Publish the charter, the spec, the numbers, the mistakes. The replication unit is one building; the replication mechanism is the next group not starting from zero.',
+  },
+];
+---
+
+<Base title="How — The Courtyard Block" current="how">
+  <header class="mx-auto max-w-[920px] px-6 pt-20 sm:px-12">
+    <p class="mb-4 font-sans text-xs uppercase tracking-[0.22em] text-terracotta">Practically</p>
+    <h1 class="text-[clamp(40px,5.5vw,68px)] font-medium leading-[1.05] tracking-[-0.015em]">
+      Tenure, money, code, first steps
+    </h1>
+    <p class="mt-6 max-w-[65ch] text-[22px] leading-[1.55] text-ink/80">
+      Short, in the order it actually happens.
+    </p>
+  </header>
+
+  <section class="mx-auto mt-6 max-w-[920px] px-6 sm:px-12">
+    {
+      items.map((i) => (
+        <article class="grid grid-cols-[64px_1fr] gap-6 border-t border-ink/15 py-7.5">
+          <p class="pt-1 font-sans text-sm text-terracotta">{i.n}</p>
+          <div>
+            <h2 class="text-[26px] font-medium">{i.t}</h2>
+            <p class="mt-2.5 max-w-[65ch] text-lg leading-[1.6] text-ink/85">{i.b}</p>
+          </div>
+        </article>
+      ))
+    }
+  </section>
+
+  <section class="mx-auto mt-20 max-w-[920px] px-6 sm:px-12">
+    <div class="bg-ink px-12 py-13 text-paper">
+      <p class="font-sans text-xs uppercase tracking-[0.2em] text-[#e08b6d]">Join</p>
+      <p class="mt-3.5 text-[clamp(24px,3vw,34px)] font-medium leading-[1.3] text-paper">
+        This site is the draft. If you would live in this building, help write it.
+      </p>
+      <p class="mt-5 text-lg leading-[1.6] text-paper/80">
+        Contribute ideas, corrections, and case studies on
+        <a href="https://github.com/crs48/courtyardblock" class="text-[#e08b6d] hover:text-[#e08b6d]"
+          >GitHub</a
+        > — open an issue or a pull request — or propose a parcel you walk past every day.
+      </p>
+    </div>
+  </section>
+</Base>

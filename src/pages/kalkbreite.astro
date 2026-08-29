@@ -1,0 +1,126 @@
+---
+import CaseStudy from '../layouts/CaseStudy.astro';
+
+const facts = [
+  { k: 'City', v: 'Zürich' },
+  { k: 'Year', v: '2014' },
+  { k: 'Height', v: '~7 stories' },
+  { k: 'Homes', v: '~97' },
+  { k: 'Residents', v: '~250' },
+  { k: 'Architect', v: 'Müller Sigrist' },
+  { k: 'Tenure', v: 'Cooperative' },
+  { k: 'Site', v: 'Over a tram depot' },
+];
+
+const gallery = [
+  { placeholder: 'Raised garden courtyard — photo needed', cap: 'The raised courtyard garden over the depot roof' },
+  {
+    placeholder: 'Street front with cinema — photo needed',
+    cap: 'Street level: shops, cinema, restaurants — the block earns its sidewalk',
+  },
+  { placeholder: 'Interior rue intérieure — photo needed', cap: 'The internal street connecting apartment clusters' },
+  {
+    placeholder: 'Tram depot — photo needed',
+    cap: 'The depot on Badenerstrasse — trams still run below the homes',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Z%C3%BCrich%20Badenerstrasse%20tram%20depot.jpg?width=1400',
+    credit: 'via Wikimedia Commons',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_Badenerstrasse_tram_depot.jpg',
+  },
+];
+---
+
+<CaseStudy
+  title="Kalkbreite"
+  subtitle="A whole piece of city — built on top of a working tram depot."
+  heroSrc="https://commons.wikimedia.org/wiki/Special:FilePath/Kalkbreite.jpg?width=1400"
+  heroPlaceholder="Kalkbreite hero"
+  heroCredit="Bub37 · CC BY-SA 4.0"
+  heroCreditHref="https://commons.wikimedia.org/wiki/File:Kalkbreite.jpg"
+  facts={facts}
+  gallery={gallery}
+  prev={{ href: '/la-borda/', label: 'La Borda, Barcelona' }}
+  next={{ href: '/spreefeld/', label: 'Spreefeld, Berlin' }}
+>
+  <section class="mx-auto max-w-[760px] px-6 pt-16 sm:px-12">
+    <p class="text-[21px] leading-[1.62]">
+      The Genossenschaft Kalkbreite convinced Zurich to lease it the air rights over a tram depot,
+      then built a full perimeter block above the sheds: roughly 97 apartments and 250 residents
+      upstairs, with shops, a cinema, restaurants and offices — on the order of 200 workplaces — at
+      the street. The courtyard is lifted one level onto the depot roof: a planted garden of about
+      2,500 m², open to the public by day. Residents get roof terraces above; the neighborhood gets
+      a green square it never had.
+    </p>
+    <p class="mt-6 text-[21px] leading-[1.62]">
+      What to steal: the mix. Incomes are deliberately mixed, apartment types run from small studios
+      to a <em>Großhaushalt</em> — a cluster household with a staffed kitchen — and the ground floor
+      pays real rent. Kalkbreite is the proof that a co-op courtyard block can sit on the hardest
+      site in the city and still pencil.
+    </p>
+  </section>
+
+  <figure class="mx-auto mt-18 max-w-[1000px] px-6 sm:px-12">
+    <svg viewBox="0 0 900 420" class="block h-auto w-full" role="img" aria-label="Section: apartments over a raised courtyard over a tram depot, shops at street level">
+      <line x1="40" y1="360" x2="860" y2="360" stroke="#1c1915" stroke-width="2.5"></line>
+      <g fill="none" stroke="#1c1915" stroke-width="2.5">
+        <rect x="150" y="80" width="140" height="280"></rect>
+        <rect x="610" y="80" width="140" height="280"></rect>
+      </g>
+      <g stroke="#1c1915" stroke-width="1.5">
+        <line x1="150" y1="300" x2="290" y2="300"></line><line x1="150" y1="255" x2="290" y2="255"></line><line x1="150" y1="210" x2="290" y2="210"></line><line x1="150" y1="165" x2="290" y2="165"></line><line x1="150" y1="122" x2="290" y2="122"></line>
+        <line x1="610" y1="300" x2="750" y2="300"></line><line x1="610" y1="255" x2="750" y2="255"></line><line x1="610" y1="210" x2="750" y2="210"></line><line x1="610" y1="165" x2="750" y2="165"></line><line x1="610" y1="122" x2="750" y2="122"></line>
+      </g>
+      <rect x="150" y="300" width="140" height="60" fill="rgba(180,74,47,0.12)" stroke="#1c1915" stroke-width="2"></rect>
+      <rect x="610" y="300" width="140" height="60" fill="rgba(180,74,47,0.12)" stroke="#1c1915" stroke-width="2"></rect>
+      <rect x="290" y="280" width="320" height="80" fill="rgba(28,25,21,0.06)" stroke="#1c1915" stroke-width="2.5"></rect>
+      <g fill="none" stroke="#1c1915" stroke-width="2">
+        <rect x="330" y="316" width="90" height="30" rx="5"></rect><circle cx="348" cy="350" r="5" fill="#1c1915"></circle><circle cx="402" cy="350" r="5" fill="#1c1915"></circle>
+        <rect x="450" y="316" width="90" height="30" rx="5"></rect><circle cx="468" cy="350" r="5" fill="#1c1915"></circle><circle cx="522" cy="350" r="5" fill="#1c1915"></circle>
+      </g>
+      <line x1="290" y1="280" x2="610" y2="280" stroke="#3f5c45" stroke-width="3"></line>
+      <g stroke="#3f5c45" stroke-width="2" fill="none">
+        <line x1="380" y1="280" x2="380" y2="248"></line>
+        <path d="M380 248 C 367 244, 364 230, 373 224 C 366 212, 377 201, 388 205 C 394 197, 409 199, 411 210 C 421 213, 422 226, 414 232 C 419 241, 406 249, 380 248 Z"></path>
+        <line x1="500" y1="280" x2="500" y2="254"></line>
+        <path d="M500 254 C 489 251, 487 239, 494 234 C 489 224, 498 215, 507 218 C 512 211, 524 213, 526 222 C 534 225, 535 235, 528 240 C 532 248, 521 255, 500 254 Z"></path>
+      </g>
+      <g font-family="'Source Sans 3',sans-serif" font-size="13" letter-spacing="2" fill="#1c1915">
+        <text x="316" y="394">TRAM DEPOT — STILL WORKING</text>
+        <text x="332" y="268" fill="#3f5c45">RAISED PUBLIC GARDEN, ~2,500 M²</text>
+        <text x="156" y="392" fill="#b44a2f">SHOPS · CINEMA</text>
+        <text x="616" y="392" fill="#b44a2f">CAFÉS · OFFICES</text>
+        <text x="156" y="66">HOMES, MIXED INCOMES</text>
+        <text x="616" y="66">ROOF TERRACES ABOVE</text>
+      </g>
+    </svg>
+    <figcaption class="mt-3.5 font-sans text-xs uppercase tracking-[0.16em] text-ink/55">
+      Fig. 05 — The Kalkbreite section: city below, garden in the middle, homes above. Illustrative.
+    </figcaption>
+  </figure>
+
+  <Fragment slot="lessons">
+    <li>
+      Impossible sites are opportunities: air rights over transit and public yards are land nobody
+      else is bidding on.
+    </li>
+    <li>
+      A raised courtyard can be public by day and residential by feel — Berkeley's corridor lots
+      could do the same over parking or retail depth.
+    </li>
+    <li>
+      Two hundred workplaces under the homes is what makes the street safe and the pro forma work —
+      retail is structure, not amenity.
+    </li>
+    <li>
+      Mixed incomes by design, from studios to a cluster household, is the anti-monoculture
+      insurance.
+    </li>
+    <li>The city leased, the co-op built. Berkeley owns parcels; the mechanism exists.</li>
+  </Fragment>
+
+  <Fragment slot="sources">
+    Sources: Genossenschaft Kalkbreite publications —
+    <a href="https://www.kalkbreite.net" target="_blank" rel="noopener">kalkbreite.net</a>. Figures
+    (~97 homes, ~250 residents, ~2,500 m² garden, ~200 jobs) are the cooperative's published
+    approximations.
+  </Fragment>
+</CaseStudy>

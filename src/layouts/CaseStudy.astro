@@ -1,0 +1,150 @@
+---
+import Base from './Base.astro';
+import ImageSlot from '../components/ImageSlot.astro';
+import { withBase } from '../lib/nav';
+
+export interface Fact {
+  k: string;
+  v: string;
+}
+
+export interface GalleryItem {
+  placeholder: string;
+  cap: string;
+  src?: string;
+  credit?: string;
+  creditHref?: string;
+}
+
+interface Props {
+  title: string;
+  subtitle: string;
+  heroSrc?: string;
+  heroPlaceholder: string;
+  heroCredit?: string;
+  heroCreditHref?: string;
+  facts: Fact[];
+  gallery?: GalleryItem[];
+  prev?: { href: string; label: string };
+  next?: { href: string; label: string };
+}
+
+const {
+  title,
+  subtitle,
+  heroSrc,
+  heroPlaceholder,
+  heroCredit,
+  heroCreditHref,
+  facts,
+  gallery,
+  prev,
+  next,
+} = Astro.props;
+---
+
+<Base title={`${title} — The Courtyard Block`} current="atlas">
+  <header class="mx-auto max-w-[1240px] px-6 pt-16 sm:px-12">
+    <a
+      href={withBase('/atlas/')}
+      class="font-sans text-xs uppercase tracking-[0.16em] text-ink/55 no-underline">← Atlas</a
+    >
+    <h1 class="mt-4.5 text-[clamp(44px,6vw,76px)] font-medium leading-[1.02] tracking-[-0.015em]">
+      {title}
+    </h1>
+    <p class="mt-3.5 text-[22px] italic text-ink/70">{subtitle}</p>
+  </header>
+
+  <div class="mx-auto mt-10 max-w-[1240px] px-6 sm:px-12">
+    <div class="h-[min(62vh,560px)] w-full">
+      <ImageSlot
+        src={heroSrc}
+        alt={title}
+        placeholder={heroPlaceholder}
+        credit={heroCredit}
+        creditHref={heroCreditHref}
+      />
+    </div>
+  </div>
+
+  <section class="mx-auto max-w-[1240px] px-6 pt-7 sm:px-12">
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(130px,1fr))] border-t-2 border-ink border-b border-b-ink/15">
+      {
+        facts.map((f) => (
+          <div class="py-4 pr-4 pb-4.5">
+            <p class="font-sans text-[11px] uppercase tracking-[0.14em] text-ink/50">{f.k}</p>
+            <p class="mt-1.5 text-lg font-medium">{f.v}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <slot />
+
+  {
+    gallery && (
+      <section class="mx-auto mt-20 max-w-[1240px] px-6 sm:px-12">
+        <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6">
+          {gallery.map((g) => (
+            <figure>
+              <div class="h-[260px] w-full">
+                <ImageSlot
+                  src={g.src}
+                  alt={g.cap}
+                  placeholder={g.placeholder}
+                  credit={g.credit}
+                  creditHref={g.creditHref}
+                />
+              </div>
+              <figcaption class="mt-2.5 font-sans text-xs uppercase tracking-[0.14em] text-ink/55">
+                {g.cap}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <section class="mx-auto mt-22 max-w-[920px] px-6 sm:px-12">
+    <div class="border-2 border-ink bg-paper-raised px-10 py-9">
+      <p class="font-sans text-xs uppercase tracking-[0.2em] text-terracotta">Lessons for Berkeley</p>
+      <ul class="mt-4.5 list-disc pl-5.5 text-[19px] leading-[1.7]">
+        <slot name="lessons" />
+      </ul>
+    </div>
+    <p class="mt-6 font-sans text-sm text-ink/60">
+      <slot name="sources" />
+    </p>
+  </section>
+
+  <section class="mx-auto mt-22 grid max-w-[1240px] grid-cols-1 gap-6 px-6 sm:grid-cols-2 sm:px-12">
+    {
+      prev ? (
+        <a href={withBase(prev.href)} class="border border-ink/25 px-8 py-7 no-underline">
+          <p class="font-sans text-[11px] uppercase tracking-[0.18em] text-ink/50">Previous case</p>
+          <p class="mt-2 text-[22px] font-medium">← {prev.label}</p>
+        </a>
+      ) : (
+        <a href={withBase('/atlas/')} class="border border-ink/25 px-8 py-7 no-underline">
+          <p class="font-sans text-[11px] uppercase tracking-[0.18em] text-ink/50">Back</p>
+          <p class="mt-2 text-[22px] font-medium">← The atlas</p>
+        </a>
+      )
+    }
+    {
+      next ? (
+        <a href={withBase(next.href)} class="border border-ink/25 px-8 py-7 text-right no-underline">
+          <p class="font-sans text-[11px] uppercase tracking-[0.18em] text-ink/50">Next case</p>
+          <p class="mt-2 text-[22px] font-medium">{next.label} →</p>
+        </a>
+      ) : (
+        <a href={withBase('/atlas/')} class="border border-ink/25 px-8 py-7 text-right no-underline">
+          <p class="font-sans text-[11px] uppercase tracking-[0.18em] text-ink/50">Back</p>
+          <p class="mt-2 text-[22px] font-medium">Back to the atlas →</p>
+        </a>
+      )
+    }
+  </section>
+</Base>

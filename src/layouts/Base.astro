@@ -1,17 +1,19 @@
 ---
 import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title?: string;
   description?: string;
+  current?: string;
 }
 
 const {
-  title = 'Courtyard Block',
-  description = 'A neighborhood project — share your ideas for the courtyard block.',
+  title = 'The Courtyard Block',
+  description = 'An atlas of courtyard housing — cooperative mid-rise blocks from Barcelona to Oakland, and the case for building them here.',
+  current,
 } = Astro.props;
-
-const repoUrl = 'https://github.com/crs48/courtyardblock';
 ---
 
 <!doctype html>
@@ -20,15 +22,19 @@ const repoUrl = 'https://github.com/crs48/courtyardblock';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Source+Sans+3:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-stone-50 text-stone-900 antialiased">
-    <slot />
-    <footer class="border-t border-stone-200 py-8 text-center text-sm text-stone-500">
-      <p>
-        Have ideas? Contribute on
-        <a href={repoUrl} class="underline underline-offset-2 hover:text-stone-800">GitHub</a>.
-      </p>
-    </footer>
+  <body class="min-h-screen">
+    <div class="min-h-screen">
+      <Nav current={current} />
+      <slot />
+      <Footer />
+    </div>
   </body>
 </html>

@@ -1,1 +1,32 @@
 @import "tailwindcss";
+
+@theme {
+  --color-paper: #f6f1e8;
+  --color-paper-raised: #fbf8f1;
+  --color-ink: #1c1915;
+  --color-terracotta: #b44a2f;
+  --color-moss: #3f5c45;
+
+  --font-serif: "Newsreader", Georgia, serif;
+  --font-sans: "Source Sans 3", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-ink);
+}
+a:hover {
+  color: var(--color-terracotta);
+}
+
+::selection {
+  background: var(--color-terracotta);
+  color: var(--color-paper);
+}

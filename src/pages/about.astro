@@ -1,0 +1,94 @@
+---
+import Base from '../layouts/Base.astro';
+import { withBase } from '../lib/nav';
+
+const sources = [
+  { name: 'La Borda', url: 'http://www.laborda.coop', label: 'laborda.coop' },
+  { name: 'Lacol', url: 'https://www.lacol.coop', label: 'lacol.coop' },
+  { name: 'Kalkbreite', url: 'https://www.kalkbreite.net', label: 'kalkbreite.net' },
+  { name: 'Spreefeld', url: 'https://www.spreefeld-berlin.de', label: 'spreefeld-berlin.de' },
+  {
+    name: 'R50 — Heide & von Beckerath',
+    url: 'https://heidevonbeckerath.com',
+    label: 'heidevonbeckerath.com',
+  },
+  { name: 'Sargfabrik', url: 'https://www.sargfabrik.at', label: 'sargfabrik.at' },
+  { name: "Swan's Market — EBALDC", url: 'https://ebaldc.org', label: 'ebaldc.org' },
+  { name: 'Mehr als Wohnen', url: 'https://www.mehralswohnen.ch', label: 'mehralswohnen.ch' },
+  { name: 'Gleis 21', url: 'https://gleis21.wien', label: 'gleis21.wien' },
+  { name: 'City of Berkeley zoning', url: 'https://berkeleyca.gov', label: 'berkeleyca.gov' },
+];
+---
+
+<Base title="About — The Courtyard Block" current="about">
+  <header class="mx-auto max-w-[920px] px-6 pt-20 sm:px-12">
+    <p class="mb-4 font-sans text-xs uppercase tracking-[0.22em] text-terracotta">About</p>
+    <h1 class="text-[clamp(40px,5.5vw,68px)] font-medium leading-[1.05] tracking-[-0.015em]">
+      Where this came from
+    </h1>
+  </header>
+
+  <section class="mx-auto max-w-[760px] px-6 pt-12 sm:px-12">
+    <p class="text-[21px] leading-[1.62]">
+      This site came out of a conversation about wanting to live in a place that is both a
+      food-forest eco-village <em>and</em> a Berlin-like city — two dreams that seem opposed until
+      you notice one building holding both: gardens, shared rooms, and children underfoot in the
+      middle; trams, strangers, and a bakery at the edge. The resolution is not a compound in the
+      countryside. It is one mid-rise courtyard building in a real city. Then another.
+    </p>
+  </section>
+
+  <section class="mx-auto mt-16 max-w-[920px] px-6 sm:px-12">
+    <h2 class="mb-5 text-[30px] font-medium">Sources</h2>
+    <p class="mb-6 max-w-[65ch] text-lg leading-[1.6] text-ink/85">
+      Building facts are drawn from each project's own publications and architects' project pages.
+      Approximate figures are marked as such throughout. Zoning notes are plain-language summaries
+      of public documents — not legal advice.
+    </p>
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-x-10">
+      {
+        sources.map((s) => (
+          <div class="flex justify-between gap-4 border-b border-ink/10 py-3">
+            <span class="text-[17px]">{s.name}</span>
+            <a
+              href={s.url}
+              target="_blank"
+              rel="noopener"
+              class="flex-none pt-0.5 font-sans text-[13px] text-terracotta no-underline"
+            >
+              {s.label} ↗
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto mt-16 max-w-[920px] px-6 sm:px-12">
+    <h2 class="mb-5 text-[30px] font-medium">Credits &amp; license</h2>
+    <p class="max-w-[65ch] text-lg leading-[1.6] text-ink/85">
+      Original text and diagrams on this site are offered under <strong>CC BY-NC 4.0</strong> — copy
+      the brief, redraw the sections, start one in your city. Photographs keep their own licenses
+      and credits; see
+      <a href="https://github.com/crs48/courtyardblock/blob/main/IMAGE-CREDITS.md"
+        ><em>IMAGE-CREDITS</em></a
+      > in the <a href="https://github.com/crs48/courtyardblock">repository</a>. Every speculative
+      drawing is labeled illustrative.
+    </p>
+    <p class="mt-5 max-w-[65ch] text-lg leading-[1.6] text-ink/85">
+      Corrections are welcome and wanted — especially from residents of the buildings in the atlas.
+      If a fact is wrong,
+      <a href="https://github.com/crs48/courtyardblock/issues">open an issue on GitHub</a> and it
+      will be fixed with a note.
+    </p>
+  </section>
+
+  <section class="mx-auto mt-22 max-w-[1240px] px-6 sm:px-12">
+    <a href={withBase('/how/')} class="block border-2 border-ink bg-paper-raised px-12 py-11 no-underline">
+      <p class="font-sans text-xs uppercase tracking-[0.2em] text-terracotta">Join</p>
+      <p class="mt-3 text-[clamp(26px,3vw,38px)] font-medium leading-[1.2]">
+        If you would live in this building, help write it →
+      </p>
+    </a>
+  </section>
+</Base>

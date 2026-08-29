@@ -1,0 +1,57 @@
+---
+import CaseStudy from '../layouts/CaseStudy.astro';
+
+const facts = [
+  { k: 'City', v: 'Oakland' },
+  { k: 'Year', v: '2000' },
+  { k: 'Original', v: '1917 market hall' },
+  { k: 'Program', v: 'Cohousing + affordable rentals + shops' },
+  { k: 'Developer', v: 'EBALDC' },
+  { k: 'Transit', v: '2 blocks from BART' },
+];
+
+const gallery = [
+  { placeholder: 'Courtyard — photo needed', cap: 'The courtyard carved from the market hall' },
+  { placeholder: 'Cohousing common house — photo needed', cap: 'The cohousing common room on the court' },
+  { placeholder: 'Washington St front — photo needed', cap: 'Shops and restaurants keep the 1917 street face' },
+];
+---
+
+<CaseStudy
+  title="Swan's Market"
+  subtitle="The closest local cousin — courtyard life two BART stops away."
+  heroPlaceholder="Swan's Market hero — courtyard in the market hall (photo needed)"
+  facts={facts}
+  gallery={gallery}
+  prev={{ href: '/village-homes/', label: 'Village Homes' }}
+  next={{ href: '/vauban/', label: 'Vauban' }}
+>
+  <section class="mx-auto max-w-[760px] px-6 pt-16 sm:px-12">
+    <p class="text-[21px] leading-[1.62]">
+      A 1917 market hall in Old Oakland, rebuilt around a courtyard: a 20-unit cohousing community,
+      affordable rental apartments, restaurants, offices, and cultural space under one historic
+      roof. It is two blocks from BART and about fifteen minutes from Berkeley — the nearest built
+      answer to this site's whole argument, even if it stays low-rise.
+    </p>
+    <p class="mt-6 text-[21px] leading-[1.62]">
+      What to steal: the coalition. A community development corporation (EBALDC) held the project
+      together, so cohousing, affordable housing, and commerce could share one roof and one loan —
+      the finance box American lenders said doesn't exist.
+    </p>
+  </section>
+
+  <Fragment slot="lessons">
+    <li>
+      It already works here: courtyard + cohousing + shops + affordability, one BART ride from
+      Berkeley.
+    </li>
+    <li>A CDC as developer is the American translation of the Baugruppe — mission absorbs the margin.</li>
+    <li>Mixed program under one historic roof financed what no single use could.</li>
+    <li>The missing ingredient is only height — Swan's at 6 stories is the Berkeley brief.</li>
+  </Fragment>
+
+  <Fragment slot="sources">
+    Sources: <a href="https://ebaldc.org" target="_blank" rel="noopener">ebaldc.org</a> and
+    published project histories.
+  </Fragment>
+</CaseStudy>

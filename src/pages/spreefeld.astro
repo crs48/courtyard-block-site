@@ -1,0 +1,103 @@
+---
+import CaseStudy from '../layouts/CaseStudy.astro';
+
+const facts = [
+  { k: 'City', v: 'Berlin' },
+  { k: 'Year', v: '2014' },
+  { k: 'Height', v: '7 stories × 3' },
+  { k: 'Homes', v: '~60' },
+  { k: 'Residents', v: '~140' },
+  { k: 'Architects', v: 'Carpaneto · FAT KOEHL · BAR' },
+  { k: 'Tenure', v: 'Co-op / Baugruppe' },
+  { k: 'Energy', v: 'Passive house' },
+];
+
+const gallery = [
+  { placeholder: 'Courtyard between buildings — photo needed', cap: 'The court the three houses hold open toward the Spree' },
+  { placeholder: 'River path — photo needed', cap: 'The bank path — kept public, not privatized' },
+  {
+    placeholder: 'Cluster apartment interior — photo needed',
+    cap: 'A cluster apartment: 600–800 m² shared among many households',
+  },
+  { placeholder: 'Roof terraces and bridges — photo needed', cap: 'Roof terraces linked by bridges between the houses' },
+];
+---
+
+<CaseStudy
+  title="Spreefeld"
+  subtitle="Three buildings, one courtyard, a riverbank kept public."
+  heroPlaceholder="Spreefeld hero — the three buildings from the river (photo needed)"
+  facts={facts}
+  gallery={gallery}
+  prev={{ href: '/kalkbreite/', label: 'Kalkbreite, Zürich' }}
+  next={{ href: '/r50/', label: 'R50, Berlin' }}
+>
+  <section class="mx-auto max-w-[760px] px-6 pt-16 sm:px-12">
+    <p class="text-[21px] leading-[1.62]">
+      On a stretch of Spree riverbank that speculation should have taken, a cooperative built three
+      7-story passive-house buildings — Carpaneto, FAT KOEHL, and BAR Architekten, one each —
+      arranged to hold a shared courtyard open to the water. About 60 homes and 140 residents,
+      including cluster apartments of 600–800 m² where a dozen people share kitchens and living
+      rooms at a scale between flat and floor.
+    </p>
+    <p class="mt-6 text-[21px] leading-[1.62]">
+      The radical move is the ground plane: no housing on it. Kindergarten, workshops, and
+      deliberately unprogrammed "option rooms" face the courtyard and the river path, which stays
+      open to everyone. Roof terraces connect across bridges. There was no speculative developer
+      anywhere in the chain — the residents were the client, and the riverbank shows it.
+    </p>
+  </section>
+
+  <figure class="mx-auto mt-18 max-w-[1000px] px-6 sm:px-12">
+    <svg viewBox="0 0 900 420" class="block h-auto w-full" role="img" aria-label="Site plan: three buildings around a shared courtyard opening to the river">
+      <path d="M40 330 C 240 300, 640 300, 860 340 L 860 420 L 40 420 Z" fill="rgba(63,92,69,0.12)" stroke="#3f5c45" stroke-width="2"></path>
+      <path d="M40 352 C 240 322, 640 322, 860 362" fill="none" stroke="#3f5c45" stroke-width="1.5" stroke-dasharray="4 7"></path>
+      <g fill="rgba(28,25,21,0.08)" stroke="#1c1915" stroke-width="2.5">
+        <rect x="150" y="70" width="180" height="120"></rect>
+        <rect x="420" y="40" width="140" height="150"></rect>
+        <rect x="640" y="80" width="170" height="110"></rect>
+      </g>
+      <path d="M330 210 C 400 250, 520 250, 640 214" fill="none" stroke="#b44a2f" stroke-width="2" stroke-dasharray="6 5"></path>
+      <g stroke="#3f5c45" stroke-width="2" fill="none">
+        <circle cx="420" cy="240" r="16"></circle><circle cx="500" cy="255" r="12"></circle><circle cx="560" cy="232" r="14"></circle>
+      </g>
+      <g font-family="'Source Sans 3',sans-serif" font-size="13" letter-spacing="2" fill="#1c1915">
+        <text x="156" y="58">HOUSE 1 · CARPANETO</text>
+        <text x="426" y="28">HOUSE 2 · FAT KOEHL</text>
+        <text x="646" y="68">HOUSE 3 · BAR</text>
+        <text x="400" y="288" fill="#3f5c45">SHARED COURT, OPEN TO THE RIVER</text>
+        <text x="70" y="398" fill="#3f5c45">THE SPREE — BANK PATH STAYS PUBLIC</text>
+        <text x="358" y="222" fill="#b44a2f">GROUND FLOOR: NO HOUSING</text>
+      </g>
+    </svg>
+    <figcaption class="mt-3.5 font-sans text-xs uppercase tracking-[0.16em] text-ink/55">
+      Fig. 06 — Spreefeld site logic: buildings hold the court; the court holds the river.
+      Illustrative.
+    </figcaption>
+  </figure>
+
+  <Fragment slot="lessons">
+    <li>
+      Two or three buildings can make one courtyard — a Berkeley group doesn't need a full-block
+      parcel to get the Hof.
+    </li>
+    <li>
+      Keeping the ground floor housing-free is what makes the block a neighbor instead of a
+      compound.
+    </li>
+    <li>
+      "Option rooms" — cheap, unfinished, rentable — are how a building stays useful for decades it
+      can't predict.
+    </li>
+    <li>
+      Cluster apartments house people the market ignores: singles, elders, groups — at rents whole
+      units can't reach.
+    </li>
+    <li>Passive-house at 7 stories, by a Baugruppe, in 2014: the performance excuse is gone.</li>
+  </Fragment>
+
+  <Fragment slot="sources">
+    Sources: Bau- und Wohngenossenschaft Spreefeld publications and the architects' project pages.
+    Figures (~60 homes, ~140 residents) are approximate.
+  </Fragment>
+</CaseStudy>

@@ -1,0 +1,33 @@
+---
+import { navItems, withBase } from '../lib/nav';
+
+interface Props {
+  current?: string;
+}
+
+const { current } = Astro.props;
+---
+
+<nav
+  class="flex flex-wrap items-baseline justify-between gap-6 border-b border-ink/15 px-6 py-6 sm:px-12"
+>
+  <a
+    href={withBase('/')}
+    class="text-[21px] font-semibold tracking-[-0.01em] no-underline">The Courtyard Block</a
+  >
+  <div
+    class="flex flex-wrap gap-6 font-sans text-xs uppercase tracking-[0.14em]"
+  >
+    {
+      navItems.map((item) => (
+        <a
+          href={withBase(item.href)}
+          class:list={['no-underline', { 'text-terracotta': item.key === current }]}
+          aria-current={item.key === current ? 'page' : undefined}
+        >
+          {item.label}
+        </a>
+      ))
+    }
+  </div>
+</nav>

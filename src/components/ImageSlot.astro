@@ -1,0 +1,48 @@
+---
+/**
+ * Static rendition of the design's <image-slot>: an image with a credit pill
+ * when a photo exists, otherwise a quiet placeholder box inviting a photo
+ * contribution.
+ */
+interface Props {
+  src?: string;
+  alt?: string;
+  placeholder?: string;
+  credit?: string;
+  creditHref?: string;
+  class?: string;
+}
+
+const { src, alt = '', placeholder = 'Photo needed', credit, creditHref, class: className } = Astro.props;
+---
+
+{
+  src ? (
+    <figure class:list={['relative m-0 h-full w-full overflow-hidden', className]}>
+      <img src={src} alt={alt} loading="lazy" class="h-full w-full object-cover" />
+      {credit &&
+        (creditHref ? (
+          <a
+            href={creditHref}
+            class="absolute right-2 bottom-2 rounded-[5px] bg-black/55 px-[7px] py-[3px] font-sans text-[10px] text-white no-underline hover:text-white"
+          >
+            {credit}
+          </a>
+        ) : (
+          <span class="absolute right-2 bottom-2 rounded-[5px] bg-black/55 px-[7px] py-[3px] font-sans text-[10px] text-white">
+            {credit}
+          </span>
+        ))}
+    </figure>
+  ) : (
+    <div
+      class:list={[
+        'relative flex h-full w-full items-center justify-center bg-[#f2f1ef] p-3 text-center',
+        className,
+      ]}
+    >
+      <span class="pointer-events-none absolute inset-0 border-[1.5px] border-dashed border-current opacity-35" />
+      <span class="font-sans text-[13px] text-[#6e6c66]">{placeholder}</span>
+    </div>
+  )
+}

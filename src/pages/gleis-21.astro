@@ -1,0 +1,53 @@
+---
+import CaseStudy from '../layouts/CaseStudy.astro';
+
+const facts = [
+  { k: 'City', v: 'Vienna' },
+  { k: 'Year', v: '2019' },
+  { k: 'Structure', v: 'Timber hybrid' },
+  { k: 'Architect', v: 'einszueins architektur' },
+  { k: 'Tenure', v: 'Baugruppe' },
+  { k: 'District', v: 'Sonnwendviertel' },
+];
+
+const gallery = [
+  { placeholder: 'Timber facade — photo needed', cap: 'The timber-hybrid house from the street' },
+  { placeholder: 'Event room — photo needed', cap: 'The ground-floor event room, open to the quarter' },
+  { placeholder: 'Roof terrace — photo needed', cap: 'The shared roof' },
+];
+---
+
+<CaseStudy
+  title="Gleis 21"
+  subtitle="Vienna's building-group culture, in current form."
+  heroPlaceholder="Gleis 21 hero — timber facade (photo needed)"
+  facts={facts}
+  gallery={gallery}
+  prev={{ href: '/hunziker-areal/', label: 'Hunziker Areal' }}
+  next={{ href: '/la-balma/', label: 'La Balma' }}
+>
+  <section class="mx-auto max-w-[760px] px-6 pt-16 sm:px-12">
+    <p class="text-[21px] leading-[1.62]">
+      In the Sonnwendviertel — the new quarter behind Vienna's main station — a building group
+      raised a timber-hybrid house whose ground floor belongs half to the city: a media workshop, an
+      event room, a sauna, a library, all programmed for the neighborhood as much as for the
+      residents upstairs.
+    </p>
+    <p class="mt-6 text-[21px] leading-[1.62]">
+      What to steal: how it got the land. Vienna allocates sites in new districts partly by concept
+      competition — the best program wins, not the highest bid. A Berkeley disposition of public
+      land could copy that rule tomorrow.
+    </p>
+  </section>
+
+  <Fragment slot="lessons">
+    <li>Award public land by concept, not price — the single most copyable rule in this atlas.</li>
+    <li>Timber construction and a Baugruppe fit together: light, fast, precut, self-finished.</li>
+    <li>Program the ground floor for the quarter and the quarter will defend the building.</li>
+    <li>New districts need groups seeded early, while land is still cheap on paper.</li>
+  </Fragment>
+
+  <Fragment slot="sources">
+    Sources: <a href="https://gleis21.wien" target="_blank" rel="noopener">gleis21.wien</a>
+  </Fragment>
+</CaseStudy>

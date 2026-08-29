@@ -1,0 +1,59 @@
+---
+import CaseStudy from '../layouts/CaseStudy.astro';
+
+const facts = [
+  { k: 'City', v: 'Zürich' },
+  { k: 'Year', v: '2015' },
+  { k: 'Buildings', v: '13' },
+  { k: 'Homes', v: '~370' },
+  { k: 'Residents', v: '~1,200' },
+  { k: 'Client', v: '"mehr als wohnen" co-op coalition' },
+  { k: 'Site', v: 'Former concrete plant' },
+];
+
+const gallery = [
+  { placeholder: 'Square — photo needed', cap: 'A square between the thirteen houses' },
+  { placeholder: 'Cluster apartment — photo needed', cap: 'A cluster apartment: private rooms, shared center' },
+  { placeholder: 'Ground-floor workshop — photo needed', cap: 'Ground floors: workshops, guest house, studios' },
+];
+---
+
+<CaseStudy
+  title="Hunziker Areal"
+  subtitle="The co-op courtyard logic, scaled to a neighborhood."
+  heroPlaceholder="Hunziker Areal hero — square between the houses (photo needed)"
+  facts={facts}
+  gallery={gallery}
+  prev={{ href: '/vauban/', label: 'Vauban' }}
+  next={{ href: '/gleis-21/', label: 'Gleis 21' }}
+>
+  <section class="mx-auto max-w-[760px] px-6 pt-16 sm:px-12">
+    <p class="text-[21px] leading-[1.62]">
+      Zurich's cooperatives pooled their experience into one flagship: thirteen buildings on a
+      former concrete plant, roughly 370 homes for some 1,200 people, with squares and lanes between
+      the houses instead of one enclosed court. Ground floors carry workshops, a guest house,
+      restaurants, and studios; upstairs, everything from studios to large cluster apartments.
+    </p>
+    <p class="mt-6 text-[21px] leading-[1.62]">
+      What to steal: the coalition as client. "Mehr als wohnen" — more than housing — was founded by
+      dozens of co-ops precisely to test ideas none could risk alone. It is the institutional form a
+      second- and third-building Berkeley would need.
+    </p>
+  </section>
+
+  <Fragment slot="lessons">
+    <li>
+      A coalition of co-ops can hold land and risk that no single group can — build the umbrella
+      early.
+    </li>
+    <li>Thirteen buildings by different architects, one brief: coherence without monoculture.</li>
+    <li>Cluster apartments serve households the unit-mix spreadsheet forgets.</li>
+    <li>The pilot-project mindset — test, publish, repeat — is itself the export.</li>
+  </Fragment>
+
+  <Fragment slot="sources">
+    Sources:
+    <a href="https://www.mehralswohnen.ch" target="_blank" rel="noopener">mehralswohnen.ch</a>.
+    Figures approximate.
+  </Fragment>
+</CaseStudy>

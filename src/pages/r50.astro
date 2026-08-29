@@ -1,0 +1,62 @@
+---
+import CaseStudy from '../layouts/CaseStudy.astro';
+
+const facts = [
+  { k: 'City', v: 'Berlin-Kreuzberg' },
+  { k: 'Year', v: '2013' },
+  { k: 'Height', v: '6 stories' },
+  { k: 'Homes', v: '19' },
+  { k: 'Architects', v: 'ifau + Jesko Fezer · Heide & von Beckerath' },
+  { k: 'Tenure', v: 'Baugruppe' },
+  { k: 'Signature', v: 'Continuous wraparound balcony' },
+];
+
+const gallery = [
+  { placeholder: 'Wraparound balcony — photo needed', cap: 'The continuous balcony: one porch shared by every floor' },
+  { placeholder: 'Garden — photo needed', cap: 'The garden the house holds at the center of the block' },
+  { placeholder: 'Interior — photo needed', cap: 'Simple shell interiors, finished by residents' },
+];
+---
+
+<CaseStudy
+  title="R50"
+  subtitle="Proof the type works at small scale."
+  heroPlaceholder="R50 hero — wraparound balcony facade (photo needed)"
+  facts={facts}
+  gallery={gallery}
+  prev={{ href: '/spreefeld/', label: 'Spreefeld, Berlin' }}
+  next={{ href: '/sargfabrik/', label: 'Sargfabrik' }}
+>
+  <section class="mx-auto max-w-[760px] px-6 pt-16 sm:px-12">
+    <p class="text-[21px] leading-[1.62]">
+      Nineteen households pooled as a Baugruppe, hired two small offices, and built a six-story
+      house in the middle of an ordinary Kreuzberg block. The move everyone remembers is the
+      balcony: a continuous open walkway wrapping every floor, so the whole building shares one long
+      porch. Below, a garden; inside, a workshop, laundry, and a roof terrace; the apartments
+      themselves were delivered simply and finished by their owners.
+    </p>
+    <p class="mt-6 text-[21px] leading-[1.62]">
+      What to steal: the scale. R50 is the proof that the courtyard-block instincts — shared
+      circulation you actually meet people on, common rooms instead of bigger flats — work on a
+      single infill lot with nineteen homes, no master plan required.
+    </p>
+  </section>
+
+  <Fragment slot="lessons">
+    <li>
+      One lot, one group, nineteen homes — the entry ticket is smaller than the atlas's famous
+      projects suggest.
+    </li>
+    <li>
+      A continuous balcony is gallery access at its cheapest: circulation and social life in one
+      element.
+    </li>
+    <li>Delivering apartments as simple shells put the budget into shared parts.</li>
+    <li>An architect-led Baugruppe closed in Berlin in 2013; the model is the lesson, not the address.</li>
+  </Fragment>
+
+  <Fragment slot="sources">
+    Sources: architects' project pages —
+    <a href="https://heidevonbeckerath.com" target="_blank" rel="noopener">heidevonbeckerath.com</a>
+  </Fragment>
+</CaseStudy>

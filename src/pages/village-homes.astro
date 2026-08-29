@@ -1,0 +1,54 @@
+---
+import CaseStudy from '../layouts/CaseStudy.astro';
+
+const facts = [
+  { k: 'City', v: 'Davis, California' },
+  { k: 'Built', v: '1975–1981' },
+  { k: 'Height', v: '1–2 stories' },
+  { k: 'Type', v: 'Clustered houses + greenways' },
+  { k: 'Developers', v: 'Michael & Judy Corbett' },
+  { k: 'Landscape', v: 'Edible commons, swale drainage' },
+];
+
+const gallery = [
+  { placeholder: 'Greenway — photo needed', cap: 'The greenway commons behind the houses' },
+  { placeholder: 'Orchards — photo needed', cap: 'Edible landscape as shared infrastructure' },
+  { placeholder: 'Lane — photo needed', cap: 'Narrow lanes; the front doors face the green' },
+];
+---
+
+<CaseStudy
+  title="Village Homes"
+  subtitle="The American ancestor — same instincts, wrong height."
+  heroPlaceholder="Village Homes hero — greenway between houses (photo needed)"
+  facts={facts}
+  gallery={gallery}
+  prev={{ href: '/bijgaardehof/', label: 'Bijgaardehof' }}
+  next={{ href: '/swans-market/', label: "Swan's Market" }}
+>
+  <section class="mx-auto max-w-[760px] px-6 pt-16 sm:px-12">
+    <p class="text-[21px] leading-[1.62]">
+      Decades before this site's European examples, Davis built the American version of the
+      instinct: houses clustered along shared greenways instead of streets, orchards and gardens as
+      the commons, narrow lanes, natural drainage, fruit trees anyone can pick. Village Homes proved
+      Californians will choose shared landscape over private lawn when someone actually builds it.
+    </p>
+    <p class="mt-6 text-[21px] leading-[1.62]">
+      What to steal — and what to fix: the instincts are exactly right; the height is wrong. At one
+      and two stories the density can't support a shop, a common kitchen, or transit. The courtyard
+      block is Village Homes stood up on its end, in town.
+    </p>
+  </section>
+
+  <Fragment slot="lessons">
+    <li>
+      The appetite for shared productive landscape is proven in California — fifty years of waiting
+      list.
+    </li>
+    <li>Common ground works when homes face it — Village Homes' greenways are the Hof, unrolled.</li>
+    <li>At 1–2 stories the commons can't fund common rooms; height is what pays for the kitchen.</li>
+    <li>An American precedent to point at when the type gets called foreign.</li>
+  </Fragment>
+
+  <Fragment slot="sources">Sources: published histories of Village Homes, Davis. Figures approximate.</Fragment>
+</CaseStudy>

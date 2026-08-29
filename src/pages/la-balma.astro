@@ -1,0 +1,55 @@
+---
+import CaseStudy from '../layouts/CaseStudy.astro';
+
+const facts = [
+  { k: 'City', v: 'Barcelona' },
+  { k: 'Year', v: '2021' },
+  { k: 'Homes', v: '20' },
+  { k: 'Architects', v: 'Lacol + LaBoqueria' },
+  { k: 'Tenure', v: 'Cession of use' },
+  { k: 'Land', v: 'Public lease, Poblenou' },
+];
+
+const gallery = [
+  { placeholder: 'Galleries — photo needed', cap: 'Access galleries onto the shared side' },
+  { placeholder: 'Common terrace — photo needed', cap: 'The communal terrace' },
+  { placeholder: 'Street facade — photo needed', cap: 'Twenty homes on a public-land lease in Poblenou' },
+];
+---
+
+<CaseStudy
+  title="La Balma"
+  subtitle="La Borda's sibling — proof the model repeats."
+  heroPlaceholder="La Balma hero — gallery facade (photo needed)"
+  facts={facts}
+  gallery={gallery}
+  prev={{ href: '/gleis-21/', label: 'Gleis 21' }}
+>
+  <section class="mx-auto max-w-[760px] px-6 pt-16 sm:px-12">
+    <p class="text-[21px] leading-[1.62]">
+      Three years after La Borda, the same tenure landed on a different lot: twenty homes in cession
+      of use on public land in Poblenou, designed by Lacol with LaBoqueria, with the familiar
+      grammar — access galleries, shared rooms, a communal terrace, modest private units backed by
+      generous common ones.
+    </p>
+    <p class="mt-6 text-[21px] leading-[1.62]">
+      What to steal: the repetition itself. La Balma is the evidence that La Borda was a model, not
+      a miracle — same legal wrapper, same participatory process, second verse. That is the whole
+      thesis of this site's Scale page.
+    </p>
+  </section>
+
+  <Fragment slot="lessons">
+    <li>
+      The second building is cheaper than the first: the charter, lawyers, and lessons are already
+      paid for.
+    </li>
+    <li>Cession of use survived contact with a second lot — the wrapper travels.</li>
+    <li>Twenty homes is a viable co-op: don't wait for the perfect big parcel.</li>
+    <li>Publish everything, as Lacol does — the next group starts at chapter two.</li>
+  </Fragment>
+
+  <Fragment slot="sources">
+    Sources: <a href="https://www.lacol.coop" target="_blank" rel="noopener">lacol.coop</a>
+  </Fragment>
+</CaseStudy>

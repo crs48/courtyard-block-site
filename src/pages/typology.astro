@@ -1,0 +1,239 @@
+---
+import Base from '../layouts/Base.astro';
+import { withBase } from '../lib/nav';
+
+const parts = [
+  {
+    n: '01',
+    title: 'The street wall',
+    body: 'The building meets the sidewalk. Shops one story high with tall ceilings, doors every few paces, no parking lot in front. The facade is the edge of a public room, not the back of a private object.',
+  },
+  {
+    n: '02',
+    title: 'The Hof — the courtyard',
+    body: 'Not a light well. Forty to eighty feet across: big enough for trees, a long dinner table, a sandbox, and a hundred bicycles. Open to residents and their guests; sheltered from the street. In Barcelona it is a patio, in Berlin a Hof — the word matters less than the width.',
+  },
+  {
+    n: '03',
+    title: 'The galleries',
+    body: 'Single-loaded open walkways facing the courtyard, so every front door looks into the shared middle. This — not programming, not an app — is why residents know their neighbors. The American sealed double-loaded corridor is its exact opposite.',
+  },
+  {
+    n: '04',
+    title: 'The roof',
+    body: 'A second courtyard in the sky: greenhouse, play surface, a long table, photovoltaics. In dense fabric the roof is the cheapest open space the building will ever own.',
+  },
+  {
+    n: '05',
+    title: 'The mix',
+    body: 'Housing over commerce, always. Some ground-floor rooms belong to the residents — a common kitchen, a workshop, laundry — and some belong to the neighborhood: a bakery, a clinic, a café. The block earns its street.',
+  },
+  {
+    n: '06',
+    title: 'The tenure',
+    body: 'The architecture dies if every unit flips at market price. Limited-equity cooperative, cession of use, or a community land trust: ownership structures that keep homes permanently affordable and keep the courtyard cared for by people who plan to stay.',
+  },
+  {
+    n: '07',
+    title: 'The restraint',
+    body: 'No private balcony bigger than the shared roof. No amenity that replaces the street. The building spends its budget on the courtyard, the galleries, and the ground floor — the parts everyone touches every day.',
+  },
+];
+
+const table = [
+  { k: 'Street', a: 'Setback + parking', h: 'Driveway', c: 'Shop + sidewalk' },
+  { k: 'Middle', a: 'Corridor', h: 'Private yard', c: 'Shared Hof' },
+  { k: 'Height', a: '3 stories or 20+', h: '1–2', c: '5–7' },
+  { k: 'Neighbors', a: 'Elevator strangers', h: 'Fences', c: 'Galleries + courtyard' },
+  { k: 'Daily needs', a: 'Car', h: 'Car', c: 'Same block' },
+];
+
+const nots = [
+  {
+    t: 'Not an eco-village',
+    b: 'No one is leaving the grid. Autonomy here means ownership, gardens, shared rooms, and fewer cars — still on sewers, still on transit, still in a city.',
+  },
+  {
+    t: 'Not a luxury podium tower',
+    b: 'No amenity deck marketed as community. The courtyard is owned and run by residents, not a leasing office.',
+  },
+  {
+    t: 'Not suburban cohousing',
+    b: 'Not a cul-de-sac of houses around a common lawn. The type is urban: shops below, strangers walking past, a tram or a bus at the corner.',
+  },
+  {
+    t: 'Not a hallway hotel',
+    b: 'No double-loaded corridor with sixty identical doors. Every home opens to daylight on the street side and the courtyard side.',
+  },
+];
+---
+
+<Base title="The Type — The Courtyard Block" current="typology">
+  <header class="mx-auto max-w-[920px] px-6 pt-20 sm:px-12">
+    <p class="mb-4 font-sans text-xs uppercase tracking-[0.22em] text-terracotta">The type</p>
+    <h1 class="text-[clamp(40px,5.5vw,68px)] font-medium leading-[1.05] tracking-[-0.015em]">
+      What the building is
+    </h1>
+    <p class="mt-6 max-w-[65ch] text-[22px] leading-[1.55] text-ink/80">
+      Seven parts, none of them exotic. Each exists in thousands of ordinary European buildings.
+      What is rare — in the United States — is finding them together.
+    </p>
+  </header>
+
+  <section class="mx-auto max-w-[920px] px-6 pt-16 sm:px-12">
+    {
+      parts.map((p) => (
+        <article class="grid grid-cols-[64px_1fr] gap-6 border-t border-ink/15 py-9">
+          <p class="pt-1.5 font-sans text-[15px] text-terracotta">{p.n}</p>
+          <div>
+            <h2 class="text-[30px] font-medium">{p.title}</h2>
+            <p class="mt-3 max-w-[65ch] text-[19px] leading-[1.6] text-ink/85">{p.body}</p>
+          </div>
+        </article>
+      ))
+    }
+  </section>
+
+  <figure class="mx-auto mt-20 max-w-[1100px] px-6 sm:px-12">
+    <svg viewBox="0 0 1000 460" class="block h-auto w-full" role="img" aria-label="Labeled cross-section of a courtyard block">
+      <line x1="40" y1="380" x2="960" y2="380" stroke="#1c1915" stroke-width="2.5"></line>
+      <g fill="none" stroke="#1c1915" stroke-width="2.5">
+        <rect x="200" y="90" width="170" height="290"></rect>
+        <rect x="640" y="120" width="150" height="260"></rect>
+      </g>
+      <rect x="200" y="316" width="170" height="64" fill="rgba(180,74,47,0.12)" stroke="#1c1915" stroke-width="2"></rect>
+      <g stroke="#1c1915" stroke-width="1.5">
+        <line x1="200" y1="276" x2="370" y2="276"></line><line x1="200" y1="236" x2="370" y2="236"></line><line x1="200" y1="196" x2="370" y2="196"></line><line x1="200" y1="156" x2="370" y2="156"></line><line x1="200" y1="120" x2="370" y2="120"></line>
+        <line x1="640" y1="330" x2="790" y2="330"></line><line x1="640" y1="288" x2="790" y2="288"></line><line x1="640" y1="246" x2="790" y2="246"></line><line x1="640" y1="204" x2="790" y2="204"></line><line x1="640" y1="162" x2="790" y2="162"></line>
+      </g>
+      <g stroke="#1c1915" stroke-width="1.5" fill="none">
+        <line x1="370" y1="156" x2="398" y2="156"></line><line x1="370" y1="196" x2="398" y2="196"></line><line x1="370" y1="236" x2="398" y2="236"></line><line x1="370" y1="276" x2="398" y2="276"></line>
+        <line x1="398" y1="156" x2="398" y2="144"></line><line x1="398" y1="196" x2="398" y2="184"></line><line x1="398" y1="236" x2="398" y2="224"></line><line x1="398" y1="276" x2="398" y2="264"></line>
+      </g>
+      <g fill="none" stroke="#1c1915" stroke-width="2">
+        <path d="M200 90 L 216 66 L 370 66 L 370 90"></path><rect x="290" y="44" width="66" height="22"></rect>
+      </g>
+      <g stroke="#3f5c45" stroke-width="2" fill="none">
+        <line x1="470" y1="380" x2="470" y2="330"></line>
+        <path d="M470 330 C 452 326, 447 306, 460 295 C 451 279, 465 263, 481 269 C 490 256, 511 260, 515 276 C 529 280, 531 299, 518 308 C 525 322, 507 334, 470 330 Z"></path>
+        <line x1="560" y1="380" x2="560" y2="344"></line>
+        <path d="M560 344 C 546 340, 543 325, 553 318 C 546 305, 557 293, 569 297 C 576 288, 592 291, 594 303 C 605 306, 606 320, 597 327 C 602 337, 588 345, 560 344 Z"></path>
+      </g>
+      <g font-family="'Source Sans 3',sans-serif" font-size="13" letter-spacing="2" fill="#1c1915">
+        <text x="60" y="410">STREET</text>
+        <text x="206" y="410">1 · STREET WALL, SHOPS BELOW</text>
+        <text x="452" y="410" fill="#3f5c45">2 · THE HOF, 40–80 FT</text>
+        <text x="646" y="410">REAR WING</text>
+        <text x="412" y="150" fill="#b44a2f">3 · GALLERIES</text>
+        <text x="206" y="34">4 · ROOF COURT</text>
+        <text x="206" y="344" fill="#b44a2f">5 · THE MIX — SHOP / KITCHEN / WORKSHOP</text>
+      </g>
+      <line x1="150" y1="380" x2="150" y2="90" stroke="rgba(28,25,21,0.35)" stroke-width="1"></line>
+      <line x1="144" y1="90" x2="156" y2="90" stroke="rgba(28,25,21,0.35)" stroke-width="1"></line>
+      <text x="96" y="240" font-family="'Source Sans 3',sans-serif" font-size="13" letter-spacing="2" fill="rgba(28,25,21,0.55)" transform="rotate(-90 96 240)">5–7 STORIES</text>
+    </svg>
+    <figcaption class="mt-3.5 font-sans text-xs uppercase tracking-[0.16em] text-ink/55">
+      Fig. 02 — The parts in section. Illustrative.
+    </figcaption>
+  </figure>
+
+  <figure class="mx-auto mt-18 max-w-[1100px] px-6 sm:px-12">
+    <svg viewBox="0 0 1000 340" class="block h-auto w-full" role="img" aria-label="Plan comparison: courtyard block, double-loaded slab, tower in parking, detached house">
+      <g fill="none" stroke="#1c1915" stroke-width="2.5">
+        <path d="M40 60 L240 60 L240 260 L40 260 Z M84 104 L196 104 L196 216 L84 216 Z" fill-rule="evenodd" fill="rgba(28,25,21,0.08)"></path>
+      </g>
+      <rect x="84" y="104" width="112" height="112" fill="rgba(63,92,69,0.3)" stroke="#3f5c45" stroke-width="1.5"></rect>
+      <g fill="rgba(28,25,21,0.08)" stroke="#1c1915" stroke-width="2.5">
+        <rect x="330" y="120" width="200" height="60"></rect>
+      </g>
+      <line x1="330" y1="150" x2="530" y2="150" stroke="#b44a2f" stroke-width="2" stroke-dasharray="6 5"></line>
+      <g fill="rgba(28,25,21,0.08)" stroke="#1c1915" stroke-width="2.5">
+        <rect x="640" y="110" width="70" height="70"></rect>
+      </g>
+      <g stroke="rgba(28,25,21,0.3)" stroke-width="1.5" fill="none">
+        <rect x="600" y="70" width="150" height="150"></rect>
+        <line x1="608" y1="90" x2="632" y2="90"></line><line x1="608" y1="200" x2="632" y2="200"></line><line x1="718" y1="90" x2="742" y2="90"></line><line x1="718" y1="200" x2="742" y2="200"></line>
+      </g>
+      <g fill="rgba(28,25,21,0.08)" stroke="#1c1915" stroke-width="2.5">
+        <rect x="850" y="120" width="56" height="56"></rect>
+      </g>
+      <g stroke="rgba(28,25,21,0.3)" stroke-width="1.5" fill="none">
+        <rect x="820" y="80" width="140" height="140"></rect>
+        <line x1="878" y1="176" x2="878" y2="220"></line>
+      </g>
+      <g font-family="'Source Sans 3',sans-serif" font-size="13" letter-spacing="2" fill="#1c1915">
+        <text x="40" y="296">COURTYARD BLOCK</text>
+        <text x="40" y="316" fill="rgba(28,25,21,0.5)">EVERY HOME ON STREET + HOF</text>
+        <text x="330" y="296">DOUBLE-LOADED SLAB</text>
+        <text x="330" y="316" fill="#b44a2f">SEALED CORRIDOR INSIDE</text>
+        <text x="600" y="296">TOWER IN PARKING</text>
+        <text x="600" y="316" fill="rgba(28,25,21,0.5)">OBJECT, NOT STREET</text>
+        <text x="820" y="296">DETACHED HOUSE</text>
+        <text x="820" y="316" fill="rgba(28,25,21,0.5)">FENCED YARD, DRIVEWAY</text>
+      </g>
+    </svg>
+    <figcaption class="mt-3.5 font-sans text-xs uppercase tracking-[0.16em] text-ink/55">
+      Fig. 03 — Four plans, one lesson: only the perimeter block makes both a street and a shared
+      middle.
+    </figcaption>
+  </figure>
+
+  <section class="mx-auto max-w-[920px] px-6 pt-22 sm:px-12">
+    <h2 class="mb-6 text-[34px] font-medium">Three ways to live, compared</h2>
+    <div class="overflow-x-auto">
+      <div class="min-w-[640px]">
+        <div class="grid grid-cols-[1.1fr_1.3fr_1.3fr_1.5fr] border-t-2 border-ink">
+          <div class="py-3.5 pr-3"></div>
+          <div class="px-3 py-3.5 font-sans text-xs uppercase tracking-[0.14em] text-ink/60">
+            Typical US apartment
+          </div>
+          <div class="px-3 py-3.5 font-sans text-xs uppercase tracking-[0.14em] text-ink/60">
+            Typical US house
+          </div>
+          <div class="px-3 py-3.5 font-sans text-xs uppercase tracking-[0.14em] text-terracotta">
+            Courtyard block
+          </div>
+        </div>
+        {
+          table.map((r) => (
+            <div class="grid grid-cols-[1.1fr_1.3fr_1.3fr_1.5fr] border-t border-ink/15">
+              <div class="py-4 pr-3 font-sans text-[13px] uppercase tracking-[0.1em] text-ink/55">
+                {r.k}
+              </div>
+              <div class="px-3 py-4 text-[17px] text-ink/80">{r.a}</div>
+              <div class="px-3 py-4 text-[17px] text-ink/80">{r.h}</div>
+              <div class="px-3 py-4 text-[17px] font-medium">{r.c}</div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-[920px] px-6 pt-22 sm:px-12">
+    <h2 class="mb-3 text-[34px] font-medium">What it is not</h2>
+    <p class="mb-7 max-w-[65ch] text-[19px] leading-[1.6] text-ink/80">
+      The type is easiest to confuse with its neighbors. Four things this proposal is deliberately
+      not:
+    </p>
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-px border border-ink/15 bg-ink/15">
+      {
+        nots.map((n) => (
+          <div class="bg-paper p-6.5">
+            <h3 class="text-[21px] font-medium text-terracotta">{n.t}</h3>
+            <p class="mt-2.5 text-base leading-[1.55] text-ink/80">{n.b}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto mt-24 max-w-[1240px] px-6 sm:px-12">
+    <a href={withBase('/atlas/')} class="block border-2 border-ink bg-paper-raised px-12 py-11 no-underline">
+      <p class="font-sans text-xs uppercase tracking-[0.2em] text-terracotta">Next</p>
+      <p class="mt-3 text-[clamp(26px,3vw,38px)] font-medium leading-[1.2]">
+        Now see the real ones — the atlas of built examples. →
+      </p>
+    </a>
+  </section>
+</Base>

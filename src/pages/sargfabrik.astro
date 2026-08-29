@@ -1,0 +1,81 @@
+---
+import CaseStudy from '../layouts/CaseStudy.astro';
+
+const facts = [
+  { k: 'City', v: 'Vienna' },
+  { k: 'Year', v: '1996' },
+  { k: 'Homes', v: '~112' },
+  { k: 'Residents', v: '~200' },
+  { k: 'Original', v: 'Coffin factory' },
+  { k: 'Tenure', v: 'Self-managed association' },
+  { k: 'Public rooms', v: 'Concert hall · restaurant · bathhouse' },
+];
+
+const gallery = [
+  {
+    placeholder: 'Bathhouse — photo needed',
+    cap: 'The bathhouse under the courtyard pond',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Wien-Penzing%20-%20Wohn-%20und%20Kulturprojekt%20Sargfabrik%20-%2013%20-%20Badehaus.jpg?width=1400',
+    credit: 'Haeferl · CC BY-SA 3.0',
+    creditHref:
+      'https://commons.wikimedia.org/wiki/File:Wien-Penzing_-_Wohn-_und_Kulturprojekt_Sargfabrik_-_13_-_Badehaus.jpg',
+  },
+  {
+    placeholder: 'Chimney — photo needed',
+    cap: 'The factory chimney, kept as the landmark',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Wien-Penzing%20-%20Wohn-%20und%20Kulturprojekt%20Sargfabrik%20-%2004%20-%20Schornstein.jpg?width=1400',
+    credit: 'Haeferl · CC BY-SA 3.0',
+    creditHref:
+      'https://commons.wikimedia.org/wiki/File:Wien-Penzing_-_Wohn-_und_Kulturprojekt_Sargfabrik_-_04_-_Schornstein.jpg',
+  },
+  { placeholder: 'Courtyard — photo needed', cap: 'The courtyard between the rebuilt factory wings' },
+];
+---
+
+<CaseStudy
+  title="Sargfabrik"
+  subtitle="A coffin factory reborn as Vienna's most social address."
+  heroSrc="https://commons.wikimedia.org/wiki/Special:FilePath/Wien-Penzing%20-%20Wohn-%20und%20Kulturprojekt%20Sargfabrik%20-%2010%20-%20Dachgarten.jpg?width=1400"
+  heroPlaceholder="Sargfabrik hero"
+  heroCredit="Haeferl · CC BY-SA 3.0"
+  heroCreditHref="https://commons.wikimedia.org/wiki/File:Wien-Penzing_-_Wohn-_und_Kulturprojekt_Sargfabrik_-_10_-_Dachgarten.jpg"
+  facts={facts}
+  gallery={gallery}
+  prev={{ href: '/r50/', label: 'R50' }}
+  next={{ href: '/brutopia/', label: 'Brutopia' }}
+>
+  <section class="mx-auto max-w-[760px] px-6 pt-16 sm:px-12">
+    <p class="text-[21px] leading-[1.62]">
+      A self-managed association bought Vienna's old coffin factory and rebuilt it as roughly 112
+      homes for some 200 people — with a courtyard pond sitting over a bathhouse, a concert hall, a
+      restaurant, a children's house, and a roof garden. Crucially, much of that program is open to
+      the neighborhood: the Sargfabrik is an address people who don't live there still go to.
+    </p>
+    <p class="mt-6 text-[21px] leading-[1.62]">
+      What to steal: the reuse method. A big roof, bought cheap because nobody else wanted it, can
+      carry more social program than any new build pro forma would dare — and the public rooms are
+      what turned neighbors into allies.
+    </p>
+  </section>
+
+  <Fragment slot="lessons">
+    <li>
+      West Berkeley's warehouses are Sargfabrik sites waiting for a group — reuse carries program
+      new builds can't afford.
+    </li>
+    <li>
+      Opening rooms to the neighborhood (hall, restaurant, baths) buys political goodwill no
+      rendering can.
+    </li>
+    <li>
+      A self-managed association has run it since 1996 — governance is a solved problem, not an
+      experiment.
+    </li>
+    <li>Keep the chimney: reuse keeps memory, and memory keeps neighbors friendly.</li>
+  </Fragment>
+
+  <Fragment slot="sources">
+    Sources: <a href="https://www.sargfabrik.at" target="_blank" rel="noopener">sargfabrik.at</a>.
+    Figures (~112 homes, ~200 people) are approximate.
+  </Fragment>
+</CaseStudy>

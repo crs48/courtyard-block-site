@@ -1,0 +1,165 @@
+---
+import Base from '../layouts/Base.astro';
+import { withBase } from '../lib/nav';
+
+const cities = [
+  {
+    name: 'Berkeley',
+    anchor: 'berkeley',
+    tag: 'The first city',
+    exists:
+      'A university town on BART with real commercial corridors and a downtown (C-DMU) already zoned for the mid-rise band. Political appetite for housing is genuine.',
+    lands:
+      'University, San Pablo, Telegraph, Shattuck, Fourth — plus the recode option on any tired walk-up. The full case is the proposal chapter.',
+    obstacle:
+      'Land cost, and neighbors who fight height with practiced skill. The answer is a building so evidently good-neighborly that the fight changes shape.',
+  },
+  {
+    name: 'Oakland',
+    anchor: 'oakland',
+    tag: 'The local cousin',
+    exists:
+      "Swan's Market already exists — courtyard cohousing in a rebuilt 1917 market, two blocks from BART. More industrial fabric, more big roofs, slightly more room to move than San Francisco.",
+    lands:
+      'Reuse first: Old Oakland, Jack London, the industrial seams. The Sargfabrik method fits Oakland better than almost anywhere in the country.',
+    obstacle:
+      'Disinvestment and displacement pressure cut both ways — the tenure story (CLT, limited equity) matters even more than the architecture here.',
+  },
+  {
+    name: 'San Francisco',
+    anchor: 'san-francisco',
+    tag: 'The finest grain',
+    exists:
+      'In places, the finest street grain in the US, and working land trusts. The city already knows the mixed-use street wall from North Beach to the Mission.',
+    lands:
+      "Corridor mid-rise where recent family-zoning and corridor reforms open height; parcels the market finds awkward — too deep, too odd — are the co-op's friends.",
+    obstacle:
+      'Height jumps and cost. Between 40 ft and the tower there is a canyon of process; crossing it takes the patience only a resident-client has.',
+  },
+  {
+    name: 'Los Angeles',
+    anchor: 'los-angeles',
+    tag: 'The strip becomes a street',
+    exists:
+      'LA Eco-Village has run a retrofit commons culture for decades. And LA has thousands of miles of arterial strips — under-built, over-parked, transit slowly arriving.',
+    lands:
+      'The boulevards: a courtyard block every few hundred meters would grow street walls on Vermont or Venice the way Berlin grew them on its radials. The courtyard tradition (bungalow courts) is native here.',
+    obstacle:
+      'Parking and setbacks are the enemy in their purest form — the type only works where the stall count no longer designs the building.',
+  },
+  {
+    name: 'New York',
+    anchor: 'new-york',
+    tag: 'The failed courtyard, redeemed',
+    exists:
+      "Courtyard tenements existed — the old-law dumbbell was a courtyard building whose court shrank to an airshaft. The lesson is not 'no courtyards'; it is 'no fake ones.'",
+    lands:
+      'Fine-grained Brooklyn and Queens streets over the outer-borough corridors — mid-rise perimeter blocks with a generous Hof, not towers in plazas.',
+    obstacle:
+      'Land price makes the 40–80 ft courtyard the single hardest line in the brief to hold. Public or trust land is nearly a precondition.',
+  },
+  {
+    name: 'Miami',
+    anchor: 'miami',
+    tag: 'The climate machine',
+    exists:
+      "A hot, bright city critically short of shade and cross-ventilation — exactly what the type manufactures. La Borda's patio-as-chimney is a cooling diagram before it is a social one.",
+    lands:
+      'The gridded neighborhoods off the high-rise spine, where mid-rise still meets the sidewalk and arcades have local precedent.',
+    obstacle:
+      'Flood elevation pushes ground floors up and parking podiums in — the street wall and the raised court have to be designed together, Kalkbreite-style, or the sidewalk dies.',
+  },
+];
+
+const lighter = [
+  {
+    name: 'Portland',
+    b: 'Courtyard-friendly code reform is furthest along here; the missing piece is height, not will.',
+  },
+  {
+    name: 'Seattle',
+    b: 'Strong co-housing lineage and corridor upzones; steep lots make split-level courts interesting.',
+  },
+  {
+    name: 'Chicago',
+    b: 'The courtyard apartment building is native fabric — thousands survive. Reviving the type means un-forgetting it.',
+  },
+  {
+    name: 'Boston',
+    b: 'Bay State Cohousing proves the group-led model closes in Massachusetts; triple-decker streets know mid-rise manners.',
+  },
+  {
+    name: 'Washington DC',
+    b: 'A legal height cap already makes a continuous cornice — the most Parisian precondition in America.',
+  },
+];
+---
+
+<Base title="Cities — The Courtyard Block" current="cities">
+  <header class="mx-auto max-w-[920px] px-6 pt-20 sm:px-12">
+    <p class="mb-4 font-sans text-xs uppercase tracking-[0.22em] text-terracotta">
+      The pattern travels
+    </p>
+    <h1 class="text-[clamp(40px,5.5vw,68px)] font-medium leading-[1.05] tracking-[-0.015em]">
+      Other American cities
+    </h1>
+    <p class="mt-6 max-w-[65ch] text-[22px] leading-[1.55] text-ink/80">
+      Berkeley is the starting city, not the only one. For each: what fabric already exists, where a
+      courtyard block could land, and which local obstacle is distinctive.
+    </p>
+  </header>
+
+  <section class="mx-auto mt-6 max-w-[1100px] px-6 sm:px-12">
+    {
+      cities.map((c) => (
+        <article id={c.anchor} class="border-t border-ink/15 py-12">
+          <div class="flex flex-wrap items-baseline justify-between gap-6">
+            <h2 class="text-4xl font-medium">{c.name}</h2>
+            <p class="font-sans text-xs uppercase tracking-[0.16em] text-moss">{c.tag}</p>
+          </div>
+          <div class="mt-5 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5">
+            <div>
+              <p class="font-sans text-[11px] uppercase tracking-[0.16em] text-ink/50">What exists</p>
+              <p class="mt-2 text-[17.5px] leading-[1.6] text-ink/90">{c.exists}</p>
+            </div>
+            <div>
+              <p class="font-sans text-[11px] uppercase tracking-[0.16em] text-ink/50">
+                Where it lands
+              </p>
+              <p class="mt-2 text-[17.5px] leading-[1.6] text-ink/90">{c.lands}</p>
+            </div>
+            <div>
+              <p class="font-sans text-[11px] uppercase tracking-[0.16em] text-terracotta">
+                The distinctive obstacle
+              </p>
+              <p class="mt-2 text-[17.5px] leading-[1.6] text-ink/90">{c.obstacle}</p>
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </section>
+
+  <section class="mx-auto mt-14 max-w-[1100px] px-6 sm:px-12">
+    <h2 class="mb-6 text-[30px] font-medium">Shorter notes</h2>
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-px border border-ink/15 bg-ink/15">
+      {
+        lighter.map((l) => (
+          <div class="bg-paper p-6">
+            <h3 class="text-xl font-medium">{l.name}</h3>
+            <p class="mt-2 text-[15.5px] leading-[1.55] text-ink/80">{l.b}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto mt-22 max-w-[1240px] px-6 sm:px-12">
+    <a href={withBase('/how/')} class="block border-2 border-ink bg-paper-raised px-12 py-11 no-underline">
+      <p class="font-sans text-xs uppercase tracking-[0.2em] text-terracotta">Next</p>
+      <p class="mt-3 text-[clamp(26px,3vw,38px)] font-medium leading-[1.2]">
+        How to actually do it — tenure, money, code, first steps →
+      </p>
+    </a>
+  </section>
+</Base>

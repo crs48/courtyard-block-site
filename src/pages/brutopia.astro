@@ -1,0 +1,57 @@
+---
+import CaseStudy from '../layouts/CaseStudy.astro';
+
+const facts = [
+  { k: 'City', v: 'Brussels' },
+  { k: 'Year', v: '2015' },
+  { k: 'Homes', v: '29' },
+  { k: 'Architects', v: 'stekke + fraas' },
+  { k: 'Tenure', v: 'Resident-developed' },
+  { k: 'Delivery', v: 'Units as shells' },
+  { k: 'Ground floor', v: 'Workspaces' },
+];
+
+const gallery = [
+  { placeholder: 'Shared garden — photo needed', cap: 'The garden the 29 homes share' },
+  { placeholder: 'Shell interior — photo needed', cap: 'A unit at handover: shell now, home later' },
+  { placeholder: 'Street front — photo needed', cap: 'Workspaces at the street' },
+];
+---
+
+<CaseStudy
+  title="Brutopia"
+  subtitle="Twenty-nine households acting as their own developer."
+  heroPlaceholder="Brutopia hero — garden facade (photo needed)"
+  facts={facts}
+  gallery={gallery}
+  prev={{ href: '/sargfabrik/', label: 'Sargfabrik' }}
+  next={{ href: '/bijgaardehof/', label: 'Bijgaardehof' }}
+>
+  <section class="mx-auto max-w-[760px] px-6 pt-16 sm:px-12">
+    <p class="text-[21px] leading-[1.62]">
+      Twenty-nine apartments wrap a shared garden in Brussels, with workspaces at the ground floor.
+      The residents were the developer: they carried the risk, made the decisions, and kept the
+      margin in the building. Units were handed over as shells — structure, envelope, services — and
+      finished by each household to its own budget.
+    </p>
+    <p class="mt-6 text-[21px] leading-[1.62]">
+      What to steal: the shell. Delivering unfinished interiors is the honest way to hit multiple
+      price points in one building without subsidy, and it converts sweat into equity for the
+      households who have more time than money.
+    </p>
+  </section>
+
+  <Fragment slot="lessons">
+    <li>Resident-as-developer removed the margin that makes Bay Area co-ops pencil out red.</li>
+    <li>Shells let a mixed-income group build one building instead of two markets.</li>
+    <li>
+      Ground-floor workspaces are the retail brief's quieter cousin — easier to lease, still eyes on
+      the street.
+    </li>
+    <li>Twenty-nine is enough: Brutopia is Berkeley Scenario 1 at modest scale.</li>
+  </Fragment>
+
+  <Fragment slot="sources">
+    Sources: project publications by stekke + fraas and the Brutopia cooperative.
+  </Fragment>
+</CaseStudy>

@@ -1,0 +1,165 @@
+---
+import Base from '../layouts/Base.astro';
+import { withBase } from '../lib/nav';
+
+// Static renditions of the design's generated step diagrams.
+const ink = '#1c1915';
+const green = '#3f5c45';
+const greenFill = 'rgba(63,92,69,0.3)';
+const bld = (x: number, y: number, w: number, h: number) =>
+  `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="rgba(28,25,21,0.08)" stroke="${ink}" stroke-width="3"/>`;
+const hof = (x: number, y: number, w: number, h: number) =>
+  `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${greenFill}" stroke="${green}" stroke-width="2"/>`;
+const street = (x1: number, y1: number, x2: number, y2: number) =>
+  `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="rgba(28,25,21,0.35)" stroke-width="2" stroke-dasharray="2 7"/>`;
+
+const diagrams: Record<string, string> = {
+  one: bld(150, 90, 180, 180) + hof(200, 140, 80, 80),
+  two: bld(90, 90, 140, 180) + bld(250, 90, 140, 180) + hof(170, 140, 140, 80),
+  three:
+    `<path d="M110 270 L110 90 L370 90 L370 270 L300 270 L300 170 L180 170 L180 270 Z" fill="rgba(28,25,21,0.08)" stroke="${ink}" stroke-width="3"/>` +
+    hof(196, 186, 88, 70),
+  block:
+    `<path d="M90 70 L390 70 L390 290 L90 290 Z M150 130 L235 130 L235 230 L150 230 Z M255 130 L330 130 L330 230 L255 230 Z" fill-rule="evenodd" fill="rgba(28,25,21,0.08)" stroke="${ink}" stroke-width="3"/>` +
+    hof(150, 130, 85, 100) +
+    hof(255, 130, 75, 100) +
+    `<line x1="240" y1="130" x2="240" y2="230" stroke="#b44a2f" stroke-width="2" stroke-dasharray="5 5"/>`,
+  street:
+    bld(60, 60, 110, 90) +
+    hof(90, 84, 50, 42) +
+    bld(200, 60, 110, 90) +
+    hof(230, 84, 50, 42) +
+    bld(340, 60, 110, 90) +
+    hof(370, 84, 50, 42) +
+    `<rect x="40" y="180" width="430" height="26" fill="rgba(28,25,21,0.18)"/>` +
+    `<line x1="40" y1="189" x2="470" y2="189" stroke="${ink}" stroke-width="1.5"/>` +
+    `<line x1="40" y1="197" x2="470" y2="197" stroke="${ink}" stroke-width="1.5"/>` +
+    bld(60, 236, 110, 80) +
+    bld(200, 236, 110, 80) +
+    bld(340, 236, 110, 80) +
+    [130, 250, 370]
+      .map(
+        (cx) =>
+          `<circle cx="${cx}" cy="166" r="6" fill="${green}"/><circle cx="${cx}" cy="222" r="6" fill="${green}"/>`
+      )
+      .join(''),
+  city:
+    street(40, 120, 470, 120) +
+    street(40, 200, 470, 200) +
+    street(40, 280, 470, 280) +
+    street(120, 40, 120, 320) +
+    street(240, 40, 240, 320) +
+    street(360, 40, 360, 320) +
+    bld(140, 140, 80, 44) +
+    hof(162, 150, 36, 24) +
+    bld(260, 220, 80, 44) +
+    hof(282, 230, 36, 24) +
+    bld(380, 140, 80, 44) +
+    hof(402, 150, 36, 24) +
+    bld(140, 60, 80, 44) +
+    hof(162, 70, 36, 24) +
+    bld(260, 60, 80, 44) +
+    hof(282, 70, 36, 24) +
+    bld(380, 240, 60, 40) +
+    hof(396, 250, 28, 20),
+};
+
+const label =
+  '<text x="20" y="346" font-family="\'Source Sans 3\',sans-serif" font-size="12" letter-spacing="2" fill="rgba(28,25,21,0.5)">ILLUSTRATIVE</text>';
+
+const stepSvg = (kind: string) =>
+  `<svg viewBox="0 0 510 360" style="width:100%;height:auto;display:block" aria-hidden="true">${diagrams[kind]}${label}</svg>`;
+
+const steps = [
+  {
+    n: 'Step 1',
+    title: 'One building',
+    body: "Twenty-five to sixty homes around one Hof, shops below, roof above. A complete social unit — big enough for a shared kitchen to make sense, small enough that everyone's face is known. This is the whole project; everything after is repetition.",
+    ref: 'La Borda · R50',
+    kind: 'one',
+  },
+  {
+    n: 'Step 2',
+    title: 'Two buildings',
+    body: 'A second building beside or across from the first. They can share a larger Hof or face each other over a passage — the courtyard grows faster than the cost. Spreefeld logic: separate houses, one ground.',
+    ref: 'Spreefeld',
+    kind: 'two',
+  },
+  {
+    n: 'Step 3',
+    title: 'Three buildings',
+    body: 'A U, or a full court. The gaps between buildings are exactly where the kindergarten, the workshop, the café want to be — rooms that need the courtyard more than they need frontage.',
+    ref: 'Spreefeld · Sargfabrik',
+    kind: 'three',
+  },
+  {
+    n: 'Step 4',
+    title: 'A block',
+    body: 'Four street walls, one or two interior courts, a passage through. At this point it stops reading as a project at all — it is simply how the ordinary fabric of Berlin or Vienna is put together.',
+    ref: 'Gründerzeit Berlin · Gemeindebau Vienna',
+    kind: 'block',
+  },
+  {
+    n: 'Step 5',
+    title: 'A street',
+    body: 'Blocks facing blocks: a tram or a frequent bus in the middle, wide sidewalks, plane trees, continuous ground-floor commercial. The street becomes the largest shared room of all.',
+    ref: 'Vauban · Prenzlauer Berg',
+    kind: 'street',
+  },
+  {
+    n: 'Step 6',
+    title: 'A city of them',
+    body: 'Not a compound and not a campus — the type dissolves into an existing American grid, lot by lot. Berkeley proves the first one; Oakland copies the brief; the next city copies Oakland. The drawing set is open-source; the pattern is the product.',
+    ref: 'The whole atlas',
+    kind: 'city',
+  },
+];
+---
+
+<Base title="Scale — The Courtyard Block" current="scale">
+  <header class="mx-auto max-w-[920px] px-6 pt-20 sm:px-12">
+    <p class="mb-4 font-sans text-xs uppercase tracking-[0.22em] text-terracotta">Scale</p>
+    <h1 class="text-[clamp(40px,5.5vw,68px)] font-medium leading-[1.05] tracking-[-0.015em]">
+      One, two, three, a block, a city
+    </h1>
+    <p class="mt-6 max-w-[65ch] text-[22px] leading-[1.55] text-ink/80">
+      The replication unit is one building. A hundred and fifty people is a social target, not a
+      master plan. Everything larger is just the pattern repeating — which is how Berlin and Vienna
+      were actually made.
+    </p>
+  </header>
+
+  <section class="mx-auto mt-10 max-w-[1100px] px-6 sm:px-12">
+    {
+      steps.map((s) => (
+        <article class="grid grid-cols-[repeat(auto-fit,minmax(340px,1fr))] items-center gap-11 border-t border-ink/15 py-12">
+          <div>
+            <p class="font-sans text-sm text-terracotta">{s.n}</p>
+            <h2 class="mt-2 text-[32px] font-medium">{s.title}</h2>
+            <p class="mt-3.5 text-[18.5px] leading-[1.6] text-ink/85">{s.body}</p>
+            <p class="mt-3.5 font-sans text-xs uppercase tracking-[0.14em] text-moss">
+              Reference — {s.ref}
+            </p>
+          </div>
+          <div set:html={stepSvg(s.kind)} />
+        </article>
+      ))
+    }
+  </section>
+
+  <section class="mx-auto mt-18 max-w-[920px] px-6 sm:px-12">
+    <blockquote class="border-t-2 border-b-2 border-ink py-10 text-center text-[clamp(24px,3vw,32px)] leading-[1.4] italic">
+      Not a compound. The type repeats <em class="text-terracotta">inside</em> an existing city —
+      Berkeley, then Oakland, then the next — each building complete on its own.
+    </blockquote>
+  </section>
+
+  <section class="mx-auto mt-22 max-w-[1240px] px-6 sm:px-12">
+    <a href={withBase('/cities/')} class="block border-2 border-ink bg-paper-raised px-12 py-11 no-underline">
+      <p class="font-sans text-xs uppercase tracking-[0.2em] text-terracotta">Next</p>
+      <p class="mt-3 text-[clamp(26px,3vw,38px)] font-medium leading-[1.2]">
+        Where else the pattern lands — other American cities →
+      </p>
+    </a>
+  </section>
+</Base>
