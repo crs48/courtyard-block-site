@@ -1,0 +1,34 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Courtyard Block',
+  description = 'A neighborhood project — share your ideas for the courtyard block.',
+} = Astro.props;
+
+const repoUrl = 'https://github.com/crs48/courtyardblock';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-stone-50 text-stone-900 antialiased">
+    <slot />
+    <footer class="border-t border-stone-200 py-8 text-center text-sm text-stone-500">
+      <p>
+        Have ideas? Contribute on
+        <a href={repoUrl} class="underline underline-offset-2 hover:text-stone-800">GitHub</a>.
+      </p>
+    </footer>
+  </body>
+</html>
