@@ -13,20 +13,41 @@ const facts = [
 ];
 
 const gallery = [
-  { placeholder: 'Courtyard between buildings — photo needed', cap: 'The court the three houses hold open toward the Spree' },
-  { placeholder: 'River path — photo needed', cap: 'The bank path — kept public, not privatized' },
+  {
+    placeholder: 'Courtyard between buildings — photo needed',
+    cap: 'The shared lane between the houses — planting, cargo bikes, option rooms',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mitte%20Wilhelmine-Gemberg-Weg.jpg?width=1400',
+    credit: 'Fridolin freudenfett · CC BY-SA 4.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Mitte_Wilhelmine-Gemberg-Weg.jpg',
+  },
+  {
+    placeholder: 'River path — photo needed',
+    cap: 'The bank path — kept public, not privatized',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mitte%20Wilhelmine-Gemberg-Weg%20Spreeuferweg.jpg?width=1400',
+    credit: 'Fridolin freudenfett · CC BY-SA 4.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Mitte_Wilhelmine-Gemberg-Weg_Spreeuferweg.jpg',
+  },
   {
     placeholder: 'Cluster apartment interior — photo needed',
     cap: 'A cluster apartment: 600–800 m² shared among many households',
   },
-  { placeholder: 'Roof terraces and bridges — photo needed', cap: 'Roof terraces linked by bridges between the houses' },
+  {
+    placeholder: 'Facade — photo needed',
+    cap: 'Seven stories over the gravel path between the houses',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mitte%20Wilhelmine-Gemberg-Weg-002.jpg?width=1400',
+    credit: 'Fridolin freudenfett · CC BY-SA 4.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Mitte_Wilhelmine-Gemberg-Weg-002.jpg',
+  },
 ];
 ---
 
 <CaseStudy
   title="Spreefeld"
   subtitle="Three buildings, one courtyard, a riverbank kept public."
+  heroSrc="https://commons.wikimedia.org/wiki/Special:FilePath/Mitte%20Wilhelmine-Gemberg-Weg-001.jpg?width=1400"
   heroPlaceholder="Spreefeld hero — the three buildings from the river (photo needed)"
+  heroCredit="Fridolin freudenfett · CC BY-SA 4.0"
+  heroCreditHref="https://commons.wikimedia.org/wiki/File:Mitte_Wilhelmine-Gemberg-Weg-001.jpg"
   facts={facts}
   gallery={gallery}
   prev={{ href: '/kalkbreite/', label: 'Kalkbreite, Zürich' }}

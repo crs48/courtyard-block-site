@@ -11,16 +11,31 @@ const facts = [
 ];
 
 const gallery = [
-  { placeholder: 'Courtyard — photo needed', cap: 'The courtyard carved from the market hall' },
+  {
+    placeholder: 'Courtyard — photo needed',
+    cap: 'The courtyard carved from the market hall — 1917 roof trusses kept overhead',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Oakland%2010th%20Street%20Market-7.jpg?width=1400',
+    credit: 'Almonroth · CC BY-SA 3.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Oakland_10th_Street_Market-7.jpg',
+  },
   { placeholder: 'Cohousing common house — photo needed', cap: 'The cohousing common room on the court' },
-  { placeholder: 'Washington St front — photo needed', cap: 'Shops and restaurants keep the 1917 street face' },
+  {
+    placeholder: 'Washington St front — photo needed',
+    cap: 'Shops and restaurants keep the 1917 street face',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Oakland%2010th%20Street%20Market-6.jpg?width=1400',
+    credit: 'Almonroth · CC BY-SA 3.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Oakland_10th_Street_Market-6.jpg',
+  },
 ];
 ---
 
 <CaseStudy
   title="Swan's Market"
   subtitle="The closest local cousin — courtyard life two BART stops away."
+  heroSrc="https://commons.wikimedia.org/wiki/Special:FilePath/10th%20Street%20Market%2C%20Oakland%2C%20CA%2C%20at%20sunset.jpg?width=1400"
   heroPlaceholder="Swan's Market hero — courtyard in the market hall (photo needed)"
+  heroCredit="Dreamyshade · CC BY-SA 4.0"
+  heroCreditHref="https://commons.wikimedia.org/wiki/File:10th_Street_Market,_Oakland,_CA,_at_sunset.jpg"
   facts={facts}
   gallery={gallery}
   prev={{ href: '/village-homes/', label: 'Village Homes' }}

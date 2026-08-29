@@ -12,16 +12,37 @@ const facts = [
 ];
 
 const gallery = [
-  { placeholder: 'Square — photo needed', cap: 'A square between the thirteen houses' },
-  { placeholder: 'Cluster apartment — photo needed', cap: 'A cluster apartment: private rooms, shared center' },
-  { placeholder: 'Ground-floor workshop — photo needed', cap: 'Ground floors: workshops, guest house, studios' },
+  {
+    placeholder: 'Square — photo needed',
+    cap: 'Hunzikerplatz — the central square between the thirteen houses',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/HAL%20014243.jpg?width=1400',
+    credit: 'Haller Juliet · CC BY-SA 4.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:HAL_014243.jpg',
+  },
+  {
+    placeholder: 'House facade — photo needed',
+    cap: 'The house at Genossenschaftsstrasse 13 — glazed uses at the ground floor',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Genossenschaftsstrasse%2013.jpg?width=1400',
+    credit: 'Tschubby · CC BY-SA 3.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Genossenschaftsstrasse_13.jpg',
+  },
+  {
+    placeholder: 'Ground-floor workshop — photo needed',
+    cap: "Ground-floor commons in use: the residents' swap table at Dialogweg 6",
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Tausch-Tisch%20im%20Dialogweg%206%20im%20Dezember%202019.jpg?width=1400',
+    credit: 'PizzaToast · CC BY-SA 4.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Tausch-Tisch_im_Dialogweg_6_im_Dezember_2019.jpg',
+  },
 ];
 ---
 
 <CaseStudy
   title="Hunziker Areal"
   subtitle="The co-op courtyard logic, scaled to a neighborhood."
+  heroSrc="https://commons.wikimedia.org/wiki/Special:FilePath/HAL%20014243.jpg?width=1400"
   heroPlaceholder="Hunziker Areal hero — square between the houses (photo needed)"
+  heroCredit="Haller Juliet · CC BY-SA 4.0"
+  heroCreditHref="https://commons.wikimedia.org/wiki/File:HAL_014243.jpg"
   facts={facts}
   gallery={gallery}
   prev={{ href: '/vauban/', label: 'Vauban' }}

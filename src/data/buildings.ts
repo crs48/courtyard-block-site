@@ -52,6 +52,9 @@ export const buildings: Building[] = [
     slot: 'atlas-spreefeld',
     placeholder: 'Spreefeld — photo needed',
     full: true,
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mitte%20Wilhelmine-Gemberg-Weg-001.jpg?width=1400',
+    credit: 'Fridolin freudenfett · CC BY-SA 4.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Mitte_Wilhelmine-Gemberg-Weg-001.jpg',
     blurb:
       "Three 7-story passive-house buildings forming a courtyard on the Spree; about 60 homes. The ground floor is kept free of housing — kindergarten, workshops, 'option rooms,' public river access. Cooperative, no speculative developer.",
     tags: ['cooperative', 'new build', 'courtyard', 'roof garden', '5-7 stories', 'ground-floor public'],
@@ -128,6 +131,9 @@ export const buildings: Building[] = [
     slot: 'atlas-swans',
     placeholder: "Swan's Market — photo needed",
     full: true,
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/10th%20Street%20Market%2C%20Oakland%2C%20CA%2C%20at%20sunset.jpg?width=1400',
+    credit: 'Dreamyshade · CC BY-SA 4.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:10th_Street_Market,_Oakland,_CA,_at_sunset.jpg',
     blurb:
       'A 1917 market hall rebuilt around a courtyard: 20-unit cohousing plus affordable rentals, restaurants and offices. Two blocks from BART, about 15 minutes from Berkeley. The closest local cousin, even if lower-rise.',
     tags: ['reuse', 'courtyard', 'ground-floor public'],
@@ -155,6 +161,9 @@ export const buildings: Building[] = [
     slot: 'atlas-hunziker',
     placeholder: 'Hunziker Areal — photo needed',
     full: true,
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/HAL%20014243.jpg?width=1400',
+    credit: 'Haller Juliet · CC BY-SA 4.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:HAL_014243.jpg',
     blurb:
       'Thirteen buildings by a coalition of Zurich co-ops on a former concrete plant — squares, workshops, guest houses, cluster apartments. The proof that the co-op courtyard logic scales to a neighborhood.',
     tags: ['cooperative', 'new build', 'courtyard', '5-7 stories', 'ground-floor public'],
@@ -167,6 +176,9 @@ export const buildings: Building[] = [
     slot: 'atlas-gleis21',
     placeholder: 'Gleis 21 — photo needed',
     full: true,
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Sonnwendviertel%20Gleis%2021.jpg?width=1400',
+    credit: 'Linie29 · CC BY-SA 4.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Sonnwendviertel_Gleis_21.jpg',
     blurb:
       "A timber-hybrid Baugruppe in the Sonnwendviertel: media workshop, sauna, event room, library at the ground floor, open to the quarter. Vienna's building-group culture in current form.",
     tags: ['cooperative', 'new build', 'roof garden', '5-7 stories', 'ground-floor public'],
@@ -201,6 +213,9 @@ export const fabric = [
     name: 'Berlin Gründerzeit',
     slot: 'fabric-berlin',
     placeholder: 'Hinterhof — photo needed',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Berlin%20H%C3%B6fe%20%28575693267%29.jpg?width=1400',
+    credit: 'Wolfgang Staudt · CC BY 2.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Berlin_H%C3%B6fe_(575693267).jpg',
     blurb:
       'The Mietskaserne and its Hinterhöfe: a height cap, a continuous cornice, courtyards all the way back. The fabric this site keeps pointing at.',
   },
@@ -208,6 +223,9 @@ export const fabric = [
     name: 'Vienna Gemeindebau',
     slot: 'fabric-vienna',
     placeholder: 'Gemeindebau Hof — photo needed',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Karl-Marx-Hof%20Sept%202020%204.jpg?width=1400',
+    credit: 'Kasa Fue · CC BY-SA 4.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Karl-Marx-Hof_Sept_2020_4.jpg',
     blurb:
       'Municipal superblocks around planted Höfe — kindergartens and laundries in the courtyard, a century of maintenance.',
   },
@@ -215,6 +233,9 @@ export const fabric = [
     name: 'Barcelona Eixample',
     slot: 'fabric-eixample',
     placeholder: 'Eixample block — photo needed',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20view%20of%20Barcelona%2C%20Spain%20%2851227309370%29.jpg?width=1400',
+    credit: 'dronepicr · CC BY 2.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Aerial_view_of_Barcelona,_Spain_(51227309370).jpg',
     blurb:
       "Cerdà's chamfered blocks with interior courtyards; the corrala patio tradition La Borda modernizes.",
   },
@@ -222,6 +243,9 @@ export const fabric = [
     name: 'Amsterdam hofjes',
     slot: 'fabric-amsterdam',
     placeholder: 'Hofje — photo needed',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Amsterdam-Beginenhof-2025-msu-8893-.jpg?width=1400',
+    credit: 'Matthias Süßen · CC BY-SA 4.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Amsterdam-Beginenhof-2025-msu-8893-.jpg',
     blurb:
       'Canal-house rows hiding almshouse courtyards — hofjes — behind a single street door. The type at its quietest.',
   },

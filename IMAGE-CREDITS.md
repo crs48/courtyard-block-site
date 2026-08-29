@@ -35,5 +35,32 @@ No photographs ship with this site yet. Every image frame is a labeled placehold
 | Kalkbreite | kalkbreite-g4 | https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_Badenerstrasse_tram_depot.jpg | see file page | see file page |
 | Home, Atlas | rail-sargfabrik / atlas-sargfabrik | https://commons.wikimedia.org/wiki/File:Wien-Penzing_-_Wohn-_und_Kulturprojekt_Sargfabrik_-_10_-_Dachgarten.jpg | Haeferl | CC BY-SA 3.0 |
 | Home, Atlas | rail-vauban / atlas-vauban | https://commons.wikimedia.org/wiki/File:Freiburg_-_Vauban.jpg | see file page | see file page |
+| Home, Atlas, Spreefeld | rail-spreefeld / atlas-spreefeld / spreefeld-hero | https://commons.wikimedia.org/wiki/File:Mitte_Wilhelmine-Gemberg-Weg-001.jpg | Fridolin freudenfett | CC BY-SA 4.0 |
+| Spreefeld | spreefeld-g1 / g2 / g4 | https://commons.wikimedia.org/wiki/File:Mitte_Wilhelmine-Gemberg-Weg.jpg, ..._Spreeuferweg.jpg, ...-002.jpg | Fridolin freudenfett | CC BY-SA 4.0 |
+| Atlas, Gleis 21 | atlas-gleis21 / gleis21-hero / gleis21-g1 | https://commons.wikimedia.org/wiki/File:Sonnwendviertel_Gleis_21.jpg | Linie29 | CC BY-SA 4.0 |
+| Gleis 21 | gleis21-g2 | https://commons.wikimedia.org/wiki/File:Gleis_21_-_public_bookcase.jpg | Herzi Pinki | CC BY-SA 4.0 |
+| Home, Atlas, Swan's Market | rail-swans / atlas-swans / swans-hero | https://commons.wikimedia.org/wiki/File:10th_Street_Market,_Oakland,_CA,_at_sunset.jpg | Dreamyshade | CC BY-SA 4.0 |
+| Swan's Market | swans-g1 / swans-g3 | https://commons.wikimedia.org/wiki/File:Oakland_10th_Street_Market-7.jpg, ...-6.jpg | Almonroth | CC BY-SA 3.0 |
+| Atlas, Hunziker Areal | atlas-hunziker / hunziker-hero / hunziker-g1 | https://commons.wikimedia.org/wiki/File:HAL_014243.jpg | Haller Juliet | CC BY-SA 4.0 |
+| Hunziker Areal | hunziker-g2 | https://commons.wikimedia.org/wiki/File:Genossenschaftsstrasse_13.jpg | Tschubby | CC BY-SA 3.0 |
+| Hunziker Areal | hunziker-g3 | https://commons.wikimedia.org/wiki/File:Tausch-Tisch_im_Dialogweg_6_im_Dezember_2019.jpg | PizzaToast | CC BY-SA 4.0 |
+| Kalkbreite | kalkbreite-g1 / g2 / g3 | https://commons.wikimedia.org/wiki/File:Kalkbreitestrasse_6,_September_2014_-_Bild_9.JPG, Bild_15, Bild_16 | Micha L. Rieser | Attribution |
+| Sargfabrik | sargfabrik-g3 | https://commons.wikimedia.org/wiki/File:Wien-Penzing_-_Wohn-_und_Kulturprojekt_Sargfabrik_-_05.jpg | Haeferl | CC BY-SA 3.0 |
+| Vauban | vauban-g3 | https://commons.wikimedia.org/wiki/File:Beispiel_Quartiersstra%C3%9Fe_Vauban.jpg | Dr. med. Mabuse | CC BY-SA 3.0 |
+| La Borda | laborda-g1 | https://commons.wikimedia.org/wiki/File:La_Borda_etxebizitza_eraikinaren_sabai-leihoa_patiotik.jpg | Birasuegi | CC BY-SA 4.0 |
+| La Borda | laborda-g2 | https://commons.wikimedia.org/wiki/File:La_Borda_building_-_rear_facade,_close.jpg | VELKEJ LED | CC BY-SA 4.0 |
+| Atlas fabric | fabric-berlin | https://commons.wikimedia.org/wiki/File:Berlin_H%C3%B6fe_(575693267).jpg | Wolfgang Staudt | CC BY 2.0 |
+| Atlas fabric | fabric-vienna | https://commons.wikimedia.org/wiki/File:Karl-Marx-Hof_Sept_2020_4.jpg | Kasa Fue | CC BY-SA 4.0 |
+| Home, Atlas fabric | rail-eixample / fabric-eixample | https://commons.wikimedia.org/wiki/File:Aerial_view_of_Barcelona,_Spain_(51227309370).jpg | dronepicr | CC BY 2.0 |
+| Atlas fabric | fabric-amsterdam | https://commons.wikimedia.org/wiki/File:Amsterdam-Beginenhof-2025-msu-8893-.jpg | Matthias Süßen | CC BY-SA 4.0 |
+
+## Known gaps (no free image exists on Wikimedia Commons as of 2026-08)
+
+- **R50, Berlin** — nothing on Commons depicts Ritterstraße 50 itself; nearby "Wohnbebauung Ritterstr." photos are a different 1990s building. Consider requesting a press image from the architects.
+- **Brutopia, Brussels** — no Commons coverage; request from stekke + fraas.
+- **Bijgaardehof, Ghent** — no Commons coverage; request from BOGDAN & VAN BROECK or sogent.
+- **La Balma, Barcelona** — no Commons coverage; request from Lacol / LaBoqueria.
+- **Village Homes, Davis** — no photographs on Commons (only a CC0 street-network diagram). A local photo trip would fill this.
+- Partial gaps: Spreefeld cluster-apartment interior, Swan's Market common house, Gleis 21 roof, Kalkbreite Badenerstrasse/cinema front, La Borda interior walkway.
 
 TODO: confirm photographer names on the "see file page" rows before publishing.

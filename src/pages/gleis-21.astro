@@ -11,8 +11,20 @@ const facts = [
 ];
 
 const gallery = [
-  { placeholder: 'Timber facade — photo needed', cap: 'The timber-hybrid house from the street' },
-  { placeholder: 'Event room — photo needed', cap: 'The ground-floor event room, open to the quarter' },
+  {
+    placeholder: 'Timber facade — photo needed',
+    cap: 'The timber-hybrid house from the street',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Sonnwendviertel%20Gleis%2021.jpg?width=1400',
+    credit: 'Linie29 · CC BY-SA 4.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Sonnwendviertel_Gleis_21.jpg',
+  },
+  {
+    placeholder: 'Ground floor — photo needed',
+    cap: 'The ground floor on Bloch-Bauer-Promenade — public bookcase, open to the quarter',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Gleis%2021%20-%20public%20bookcase.jpg?width=1400',
+    credit: 'Herzi Pinki · CC BY-SA 4.0',
+    creditHref: 'https://commons.wikimedia.org/wiki/File:Gleis_21_-_public_bookcase.jpg',
+  },
   { placeholder: 'Roof terrace — photo needed', cap: 'The shared roof' },
 ];
 ---
@@ -20,7 +32,10 @@ const gallery = [
 <CaseStudy
   title="Gleis 21"
   subtitle="Vienna's building-group culture, in current form."
+  heroSrc="https://commons.wikimedia.org/wiki/Special:FilePath/Sonnwendviertel%20Gleis%2021.jpg?width=1400"
   heroPlaceholder="Gleis 21 hero — timber facade (photo needed)"
+  heroCredit="Linie29 · CC BY-SA 4.0"
+  heroCreditHref="https://commons.wikimedia.org/wiki/File:Sonnwendviertel_Gleis_21.jpg"
   facts={facts}
   gallery={gallery}
   prev={{ href: '/hunziker-areal/', label: 'Hunziker Areal' }}
