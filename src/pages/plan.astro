@@ -1,0 +1,180 @@
+---
+import Base from '../layouts/Base.astro';
+import { withBase } from '../lib/nav';
+
+const layers = [
+  {
+    n: '01',
+    title: 'The two-stair rule dictates the building’s shape',
+    body: 'A Berlin or Barcelona block is ~13–15 m deep: a stair every 20–30 m, two to four units per landing, every apartment with windows on the street and the courtyard. US codes above three stories require two exit stairs connected by a corridor, which only pencils if the floorplate is deep and double-loaded. That produces the 5-over-1 slab with a “courtyard” that’s really a light well. This is the single biggest lever, and it is moving: seven states passed bipartisan single-stair legislation in 2025 — Colorado, Montana, New Hampshire and Texas now allow them, Maine is finishing, Hawaii and Maryland are studying it, and Dallas went further, allowing single stairways up to eight stories. California is behind: the state’s mandated report took a generally skeptical view, citing safety concerns, though AB 2252 would direct HCD to propose standards up to six stories, and Culver City already legalized six-story single-stair.',
+  },
+  {
+    n: '02',
+    title: 'Parking',
+    body: 'Structured parking is ~$40–70k per space in a mid-rise. Put it under the courtyard and you lose the courtyard (no trees, no soil); wrap it and you get the Texas donut. Since 2017, 116 cities including Baltimore, Buffalo, Denver, Minneapolis and San Francisco have removed all parking minimums citywide, and 14 states have passed 34 laws reducing them since 2019. Solved in the right cities, not nationally.',
+  },
+  {
+    n: '03',
+    title: 'Zoning geometry',
+    body: 'Even where mid-rise is allowed, side setbacks, lot-coverage caps, open-space ratios and FAR limits forbid the perimeter form. A courtyard block needs zero side setbacks, party walls, ~65–75% lot coverage, and a height cap expressed as a street wall (say 22 m) rather than FAR.',
+  },
+  {
+    n: '04',
+    title: 'Parcel grain and ownership',
+    body: 'This is the one people miss. A European block is 8–20 separate buildings by 8–20 separate owners sharing a perimeter. US blocks get assembled into one giant parcel and one lender, one developer, one architect. The fine grain that makes those blocks feel good is a property-law and finance outcome, not an aesthetic choice. Small builders can’t get construction loans for a 24-unit building; Fannie/Freddie and CMBS reward the 300-unit standardized product.',
+  },
+  {
+    n: '05',
+    title: 'Elevators and secondary codes',
+    body: 'US elevator, ADA and accessibility standards make a small point-access building carry a disproportionately expensive core. Europe uses smaller, cheaper cabs. This is a quieter fight but real.',
+  },
+  {
+    n: '06',
+    title: 'Discretionary review',
+    body: 'CEQA, design review, neighbor appeals — each adds 12–24 months, which small builders can’t carry.',
+  },
+];
+
+const beachheads = [
+  {
+    name: 'Austin & Dallas',
+    note: 'Texas six-story single-stair; Austin repealed parking citywide; Dallas at eight stories with parking mostly gone for small housing.',
+  },
+  { name: 'Denver', note: 'Colorado five-story single-stair, no parking minimums.' },
+  {
+    name: 'Missoula / Bozeman',
+    note: 'Montana’s law is the strongest, applying to all jurisdictions with the fewest restrictions; small markets, but a good place for a demonstration block.',
+  },
+  {
+    name: 'Nashville',
+    note: 'Tennessee’s four largest cities adopted six-story single-stair after the 2024 law.',
+  },
+  {
+    name: 'Seattle',
+    note: 'Has had single-stair for decades — the point is it already has a small set of architects who know how to design them. Steal those firms.',
+  },
+];
+
+const phases = [
+  {
+    n: 'Phase 1',
+    title: 'Go where the code is already 80% done',
+    body: 'You want cities with (a) single-stair to ≥5 stories, (b) no parking minimums, and (c) a state that preempts local obstruction. Minneapolis is close but stuck at four stories. LA, SF and NYC are the prize, not the beachhead.',
+    list: beachheads,
+  },
+  {
+    n: 'Phase 2',
+    title: 'Write a “courtyard block” overlay, not a density bonus',
+    body: 'One page: perimeter build-to line, zero side setbacks, party walls permitted, 5–7 stories by street width, courtyard ≥ 20 m across, no FAR, no discretionary review, ground floor allowed commercial — don’t mandate it; mandated retail produces vacant storefronts, so let it convert from residential when foot traffic arrives. Include pre-approved building plans so a 15 m-wide lot has a stamped design ready to go.',
+  },
+  {
+    n: 'Phase 3',
+    title: 'Fix the parcel grain with public land',
+    body: 'This is the Vienna/Hamburg/Freiburg move. The city or a land bank assembles one block, master-plans the perimeter and the shared courtyard, then subdivides into 8–12 lots and sells them to different builders — including co-ops (Baugruppen), nonprofits, and small developers — with the design rules attached to the deed. You get variety and fine grain by construction, not by hoping. Candidate sites: Austin’s public tracts, Denver’s rail-adjacent land, Sacramento’s railyards, Salt Lake’s redevelopment parcels.',
+  },
+  {
+    n: 'Phase 4',
+    title: 'Finance for small builders',
+    body: 'A state or city revolving construction-loan fund for 10–40-unit buildings, plus liability reform so small condo buildings can exist — California’s construction-defect law is why nearly everything is rental. Without this, only the big players use the new code and you get better 5-over-1s, not courtyard blocks.',
+  },
+  {
+    n: 'Phase 5',
+    title: 'Build one, then replicate',
+    body: 'Nobody in the US has seen a modern one. A single finished demonstration block with a real courtyard, leased and lived in, does more than ten white papers. Bring fire marshals through it with sprinklers and pressurized stairs on display — that’s how you neutralize the Connecticut problem in advance.',
+  },
+];
+---
+
+<Base
+  title="The Plan — The Courtyard Block"
+  description="Nothing about the courtyard block is illegal in the abstract — four or five rule layers each make it uneconomic. The mechanics, then the phased plan."
+  current="plan"
+>
+  <header class="mx-auto max-w-[920px] px-6 pt-20 sm:px-12">
+    <p class="mb-4 font-sans text-xs uppercase tracking-[0.22em] text-terracotta">The game plan</p>
+    <h1 class="text-[clamp(40px,5.5vw,68px)] font-medium leading-[1.05] tracking-[-0.015em]">
+      Legal isn't built
+    </h1>
+    <p class="mt-6 max-w-[65ch] text-[22px] leading-[1.55] text-ink/80">
+      Nothing about the courtyard block is illegal in the abstract — but four or five separate rule
+      layers each independently make it uneconomic, and you have to clear all of them before anyone
+      builds one. Here are the mechanics, then the plan.
+    </p>
+  </header>
+
+  <section class="mx-auto max-w-[920px] px-6 pt-14 sm:px-12">
+    <h2 class="mb-2 text-[34px] font-medium">What's actually stopping it</h2>
+    {
+      layers.map((l) => (
+        <article class="border-t border-ink/15 py-9 first-of-type:mt-6">
+          <p class="font-sans text-sm text-terracotta">{l.n}</p>
+          <h3 class="mt-2 text-[30px] font-medium">{l.title}</h3>
+          <p class="mt-3.5 max-w-[65ch] text-[19px] leading-[1.6] text-ink/85">{l.body}</p>
+        </article>
+      ))
+    }
+  </section>
+
+  <section class="mx-auto mt-16 max-w-[920px] px-6 sm:px-12">
+    <div class="border-2 border-ink bg-paper-raised px-10 py-9">
+      <p class="font-sans text-xs uppercase tracking-[0.2em] text-terracotta">The pattern</p>
+      <p class="mt-3.5 text-[21px] leading-[1.6]">
+        Making a building legal doesn't mean it gets built. In Minnesota, small developers are
+        excited but the larger Twin Cities developers aren't even aware of the debate. And
+        Connecticut's reform was repealed in February 2026 after local fire professionals quietly
+        lobbied an obscure regulation review committee. Fire services are the durable opposition —
+        you plan around them.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-[920px] px-6 pt-22 sm:px-12">
+    <h2 class="mb-2 text-[34px] font-medium">The game plan</h2>
+    {
+      phases.map((p) => (
+        <article class="border-t border-ink/15 py-9 first-of-type:mt-6">
+          <p class="font-sans text-sm text-terracotta">{p.n}</p>
+          <h3 class="mt-2 text-[30px] font-medium">{p.title}</h3>
+          <p class="mt-3.5 max-w-[65ch] text-[19px] leading-[1.6] text-ink/85">{p.body}</p>
+          {p.list && (
+            <div class="mt-6 grid">
+              {p.list.map((c) => (
+                <div class="grid grid-cols-1 gap-x-6 border-t border-ink/10 py-4 sm:grid-cols-[220px_1fr]">
+                  <p class="pt-0.5 font-sans text-sm font-semibold uppercase tracking-[0.08em]">
+                    {c.name}
+                  </p>
+                  <p class="text-[17.5px] leading-[1.6] text-ink/85">{c.note}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </article>
+      ))
+    }
+  </section>
+
+  <section class="mx-auto mt-18 max-w-[920px] px-6 sm:px-12">
+    <blockquote class="border-t-2 border-b-2 border-ink py-10 text-[clamp(21px,2.4vw,26px)] leading-[1.5] italic">
+      An honest pushback on this site's own framing: the 5–7 story courtyard block gets you an FAR
+      around 3–4, which is plenty — but the felt quality of the European city comes less from the
+      height than from the <em class="text-terracotta">parcel grain</em> and the
+      <em class="text-terracotta">absence of parking</em>. With only Phase 3 and parking reform,
+      you'd already have most of it.
+    </blockquote>
+    <p class="mt-5 font-sans text-sm text-ink/60">
+      Legislative details on this page (single-stair states, parking-reform counts, AB 2252, the
+      Connecticut repeal) are as of early 2026 — check current status before citing.
+    </p>
+  </section>
+
+  <section class="mx-auto mt-22 grid max-w-[1240px] grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 px-6 sm:px-12">
+    <a href={withBase('/berkeley/')} class="border-2 border-ink bg-paper-raised px-10 py-9 no-underline">
+      <p class="font-sans text-xs uppercase tracking-[0.2em] text-terracotta">Meanwhile</p>
+      <p class="mt-2.5 text-[26px] font-medium leading-[1.25]">The Berkeley proposal →</p>
+    </a>
+    <a href={withBase('/how/')} class="border-2 border-ink bg-paper-raised px-10 py-9 no-underline">
+      <p class="font-sans text-xs uppercase tracking-[0.2em] text-terracotta">For a group</p>
+      <p class="mt-2.5 text-[26px] font-medium leading-[1.25]">Tenure, money, code, first steps →</p>
+    </a>
+  </section>
+</Base>

@@ -12,6 +12,7 @@ export const navItems: NavItem[] = [
   { label: 'Scale', href: '/scale/', key: 'scale' },
   { label: 'Cities', href: '/cities/', key: 'cities' },
   { label: 'How', href: '/how/', key: 'how' },
+  { label: 'Plan', href: '/plan/', key: 'plan' },
   { label: 'About', href: '/about/', key: 'about' },
 ];
 
