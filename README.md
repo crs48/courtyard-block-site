@@ -2,11 +2,11 @@
 
 Website for the Courtyard Block project, built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com), deployed to GitHub Pages.
 
-**Live site:** https://crs48.github.io/courtyardblock
+**Live site:** https://crs48.github.io/courtyard-block-site
 
 ## Contributing ideas
 
-Have an idea for the courtyard block? [Open an issue](https://github.com/crs48/courtyardblock/issues) — all suggestions welcome.
+Have an idea for the courtyard block? [Open an issue](https://github.com/crs48/courtyard-block-site/issues) — all suggestions welcome.
 
 ## Development
 
