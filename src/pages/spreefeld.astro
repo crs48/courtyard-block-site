@@ -3,13 +3,10 @@ import CaseStudy from '../layouts/CaseStudy.astro';
 
 const facts = [
   { k: 'City', v: 'Berlin' },
-  { k: 'Year', v: '2014' },
-  { k: 'Height', v: '7 stories × 3' },
+  { k: 'Project period', v: '2011–2015' },
   { k: 'Homes', v: '~60' },
-  { k: 'Residents', v: '~140' },
   { k: 'Architects', v: 'Carpaneto · FAT KOEHL · BAR' },
   { k: 'Tenure', v: 'Co-op / Baugruppe' },
-  { k: 'Energy', v: 'Passive house' },
 ];
 
 const gallery = [
@@ -29,11 +26,11 @@ const gallery = [
   },
   {
     placeholder: 'Cluster apartment interior — photo needed',
-    cap: 'A cluster apartment: 600–800 m² shared among many households',
+    cap: 'A cluster apartment: private rooms and shared domestic space',
   },
   {
     placeholder: 'Facade — photo needed',
-    cap: 'Seven stories over the gravel path between the houses',
+    cap: 'One of the houses beside the shared outdoor space',
     src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mitte%20Wilhelmine-Gemberg-Weg-002.jpg?width=1400',
     credit: 'Fridolin freudenfett · CC BY-SA 4.0',
     creditHref: 'https://commons.wikimedia.org/wiki/File:Mitte_Wilhelmine-Gemberg-Weg-002.jpg',
@@ -43,7 +40,7 @@ const gallery = [
 
 <CaseStudy
   title="Spreefeld"
-  subtitle="Three buildings, one courtyard, a riverbank kept public."
+  subtitle="Three houses, and a riverbank you can still walk along."
   heroSrc="https://commons.wikimedia.org/wiki/Special:FilePath/Mitte%20Wilhelmine-Gemberg-Weg-001.jpg?width=1400"
   heroPlaceholder="Spreefeld hero — the three buildings from the river (photo needed)"
   heroCredit="Fridolin freudenfett · CC BY-SA 4.0"
@@ -53,20 +50,13 @@ const gallery = [
   prev={{ href: '/kalkbreite/', label: 'Kalkbreite, Zürich' }}
   next={{ href: '/r50/', label: 'R50, Berlin' }}
 >
-  <section class="mx-auto max-w-[760px] px-6 pt-16 sm:px-12">
-    <p class="text-[21px] leading-[1.62]">
-      On a stretch of Spree riverbank that speculation should have taken, a cooperative built three
-      7-story passive-house buildings — Carpaneto, FAT KOEHL, and BAR Architekten, one each —
-      arranged to hold a shared courtyard open to the water. About 60 homes and 140 residents,
-      including cluster apartments of 600–800 m² where a dozen people share kitchens and living
-      rooms at a scale between flat and floor.
-    </p>
-    <p class="mt-6 text-[21px] leading-[1.62]">
-      The radical move is the ground plane: no housing on it. Kindergarten, workshops, and
-      deliberately unprogrammed "option rooms" face the courtyard and the river path, which stays
-      open to everyone. Roof terraces connect across bridges. There was no speculative developer
-      anywhere in the chain — the residents were the client, and the riverbank shows it.
-    </p>
+  <section class="case-reading mx-auto max-w-[820px] px-6 pt-12 sm:px-12">
+    <p>Spreefeld is a cooperative ensemble of three timber-and-concrete buildings on Berlin’s Spree. The collaborating architects—Carpaneto, fatkoehl and BAR—describe a mix of conventional homes and large cluster apartments, with daycare and adaptable “option rooms” at ground level. <a class="source-link" href="https://fatkoehl.com/wohnenmixed-use/spreefeld-berlin/">[Project source]</a></p>
+    <p>The published design deliberately keeps routes to and along the river accessible. This is an open arrangement of buildings, rather than a sealed perimeter block. Cluster homes combine individual space with shared domestic rooms; they are one option within the project, not a requirement that everybody live the same way.</p>
+    <h2>Leave an invitation between the buildings.</h2>
+    <p>The gaps are doing work. They can connect a neighborhood to an amenity instead of turning an attractive waterfront into a residents-only reward. But an open route also needs clarity: where does public access end, who cleans it, and how are noise and evening use handled?</p>
+    <p>Borrow the mix of household arrangements before borrowing the silhouette. Small private units with shared kitchens suit some people; others need a fully independent apartment, care access or a quieter threshold. Participation should include a real right to opt out.</p>
+    <aside class="research-note mt-8">Reading lens: project publications document the place and its intended design. They are not independent evaluations of affordability, energy performance or how every resident experiences life there. The questions here are our interpretation.</aside>
   </section>
 
   <figure class="mx-auto mt-18 max-w-[1000px] px-6 sm:px-12">
@@ -98,27 +88,10 @@ const gallery = [
   </figure>
 
   <Fragment slot="lessons">
-    <li>
-      Two or three buildings can make one courtyard — a Berkeley group doesn't need a full-block
-      parcel to get the Hof.
-    </li>
-    <li>
-      Keeping the ground floor housing-free is what makes the block a neighbor instead of a
-      compound.
-    </li>
-    <li>
-      "Option rooms" — cheap, unfinished, rentable — are how a building stays useful for decades it
-      can't predict.
-    </li>
-    <li>
-      Cluster apartments house people the market ignores: singles, elders, groups — at rents whole
-      units can't reach.
-    </li>
-    <li>Passive-house at 7 stories, by a Baugruppe, in 2014: the performance excuse is gone.</li>
-  </Fragment>
+<li>Draw public routes and private thresholds on the first plan, not as a later sign-making exercise.</li>
+<li>Separate shared-flat life from shared-building life; offer different degrees of participation.</li>
+<li>Give flexible rooms an operator and a budget. An empty room is potential, not yet a community service.</li>
+</Fragment>
 
-  <Fragment slot="sources">
-    Sources: Bau- und Wohngenossenschaft Spreefeld publications and the architects' project pages.
-    Figures (~60 homes, ~140 residents) are approximate.
-  </Fragment>
+  <Fragment slot="sources"><a href="https://fatkoehl.com/wohnenmixed-use/spreefeld-berlin/">fatkoehl · Spreefeld project account</a>. Reviewed October 2026. Approximate counts are identified; population changes over time.</Fragment>
 </CaseStudy>

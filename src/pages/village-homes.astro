@@ -3,7 +3,7 @@ import CaseStudy from '../layouts/CaseStudy.astro';
 
 const facts = [
   { k: 'City', v: 'Davis, California' },
-  { k: 'Built', v: '1975–1981' },
+  { k: 'Built', v: '1975–1980s' },
   { k: 'Height', v: '1–2 stories' },
   { k: 'Type', v: 'Clustered houses + greenways' },
   { k: 'Developers', v: 'Michael & Judy Corbett' },
@@ -19,36 +19,27 @@ const gallery = [
 
 <CaseStudy
   title="Village Homes"
-  subtitle="The American ancestor — same instincts, wrong height."
+  subtitle="The lower-rise cousin brought fruit."
   heroPlaceholder="Village Homes hero — greenway between houses (photo needed)"
   facts={facts}
   gallery={gallery}
   prev={{ href: '/bijgaardehof/', label: 'Bijgaardehof' }}
   next={{ href: '/swans-market/', label: "Swan's Market" }}
 >
-  <section class="mx-auto max-w-[760px] px-6 pt-16 sm:px-12">
-    <p class="text-[21px] leading-[1.62]">
-      Decades before this site's European examples, Davis built the American version of the
-      instinct: houses clustered along shared greenways instead of streets, orchards and gardens as
-      the commons, narrow lanes, natural drainage, fruit trees anyone can pick. Village Homes proved
-      Californians will choose shared landscape over private lawn when someone actually builds it.
-    </p>
-    <p class="mt-6 text-[21px] leading-[1.62]">
-      What to steal — and what to fix: the instincts are exactly right; the height is wrong. At one
-      and two stories the density can't support a shop, a common kitchen, or transit. The courtyard
-      block is Village Homes stood up on its end, in town.
-    </p>
+  <section class="case-reading mx-auto max-w-[820px] px-6 pt-12 sm:px-12">
+    <p>Village Homes in Davis began construction in 1975 and developed through the 1980s. The community’s account lists 225 houses and 20 apartments on about 70 acres, with paths, orchards, gardens and swales woven between homes. It also has communal facilities; shared life is not exclusive to mid-rise buildings. <a class="source-link" href="https://www.villagehomesdavis.org/about">[Project source]</a></p>
+    <p>This is a lower-density neighborhood, not a courtyard block. Its relevance is how a network of common landscape changes what homes face and how people move between them. The layout deliberately gives walking, growing and rainwater space in the everyday plan.</p>
+    <h2>The path home might come with a plum.</h2>
+    <p>Edible landscape makes the commons tangible. So do pruning, harvest rules, irrigation and the occasional fallen fruit. The lesson to borrow is treating landscape as a maintained shared resource—not assuming that planting an orchard automatically produces enough food, friendship or ecological benefit.</p>
+    <p>A Berkeley version would have different land costs, resident needs and density goals. Keep the landscape intelligence while testing how many homes, accessible routes and useful shared rooms a real parcel can support. Higher and lower forms can teach each other.</p>
+    <aside class="research-note mt-8">Reading lens: project publications document the place and its intended design. They are not independent evaluations of affordability, energy performance or how every resident experiences life there. The questions here are our interpretation.</aside>
   </section>
 
   <Fragment slot="lessons">
-    <li>
-      The appetite for shared productive landscape is proven in California — fifty years of waiting
-      list.
-    </li>
-    <li>Common ground works when homes face it — Village Homes' greenways are the Hof, unrolled.</li>
-    <li>At 1–2 stories the commons can't fund common rooms; height is what pays for the kitchen.</li>
-    <li>An American precedent to point at when the type gets called foreign.</li>
-  </Fragment>
+<li>Design landscape maintenance and harvest access together with planting.</li>
+<li>Connect walking routes to real destinations, and assess accessibility beyond a pretty path.</li>
+<li>Compare land use and housing capacity honestly without treating one height as the correct way to live.</li>
+</Fragment>
 
-  <Fragment slot="sources">Sources: published histories of Village Homes, Davis. Figures approximate.</Fragment>
+  <Fragment slot="sources"><a href="https://www.villagehomesdavis.org/about">Village Homes association · community history and design</a>. Reviewed October 2026. Approximate counts are identified; population changes over time.</Fragment>
 </CaseStudy>

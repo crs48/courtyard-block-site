@@ -1,4 +1,5 @@
 ---
+import CourtyardLab from '../components/CourtyardLab.astro';
 import Base from '../layouts/Base.astro';
 import ImageSlot from '../components/ImageSlot.astro';
 import { withBase } from '../lib/nav';
@@ -24,7 +25,7 @@ const rail = [
   },
   {
     name: 'Spreefeld',
-    meta: 'Berlin · 2014 · on the river',
+    meta: 'Berlin · 2010s · on the river',
     href: '/spreefeld/',
     placeholder: 'Spreefeld — photo needed',
     src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mitte%20Wilhelmine-Gemberg-Weg-001.jpg?width=1400',
@@ -34,7 +35,7 @@ const rail = [
   { name: 'R50', meta: 'Berlin-Kreuzberg · 2013', href: '/r50/', placeholder: 'R50 — photo needed' },
   {
     name: 'Sargfabrik',
-    meta: 'Vienna · 1996 · factory reuse',
+    meta: 'Vienna · 1996 + 2000',
     href: '/sargfabrik/',
     placeholder: 'Sargfabrik — photo needed',
     src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Wien-Penzing%20-%20Wohn-%20und%20Kulturprojekt%20Sargfabrik%20-%2010%20-%20Dachgarten.jpg?width=1400',
@@ -42,7 +43,7 @@ const rail = [
     creditHref:
       'https://commons.wikimedia.org/wiki/File:Wien-Penzing_-_Wohn-_und_Kulturprojekt_Sargfabrik_-_10_-_Dachgarten.jpg',
   },
-  { name: 'Brutopia', meta: 'Brussels · 2015', href: '/brutopia/', placeholder: 'Brutopia — photo needed' },
+  { name: 'Brutopia', meta: 'Brussels · cohousing', href: '/brutopia/', placeholder: 'Brutopia — photo needed' },
   { name: 'Bijgaardehof', meta: 'Ghent · factory reuse', href: '/bijgaardehof/', placeholder: 'Bijgaardehof — photo needed' },
   {
     name: "Swan's Market",
@@ -74,11 +75,11 @@ const rail = [
 ];
 
 const brief = [
-  { k: 'Height', v: '5–7 stories' },
+  { k: 'Height', v: 'Explore a mid-rise option' },
   { k: 'Street', v: 'Ground-floor retail at the sidewalk' },
   { k: 'Middle', v: 'Inner courtyard, 40–80 ft across' },
   { k: 'Roof', v: 'A second courtyard — greenhouse, play, PV' },
-  { k: 'Homes', v: '25–80' },
+  { k: 'Homes', v: 'Count follows a real site study' },
   { k: 'Tenure', v: 'Limited-equity co-op or CLT' },
 ];
 ---
@@ -86,14 +87,15 @@ const brief = [
 <Base title="The Courtyard Block" current="home">
   <header class="mx-auto max-w-[1240px] px-6 pt-18 sm:px-12">
     <p class="mb-4.5 font-sans text-xs uppercase tracking-[0.22em] text-terracotta">
-      An atlas &amp; a proposal
+      13 real places · one delightfully useful question
     </p>
     <h1 class="max-w-[900px] text-[clamp(48px,7vw,92px)] font-medium leading-[1.02] tracking-[-0.02em]">
-      The Courtyard Block
+      Meet your middle.
     </h1>
-    <p class="mt-5 text-[clamp(20px,2.4vw,28px)] italic text-ink/75">
-      European mid-rise living, starting in Berkeley.
+    <p class="mt-5 max-w-[750px] text-[clamp(20px,2.4vw,28px)] italic text-ink/75">
+      What if home came with a little more life around it? A courtyard, a shared table, a neighbor you can wave to. Let’s look around.
     </p>
+    <div class="mt-7 flex flex-wrap gap-3"><a class="button-link primary" href={withBase('/atlas/')}>Take a little world tour <span aria-hidden="true">↗</span></a><a class="button-link" href="#drawing-board">Try the drawing board ↓</a></div>
   </header>
 
   <figure class="mx-auto mt-14 max-w-[1240px] px-6 sm:px-12">
@@ -184,24 +186,21 @@ const brief = [
       </g>
     </svg>
     <figcaption class="mt-3.5 font-sans text-xs uppercase tracking-[0.16em] text-ink/55">
-      Fig. 01 — Section through the type. Illustrative.
+      Fig. 01 — A wish list in section. Illustrative: dimensions and program are design ideas, not a permitted building.
     </figcaption>
   </figure>
 
   <section class="mx-auto max-w-[720px] px-6 pt-18 sm:px-12">
     <p class="text-2xl leading-[1.55]">
-      Most American cities offer two shapes of home: a house with a driveway, or a tower with a
-      garage. The everyday European city is a third thing — five to seven stories, shops on the
-      ground floor, a private courtyard in the middle, a tram or a wide sidewalk out front. People
-      live above the bakery. Children play in the Hof. The roof is a garden.
+      A courtyard block puts homes around a shared middle and meets the city at its edges. Think a place for a tree, a table, a bicycle repair, or a small hello on the way upstairs. Versions exist across the world—including in American cities. This guide follows a particular family: cooperative housing, useful shared space and lively streets.
     </p>
     <p class="mt-6 text-2xl leading-[1.55]">
-      This site is an atlas of that building, and a proposal to start one in Berkeley.
+      The promise is appealing. The details deserve a proper look: who gets to live there, who pays, who can get around, and who takes the bins out. Explore the real projects, play with the geometry, then help make the Berkeley idea more specific.
     </p>
   </section>
 
   <section class="pt-22">
-    <div class="mx-auto flex max-w-[1240px] items-baseline justify-between px-6 sm:px-12">
+    <div class="mx-auto flex flex-wrap gap-3 max-w-[1240px] items-baseline justify-between px-6 sm:px-12">
       <h2 class="text-[34px] font-medium">The buildings already exist</h2>
       <a
         href={withBase('/atlas/')}
@@ -213,7 +212,7 @@ const brief = [
     <div class="flex gap-5 overflow-x-auto px-6 pt-8 pb-3 sm:px-12 [scrollbar-width:thin]">
       {
         rail.map((b) => (
-          <a href={withBase(b.href)} class="w-[280px] flex-none no-underline">
+          <article class="w-[280px] flex-none no-underline">
             <div class="h-[360px] w-[280px]">
               <ImageSlot
                 src={b.src}
@@ -223,48 +222,46 @@ const brief = [
                 creditHref={b.creditHref}
               />
             </div>
-            <p class="mt-3 mb-0.5 text-xl font-medium">{b.name}</p>
+            <p class="mt-3 mb-0.5 text-xl font-medium"><a href={withBase(b.href)}>{b.name}</a></p>
             <p class="font-sans text-xs uppercase tracking-[0.14em] text-ink/55">{b.meta}</p>
-          </a>
+          </article>
         ))
       }
     </div>
   </section>
 
   <section class="mx-auto max-w-[1240px] px-6 pt-24 sm:px-12">
-    <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] border-t border-ink/20">
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] border-t border-ink/20">
       <a href={withBase('/atlas/')} class="border-r border-ink/10 py-8 pr-8 pb-10 no-underline">
         <p class="font-sans text-[15px] text-terracotta">01</p>
         <h3 class="mt-2.5 mb-2 text-[26px] font-medium">See it</h3>
         <p class="text-[17px] leading-[1.5] text-ink/75">
-          Eleven-plus buildings, from Barcelona co-ops to a Zurich block over a tram depot, that
-          already run this life as ordinary city.
+          Thirteen cases, from Barcelona co-ops to a Zürich block over a tram depot. What they built, what we can learn, and what doesn’t automatically travel.
         </p>
       </a>
       <a href={withBase('/why/')} class="border-r border-ink/10 p-8 pb-10 no-underline">
         <p class="font-sans text-[15px] text-terracotta">02</p>
         <h3 class="mt-2.5 mb-2 text-[26px] font-medium">Understand why it is rare here</h3>
         <p class="text-[17px] leading-[1.5] text-ink/75">
-          Zoning, parking, egress code, and finance quietly made the European default block illegal
-          — not impossible.
+          Land, zoning, safety, money and management all shape a building. Untangle the decisions without turning any one of them into a villain.
         </p>
       </a>
       <a href={withBase('/berkeley/')} class="py-8 pl-8 pb-10 no-underline">
         <p class="font-sans text-[15px] text-terracotta">03</p>
         <h3 class="mt-2.5 mb-2 text-[26px] font-medium">Propose it in Berkeley</h3>
         <p class="text-[17px] leading-[1.5] text-ink/75">
-          A concrete brief, three site scenarios, and a first-year path for a founding group of
-          households.
+          A working design brief, three site scenarios and practical questions for a founding group. No parcel, funding or approvals are claimed.
         </p>
       </a>
     </div>
   </section>
 
+  <div id="drawing-board"><CourtyardLab /></div>
   <section
     class="mx-auto grid max-w-[1240px] grid-cols-[repeat(auto-fit,minmax(320px,1fr))] items-start gap-12 px-6 pt-24 sm:px-12"
   >
     <div class="border-2 border-ink bg-paper-raised px-9 pt-9 pb-10">
-      <p class="font-sans text-xs uppercase tracking-[0.2em] text-terracotta">The brief</p>
+      <p class="font-sans text-xs uppercase tracking-[0.2em] text-terracotta">Design wishes, to test</p>
       <div class="mt-4.5 grid">
         {
           brief.map((row) => (
@@ -281,8 +278,7 @@ const brief = [
     <div>
       <h2 class="mb-2 text-[34px] font-medium">One, two, three, a block</h2>
       <p class="mb-7 text-lg leading-[1.55] text-ink/75">
-        The replication unit is one building. Then the pattern repeats — the way Berlin and Vienna
-        were actually made.
+        Start with one useful building. As the idea grows, the work changes: shared access, services, streets and decisions need their own plans.
       </p>
       <a href={withBase('/scale/')} class="grid grid-cols-3 gap-4 no-underline">
         <div>
@@ -309,4 +305,15 @@ const brief = [
       </p>
     </a>
   </section>
+
+  <section class="mx-auto mt-20 max-w-[920px] px-6 sm:px-12" aria-labelledby="curious-title">
+    <p class="eyebrow">Questions from the imaginary open house</p>
+    <h2 id="curious-title" class="mt-3 text-4xl">Before you move your favorite chair…</h2>
+    <div class="mt-6 space-y-3 font-sans">
+      <details class="border-y border-ink/20 py-4"><summary class="text-lg font-semibold">Do we all have to eat together?</summary><p class="mt-4 max-w-[65ch] leading-relaxed">Only if that is what the residents choose. Shared housing can include fully independent apartments plus a guest room, a garden or a laundry. A good brief makes space for dinner enthusiasts and people who just want a polite wave.</p></details>
+      <details class="border-b border-ink/20 pb-4"><summary class="text-lg font-semibold">Does a courtyard make homes affordable?</summary><p class="mt-4 max-w-[65ch] leading-relaxed">A courtyard is a shape, not a subsidy. Land, financing, building costs, entry requirements and long-term ownership rules determine who can live there. The atlas looks at the social and financial arrangements alongside the lovely spaces.</p></details>
+      <details class="border-b border-ink/20 pb-4"><summary class="text-lg font-semibold">Could this work on my block?</summary><p class="mt-4 max-w-[65ch] leading-relaxed">That is the fun question. Start by noticing the people and places already there. Then explore access, daylight, permitted uses, costs and a real household brief. <a href={withBase('/how/')}>The practical chapter has a useful first-meeting checklist.</a></p></details>
+    </div>
+  </section>
+
 </Base>

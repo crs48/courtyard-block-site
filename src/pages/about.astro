@@ -1,30 +1,16 @@
 ---
+import { caseSources } from '../data/research';
 import Base from '../layouts/Base.astro';
 import { withBase } from '../lib/nav';
 
-const sources = [
-  { name: 'La Borda', url: 'http://www.laborda.coop', label: 'laborda.coop' },
-  { name: 'Lacol', url: 'https://www.lacol.coop', label: 'lacol.coop' },
-  { name: 'Kalkbreite', url: 'https://www.kalkbreite.net', label: 'kalkbreite.net' },
-  { name: 'Spreefeld', url: 'https://www.spreefeld-berlin.de', label: 'spreefeld-berlin.de' },
-  {
-    name: 'R50 — Heide & von Beckerath',
-    url: 'https://heidevonbeckerath.com',
-    label: 'heidevonbeckerath.com',
-  },
-  { name: 'Sargfabrik', url: 'https://www.sargfabrik.at', label: 'sargfabrik.at' },
-  { name: "Swan's Market — EBALDC", url: 'https://ebaldc.org', label: 'ebaldc.org' },
-  { name: 'Mehr als Wohnen', url: 'https://www.mehralswohnen.ch', label: 'mehralswohnen.ch' },
-  { name: 'Gleis 21', url: 'https://gleis21.wien', label: 'gleis21.wien' },
-  { name: 'City of Berkeley zoning', url: 'https://berkeleyca.gov', label: 'berkeleyca.gov' },
-];
+const sources = caseSources;
 ---
 
 <Base title="About — The Courtyard Block" current="about">
   <header class="mx-auto max-w-[920px] px-6 pt-20 sm:px-12">
     <p class="mb-4 font-sans text-xs uppercase tracking-[0.22em] text-terracotta">About</p>
     <h1 class="text-[clamp(40px,5.5vw,68px)] font-medium leading-[1.05] tracking-[-0.015em]">
-      Where this came from
+      A hopeful idea. With footnotes.
     </h1>
   </header>
 
@@ -41,20 +27,19 @@ const sources = [
   <section class="mx-auto mt-16 max-w-[920px] px-6 sm:px-12">
     <h2 class="mb-5 text-[30px] font-medium">Sources</h2>
     <p class="mb-6 max-w-[65ch] text-lg leading-[1.6] text-ink/85">
-      Building facts are drawn from each project's own publications and architects' project pages.
-      Approximate figures are marked as such throughout. Zoning notes are plain-language summaries
-      of public documents — not legal advice.
+      The atlas prioritizes project, architect, cooperative and city publications. Those sources describe built features and intended design; they do not independently establish resident happiness, whole-life cost or environmental performance. Each case separates the project record from our questions for another place. The Berkeley and city pages are exploratory briefs, not legal or investment advice.
     </p>
-    <div class="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-x-10">
+    <p class="research-note mb-6">October 2026 review: corrected the combined Sargfabrik/Miss Sargfabrik dates and counts; separated public and resident facilities at Gleis 21; clarified Swan’s Market’s multiple delivery arrangements. Removed unsourced savings, legal-reform counts and universal climate or community guarantees. Corrections improve the invitation, not diminish it.</p>
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] gap-x-10">
       {
         sources.map((s) => (
-          <div class="flex justify-between gap-4 border-b border-ink/10 py-3">
+          <div class="border-b border-ink/15 py-4">
             <span class="text-[17px]">{s.name}</span>
             <a
               href={s.url}
               target="_blank"
               rel="noopener"
-              class="flex-none pt-0.5 font-sans text-[13px] text-terracotta no-underline"
+              class="mt-1 block font-sans text-sm text-terracotta"
             >
               {s.label} ↗
             </a>
@@ -78,8 +63,7 @@ const sources = [
     <p class="mt-5 max-w-[65ch] text-lg leading-[1.6] text-ink/85">
       Corrections are welcome and wanted — especially from residents of the buildings in the atlas.
       If a fact is wrong,
-      <a href="https://github.com/crs48/courtyard-block-site/issues">open an issue on GitHub</a> and it
-      will be fixed with a note.
+      <a href="https://github.com/crs48/courtyard-block-site/issues">open an issue on GitHub</a> so it can be reviewed and corrected with a note.
     </p>
   </section>
 

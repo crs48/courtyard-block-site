@@ -26,8 +26,8 @@ export const buildings: Building[] = [
     credit: 'via Wikimedia Commons',
     creditHref: 'https://commons.wikimedia.org/wiki/File:La_Borda_building_-_front_facade_2.jpg',
     blurb:
-      "Lacol's 6-story, 28-home timber cooperative on 75-year leased public land. Cession-of-use tenure, a full-height glazed patio in the corrala tradition, access galleries, shared kitchen-dining at the street. The closest single-building match to this brief.",
-    tags: ['cooperative', 'new build', 'courtyard', '5-7 stories', 'ground-floor public'],
+      "28 cooperative homes around a covered patio, on a 75-year public land lease. A close look at how circulation, shared rooms and resident decisions can meet.",
+    tags: ['cooperative', 'new build', 'courtyard', 'ground-floor public'],
   },
   {
     name: 'Kalkbreite',
@@ -41,12 +41,12 @@ export const buildings: Building[] = [
     credit: 'Bub37 · CC BY-SA 4.0',
     creditHref: 'https://commons.wikimedia.org/wiki/File:Kalkbreite.jpg',
     blurb:
-      'A co-op block of roughly 97 apartments and 250 residents built over a working tram depot: shops, a cinema and offices at the street, a raised public garden courtyard of about 2,500 m², mixed incomes, city land leased to the cooperative.',
-    tags: ['cooperative', 'new build', 'courtyard', 'roof garden', '5-7 stories', 'ground-floor public'],
+      "Housing above a working tram depot, with a public courtyard and resident roof terraces. A striking example of different uses sharing the same piece of city.",
+    tags: ['cooperative', 'new build', 'courtyard', 'roof garden', 'ground-floor public'],
   },
   {
     name: 'Spreefeld',
-    meta: 'Berlin · 2014',
+    meta: 'Berlin · 2010s',
     anchor: 'spreefeld',
     slug: 'spreefeld',
     slot: 'atlas-spreefeld',
@@ -56,8 +56,8 @@ export const buildings: Building[] = [
     credit: 'Fridolin freudenfett · CC BY-SA 4.0',
     creditHref: 'https://commons.wikimedia.org/wiki/File:Mitte_Wilhelmine-Gemberg-Weg-001.jpg',
     blurb:
-      "Three 7-story passive-house buildings forming a courtyard on the Spree; about 60 homes. The ground floor is kept free of housing — kindergarten, workshops, 'option rooms,' public river access. Cooperative, no speculative developer.",
-    tags: ['cooperative', 'new build', 'courtyard', 'roof garden', '5-7 stories', 'ground-floor public'],
+      "Three cooperative buildings, cluster apartments and adaptable ground-floor rooms beside an accessible riverbank. The useful shared space is also between buildings.",
+    tags: ['cooperative', 'new build', 'courtyard', 'roof garden', 'ground-floor public'],
   },
   {
     name: 'R50',
@@ -68,12 +68,12 @@ export const buildings: Building[] = [
     placeholder: 'R50 — photo needed',
     full: true,
     blurb:
-      'ifau + Jesko Fezer / Heide & von Beckerath. Six stories, 19 apartments, a Baugruppe. A wraparound balcony works as a continuous porch; garden, workshop, laundry, roof terrace. Proof the type works at small scale, inside an ordinary block.',
-    tags: ['cooperative', 'new build', '5-7 stories', 'roof garden'],
+      "19 homes, shared rooms and a continuous balcony in Berlin. A compact group-commissioned building that opens questions about privacy, thresholds and collective decisions.",
+    tags: ['resident-led', 'new build', 'roof garden'],
   },
   {
     name: 'Sargfabrik',
-    meta: 'Vienna · 1996',
+    meta: 'Vienna · 1996 + 2000',
     anchor: 'sargfabrik',
     slug: 'sargfabrik',
     slot: 'atlas-sargfabrik',
@@ -84,19 +84,19 @@ export const buildings: Building[] = [
     creditHref:
       'https://commons.wikimedia.org/wiki/File:Wien-Penzing_-_Wohn-_und_Kulturprojekt_Sargfabrik_-_10_-_Dachgarten.jpg',
     blurb:
-      "A converted coffin factory: roughly 112 homes and 200 people in a self-managed association. Courtyard pond over a bathhouse; concert hall, restaurant, children's house and roof garden, parts of it open to the neighborhood. The warehouse-reuse model.",
+      "73 homes in Sargfabrik (1996), plus 39 in Miss Sargfabrik (2000). Housing, culture and shared facilities on a former coffin-factory site.",
     tags: ['cooperative', 'reuse', 'courtyard', 'roof garden', 'ground-floor public'],
   },
   {
     name: 'Brutopia',
-    meta: 'Brussels · 2015',
+    meta: 'Brussels · cohousing',
     anchor: 'brutopia',
     slug: 'brutopia',
     slot: 'atlas-brutopia',
     placeholder: 'Brutopia — photo needed',
     full: true,
     blurb:
-      'stekke + fraas. Twenty-nine apartments around a shared garden, ground-floor workspaces, units delivered as shells. The residents acted as their own developer — the margin went into the building.',
+      "29 homes and ground-floor workspaces in a resident-led Brussels cohousing project. The interesting design material here includes collective decisions.",
     tags: ['cooperative', 'new build', 'courtyard'],
   },
   {
@@ -108,7 +108,7 @@ export const buildings: Building[] = [
     placeholder: 'Bijgaardehof — photo needed',
     full: true,
     blurb:
-      'Factory reuse housing three cohousing groups around planted courtyard rooms, with a neighborhood health center at the ground floor. Several communities, one shared middle.',
+      "59 homes, three cohousing groups and a neighborhood health center in Ghent. An example of sharing a place without making every decision at the same scale.",
     tags: ['cooperative', 'reuse', 'courtyard', 'ground-floor public'],
   },
   {
@@ -120,7 +120,7 @@ export const buildings: Building[] = [
     placeholder: 'Village Homes — photo needed',
     full: true,
     blurb:
-      'Not mid-rise — the American ancestor. Clustered houses, shared productive landscape, walking paths instead of streets. Same instincts, wrong height: the density is too low to make a street wall or pay for a common ground floor.',
+      "A Davis neighborhood of houses, apartments, greenways, orchards and shared facilities. A lower-rise relative with lessons about tending common land.",
     tags: ['courtyard'],
   },
   {
@@ -135,7 +135,7 @@ export const buildings: Building[] = [
     credit: 'Dreamyshade · CC BY-SA 4.0',
     creditHref: 'https://commons.wikimedia.org/wiki/File:10th_Street_Market,_Oakland,_CA,_at_sunset.jpg',
     blurb:
-      'A 1917 market hall rebuilt around a courtyard: 20-unit cohousing plus affordable rentals, restaurants and offices. Two blocks from BART, about 15 minutes from Berkeley. The closest local cousin, even if lower-rise.',
+      "Historic market reuse, cohousing, affordable rentals and businesses in Old Oakland. A local precedent with a genuinely complex delivery story.",
     tags: ['reuse', 'courtyard', 'ground-floor public'],
   },
   {
@@ -150,8 +150,8 @@ export const buildings: Building[] = [
     credit: 'via Wikimedia Commons',
     creditHref: 'https://commons.wikimedia.org/wiki/File:Freiburg_-_Vauban.jpg',
     blurb:
-      'Not one building but a district of them: mid-rise blocks, a tram in the street, shops, parking pushed to the edge, many Baugruppen. What a whole street of courtyard blocks feels like.',
-    tags: ['new build', '5-7 stories', 'ground-floor public'],
+      "A Freiburg district with green spaces, low-energy requirements and tram service. A reminder that the spaces between projects—and the trip beyond them—matter.",
+    tags: ['new build', 'ground-floor public'],
   },
   {
     name: 'Mehr als Wohnen — Hunziker Areal',
@@ -165,8 +165,8 @@ export const buildings: Building[] = [
     credit: 'Haller Juliet · CC BY-SA 4.0',
     creditHref: 'https://commons.wikimedia.org/wiki/File:HAL_014243.jpg',
     blurb:
-      'Thirteen buildings by a coalition of Zurich co-ops on a former concrete plant — squares, workshops, guest houses, cluster apartments. The proof that the co-op courtyard logic scales to a neighborhood.',
-    tags: ['cooperative', 'new build', 'courtyard', '5-7 stories', 'ground-floor public'],
+      "13 buildings and about 370 homes within a cooperative neighborhood. Different housing types, shared facilities and a published account of what the experiment taught its organizers.",
+    tags: ['cooperative', 'new build', 'courtyard', 'ground-floor public'],
   },
   {
     name: 'Gleis 21',
@@ -180,8 +180,8 @@ export const buildings: Building[] = [
     credit: 'Linie29 · CC BY-SA 4.0',
     creditHref: 'https://commons.wikimedia.org/wiki/File:Sonnwendviertel_Gleis_21.jpg',
     blurb:
-      "A timber-hybrid Baugruppe in the Sonnwendviertel: media workshop, sauna, event room, library at the ground floor, open to the quarter. Vienna's building-group culture in current form.",
-    tags: ['cooperative', 'new build', 'roof garden', '5-7 stories', 'ground-floor public'],
+      "34 homes, ground-floor cultural uses and resident shared spaces in Vienna. A useful lesson in different degrees of openness within one building.",
+    tags: ['cooperative', 'new build', 'roof garden', 'ground-floor public'],
   },
   {
     name: 'La Balma',
@@ -192,20 +192,20 @@ export const buildings: Building[] = [
     placeholder: 'La Balma — photo needed',
     full: true,
     blurb:
-      "Lacol + LaBoqueria. Twenty homes in cession-of-use on public land in Poblenou — La Borda's sibling, showing the model repeats: same tenure, same galleries, a different lot.",
-    tags: ['cooperative', 'new build', 'courtyard', '5-7 stories'],
+      "20 cooperative homes with shared rooms distributed through the building and a flexible room system. A sibling to La Borda with different design decisions.",
+    tags: ['cooperative', 'new build', 'courtyard'],
   },
 ];
 
 export const filterChips = [
   'all',
   'cooperative',
+  'resident-led',
   'new build',
   'reuse',
   'courtyard',
   'ground-floor public',
   'roof garden',
-  '5-7 stories',
 ];
 
 export const fabric = [
@@ -217,7 +217,7 @@ export const fabric = [
     credit: 'Wolfgang Staudt · CC BY 2.0',
     creditHref: 'https://commons.wikimedia.org/wiki/File:Berlin_H%C3%B6fe_(575693267).jpg',
     blurb:
-      'The Mietskaserne and its Hinterhöfe: a height cap, a continuous cornice, courtyards all the way back. The fabric this site keeps pointing at.',
+      'Look at the sequence from street to passage to interior court. Historic fabric is context, not a claim that every court offered good housing conditions.',
   },
   {
     name: 'Vienna Gemeindebau',
@@ -227,7 +227,7 @@ export const fabric = [
     credit: 'Kasa Fue · CC BY-SA 4.0',
     creditHref: 'https://commons.wikimedia.org/wiki/File:Karl-Marx-Hof_Sept_2020_4.jpg',
     blurb:
-      'Municipal superblocks around planted Höfe — kindergartens and laundries in the courtyard, a century of maintenance.',
+      'Municipal housing around shared courts. Read the spaces alongside the institutions that provide and maintain the homes; the architecture is one part of the system.',
   },
   {
     name: 'Barcelona Eixample',
@@ -237,7 +237,7 @@ export const fabric = [
     credit: 'dronepicr · CC BY 2.0',
     creditHref: 'https://commons.wikimedia.org/wiki/File:Aerial_view_of_Barcelona,_Spain_(51227309370).jpg',
     blurb:
-      "Cerdà's chamfered blocks with interior courtyards; the corrala patio tradition La Borda modernizes.",
+      "Chamfered corners and block interiors: a useful scale comparison with the small cooperative projects in this atlas. The access and use of each interior varies.",
   },
   {
     name: 'Amsterdam hofjes',
@@ -247,6 +247,6 @@ export const fabric = [
     credit: 'Matthias Süßen · CC BY-SA 4.0',
     creditHref: 'https://commons.wikimedia.org/wiki/File:Amsterdam-Beginenhof-2025-msu-8893-.jpg',
     blurb:
-      'Canal-house rows hiding almshouse courtyards — hofjes — behind a single street door. The type at its quietest.',
+      'Smaller shared courts reached through a street threshold. Look at the transition between public and quiet space; respect posted visitor rules and residents’ privacy.',
   },
 ];

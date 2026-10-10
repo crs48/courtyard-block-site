@@ -26,25 +26,28 @@ const { src, alt = '', placeholder = 'Photo needed', credit, creditHref, class: 
         (creditHref ? (
           <a
             href={creditHref}
-            class="absolute right-2 bottom-2 rounded-[5px] bg-black/55 px-[7px] py-[3px] font-sans text-[10px] text-white no-underline hover:text-white"
+            class="absolute right-2 bottom-2 rounded-[5px] bg-black/75 px-[7px] py-[3px] font-sans text-[10px] text-white no-underline hover:text-white"
           >
             {credit}
           </a>
-        ) : (
-          <span class="absolute right-2 bottom-2 rounded-[5px] bg-black/55 px-[7px] py-[3px] font-sans text-[10px] text-white">
-            {credit}
-          </span>
-        ))}
+        ) : (<span class="absolute right-2 bottom-2 rounded bg-black/75 px-2 py-1 font-sans text-xs text-white">{credit}</span>))}
     </figure>
   ) : (
-    <div
-      class:list={[
-        'relative flex h-full w-full items-center justify-center bg-[#f2f1ef] p-3 text-center',
-        className,
-      ]}
-    >
-      <span class="pointer-events-none absolute inset-0 border-[1.5px] border-dashed border-current opacity-35" />
-      <span class="font-sans text-[13px] text-[#6e6c66]">{placeholder}</span>
+    <div class:list={['photo-pending relative h-full w-full overflow-hidden', className]}>
+      <svg viewBox="0 0 400 260" aria-hidden="true" class="absolute inset-0 h-full w-full" preserveAspectRatio="xMidYMid slice">
+        <rect width="400" height="260" fill="#e8e4d3" />
+        <g fill="none" stroke="#355743" stroke-width="1.5" opacity=".45">
+          <path d="M-30 180 140 80 310 180 140 280Z M30 180 140 115 250 180 140 245Z" />
+          <path d="M140 80V40L310 140V180 M-30 180V140L140 40 M30 180V155L140 90L250 155V180" />
+          <path d="M140 90V115 M0 142V183 M60 108V143 M95 88V123 M185 68V109 M225 92V133 M265 116V157" />
+        </g>
+        <circle cx="310" cy="60" r="22" fill="#d29062" />
+      </svg>
+      <div class="absolute inset-x-4 bottom-4 bg-paper-raised/95 p-3 font-sans text-sm">
+        <span class="block text-[10px] uppercase tracking-widest text-moss">Photo still on our wish list</span>
+        <span>{alt || placeholder.replace(/ — photo needed| — .*photo needed| — photo/g, '')}</span>
+        <span class="block text-[10px] text-ink/70">Decorative sketch · not a plan of this project</span>
+      </div>
     </div>
   )
 }

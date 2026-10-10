@@ -1,33 +1,13 @@
 ---
 import { navItems, withBase } from '../lib/nav';
-
-interface Props {
-  current?: string;
-}
-
+interface Props { current?: string; }
 const { current } = Astro.props;
 ---
-
-<nav
-  class="flex flex-wrap items-baseline justify-between gap-6 border-b border-ink/15 px-6 py-6 sm:px-12"
->
-  <a
-    href={withBase('/')}
-    class="text-[21px] font-semibold tracking-[-0.01em] no-underline">The Courtyard Block</a
-  >
-  <div
-    class="flex flex-wrap gap-6 font-sans text-xs uppercase tracking-[0.14em]"
-  >
-    {
-      navItems.map((item) => (
-        <a
-          href={withBase(item.href)}
-          class:list={['no-underline', { 'text-terracotta': item.key === current }]}
-          aria-current={item.key === current ? 'page' : undefined}
-        >
-          {item.label}
-        </a>
-      ))
-    }
-  </div>
+<nav aria-label="Main navigation" class="site-nav">
+  <a href={withBase('/')} class="wordmark"><span aria-hidden="true" class="block-mark">⌑</span> The Courtyard Block<span class="wordmark-note">a field guide to living around a little more life</span></a>
+  <div class="desktop-links">{navItems.map(item => <a href={withBase(item.href)} aria-current={item.key === current ? 'page' : undefined}>{item.label}</a>)}</div>
+  <details class="mobile-menu"><summary>Explore the block <span aria-hidden="true">＋</span></summary><div>{navItems.map(item => <a href={withBase(item.href)} aria-current={item.key === current ? 'page' : undefined}>{item.label}</a>)}</div></details>
 </nav>
+<style>
+.site-nav{max-width:1440px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1.4rem 3rem;border-bottom:1px solid #242b2325}.wordmark{font-size:1.35rem;line-height:1;text-decoration:none;font-weight:600;white-space:nowrap}.block-mark{display:inline-grid;place-items:center;width:1.7rem;height:1.7rem;background:var(--color-terracotta);color:var(--color-paper);margin-right:.35rem}.wordmark-note{display:block;font: .67rem var(--font-sans);letter-spacing:.02em;margin-top:.45rem;font-weight:400}.desktop-links{display:flex;gap:1.25rem;flex-wrap:wrap;justify-content:flex-end;font: .8rem var(--font-sans)}.desktop-links a{text-decoration:none;padding:.4rem 0}.site-nav [aria-current=page]{color:var(--color-terracotta);text-decoration:underline;font-weight:700}.mobile-menu{display:none}@media(max-width:1100px){.site-nav{padding:1.3rem 1.5rem;align-items:start;flex-wrap:wrap;gap:1rem}.desktop-links{display:none}.mobile-menu{display:block;width:100%;font: .9rem var(--font-sans)}summary{padding:.6rem 0}summary span{float:right}.mobile-menu div{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;padding-top:.6rem}.mobile-menu a{padding:.65rem 0}}
+</style>

@@ -1,0 +1,53 @@
+---
+import { courtyardGeometry } from '../lib/courtyard';
+const initial = courtyardGeometry(20,5);
+---
+<section class="courtyard-lab" aria-labelledby="lab-title">
+  <div class="lab-intro"><p class="eyebrow">A tiny drawing board · no hard hat required</p><h2 id="lab-title">Make room for the middle.</h2><p>On the same 40 × 40 m site, a bigger courtyard leaves a thinner ring of building. Add a floor and you gain area without filling the garden. Try the tradeoff.</p></div>
+  <div class="lab-body">
+    <div class="lab-drawing">
+      <svg viewBox="0 0 400 400" role="img" aria-labelledby="lab-drawing-title"><title id="lab-drawing-title">Illustrative square building around a central courtyard, seen from above.</title>
+        <defs><pattern id="lab-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#242b2315"/></pattern></defs>
+        <rect width="400" height="400" fill="url(#lab-grid)"/>
+        <rect x="40" y="40" width="320" height="320" fill="#db9b70" stroke="#242b23" stroke-width="2"/>
+        <rect data-court x="120" y="120" width="160" height="160" fill="#d1dec1" stroke="#355743" stroke-width="2"/>
+        <g fill="#355743"><circle cx="175" cy="178" r="4"/><circle cx="225" cy="178" r="4"/></g>
+        <path d="M184 197 Q200 212 216 197" fill="none" stroke="#355743" stroke-width="3" stroke-linecap="round"/>
+        <text x="200" y="245" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#355743">hello, middle.</text>
+        <text x="200" y="382" text-anchor="middle" font-size="12" font-family="sans-serif">40 m site · conceptual plan</text>
+      </svg>
+      <p class="font-sans text-xs"><span class="legend-ring"></span> Building footprint <span class="legend-court"></span> Open courtyard</p>
+    </div>
+    <div>
+      <div data-lab-controls><label for="court-width">Courtyard width <output id="court-width-value" for="court-width">20 m</output></label><input id="court-width" type="range" min="12" max="28" step="1" value="20" aria-describedby="lab-limits" />
+      <label for="court-floors">Floors <output id="court-floors-value" for="court-floors">5</output></label><input id="court-floors" type="range" min="3" max="7" step="1" value="5" aria-describedby="lab-limits" /></div>
+      <dl class="lab-results"><div><dt>Open courtyard</dt><dd><span data-open>{initial.openArea}</span> m²</dd></div><div><dt>Building depth</dt><dd><span data-depth>{initial.depth}</span> m</dd></div><div><dt>Site coverage</dt><dd><span data-coverage>{initial.coverage}</span>%</dd></div><div><dt>Illustrative FAR</dt><dd data-far>{initial.far.toFixed(2)}</dd></div></dl>
+      <p class="lab-observation" data-observation aria-live="polite" aria-atomic="true">The courtyard takes a quarter of the site. The building ring is 10 m deep.</p>
+      <p id="lab-limits" class="lab-limits">Just geometry. FAR = total modeled floor area ÷ site area. Every floor is identical; walls, stairs, setbacks, entrances and galleries are omitted. These numbers do not predict legal capacity, apartment count, affordability, sunlight, ventilation or energy use.</p>
+      <noscript><p>JavaScript is off. This example shows a 20 m courtyard and five floors; the text and atlas still work.</p></noscript>
+    </div>
+  </div>
+</section>
+<script>
+  import { courtyardGeometry } from '../lib/courtyard';
+  const lab = document.querySelector<HTMLElement>('.courtyard-lab');
+  if (lab) {
+    const width = lab.querySelector<HTMLInputElement>('#court-width')!;
+    const floors = lab.querySelector<HTMLInputElement>('#court-floors')!;
+    const setText = (selector: string, value: string) => { lab.querySelector<HTMLElement>(selector)!.textContent = value; };
+    const render = () => {
+      const court = Number(width.value), levels = Number(floors.value);
+      const model = courtyardGeometry(court, levels);
+      setText('#court-width-value', `${court} m`); setText('#court-floors-value', String(levels));
+      setText('[data-open]', String(model.openArea)); setText('[data-depth]', String(model.depth));
+      setText('[data-coverage]', model.coverage.toFixed(0)); setText('[data-far]', model.far.toFixed(2));
+      const square = lab.querySelector('[data-court]')!;
+      Object.entries({ x:200-court*4, y:200-court*4, width:court*8, height:court*8 }).forEach(([key,value]) => square.setAttribute(key,String(value)));
+      setText('[data-observation]', `${court} m courtyard: ${model.openArea} m² open, with a ${model.depth} m building ring. ${levels} floors give ${model.far.toFixed(2)} illustrative FAR. ${court >= 25 ? 'Roomy middle; tighter floor plates.' : court <= 15 ? 'More building; a smaller shared middle.' : 'The tradeoff lives in the middle.'}`);
+    };
+    [width,floors].forEach(input => input.addEventListener('input',render));
+  }
+</script>
+<style>
+.courtyard-lab{max-width:1144px;margin:5rem auto;background:var(--color-paper-raised);border:2px solid var(--color-ink);border-radius:8px;box-shadow:7px 7px 0 #d8d6bd;padding:2.5rem}.lab-intro{max-width:720px}.lab-intro h2{font-size:clamp(2rem,4vw,3.3rem);line-height:1.1;margin:.8rem 0}.lab-intro>p:last-child{font-size:1.25rem;line-height:1.5}.lab-body{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;margin-top:2rem}.lab-drawing svg{width:100%;height:auto}.lab-drawing p{text-align:center}.legend-ring,.legend-court{display:inline-block;width:10px;height:10px;background:#db9b70;margin:0 .2rem 0 .7rem}.legend-court{background:#d1dec1}label{display:flex;justify-content:space-between;font:600 1rem var(--font-sans);margin-top:1.2rem}input{width:100%;accent-color:var(--color-moss);height:2.5rem}.lab-results{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1.5rem 0}.lab-results dt{font:.8rem var(--font-sans)}.lab-results dd{font-size:2rem;margin:0}.lab-observation{font:1rem/1.5 var(--font-sans);padding:1rem;background:#e4eadc}.lab-limits{font:.8rem/1.5 var(--font-sans);margin-top:1rem;color:#55584e}@media(max-width:800px){.courtyard-lab{margin:3rem 1.5rem;padding:1.5rem}.lab-body{grid-template-columns:1fr;gap:1rem}.lab-drawing{max-width:370px;margin:auto}}
+</style>

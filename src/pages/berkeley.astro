@@ -4,56 +4,95 @@ import { withBase } from '../lib/nav';
 
 const legal = [
   {
-    k: 'Downtown C-DMU',
-    v: "Berkeley's downtown mixed-use zoning already contemplates mid-rise mixed use — commonly in the ~50–75 ft range, with limited taller exceptions. That is the 5–7 story band. The type is closest to legal here.",
+    "k": "Start with the parcel",
+    "v": "Identify the current zone, overlays, existing uses, easements and applicable approval pathway. A corridor name alone does not tell you what is permitted."
   },
   {
-    k: 'The corridors',
-    v: 'University, San Pablo, Telegraph, Shattuck, Fourth: the natural street-wall locations, already commercial at the ground floor, already on frequent transit.',
+    "k": "Look along useful streets",
+    "v": "University, San Pablo, Telegraph and Shattuck suggest places to investigate because they connect to existing destinations. This is a search strategy, not an endorsement of a particular site."
   },
   {
-    k: 'West Berkeley',
-    v: 'The warehouses are tempting for Sargfabrik-style reuse, but MU-R height limits are much lower (~3 stories). Treat reuse there as a shorter cousin unless a variance or upzone exists.',
+    "k": "Check reuse carefully",
+    "v": "A warehouse or existing apartment building has its own structural, environmental, access and tenant questions. Do not assume a change of use or courtyard cut-out is permitted or inexpensive."
   },
   {
-    k: 'Middle Housing reforms',
-    v: 'Recent reforms help courtyard apartments in residential fabric — genuinely useful, but usually at a smaller scale than the European block. This proposal is honest about that gap.',
-  },
+    "k": "Read adopted rules, not headlines",
+    "v": "City planning programs and state housing law change. Distinguish studies and proposed amendments from adopted rules and their effective dates; ask planning staff what applies to the actual application."
+  }
 ];
 
 const spec = [
-  { k: 'Site', v: 'On or just off a commercial street' },
-  { k: 'Height', v: '5–7 stories, street wall at the sidewalk' },
-  { k: 'Ground floor', v: 'Shops, 15–18 ft ceilings' },
-  { k: 'Courtyard', v: '~40–80 ft across — not a light well' },
-  { k: 'Access', v: 'Single-loaded galleries on the courtyard' },
-  { k: 'Common', v: 'Kitchen opening onto the Hof; guest rooms, laundry, workshop' },
-  { k: 'Roof', v: 'Greenhouse + play + long table + PV' },
-  { k: 'Homes', v: '25–60 on a first lot; ~80–100 if Kalkbreite-large' },
-  { k: 'Parking', v: 'Underground or off-site — never in the courtyard' },
-  { k: 'Tenure', v: 'Limited-equity co-op and/or community land trust' },
-  { k: 'Retail leases', v: 'Member and neighborhood businesses' },
-  { k: 'Method', v: 'New build, reuse, or recode — new courtyard block is the ideal' },
+  {
+    "k": "Site",
+    "v": "Investigate a walkable location with useful transport and services"
+  },
+  {
+    "k": "Height",
+    "v": "Explore mid-rise; test height against the site and adopted rules"
+  },
+  {
+    "k": "Street",
+    "v": "Welcoming entries; commercial or community uses where viable"
+  },
+  {
+    "k": "Courtyard",
+    "v": "Test 40–80 ft across as an initial idea, not a minimum or performance rule"
+  },
+  {
+    "k": "Access",
+    "v": "Compare galleries and other routes with safety and accessibility expertise"
+  },
+  {
+    "k": "Shared rooms",
+    "v": "Choose kitchen, guests, laundry or workshop with future residents"
+  },
+  {
+    "k": "Roof",
+    "v": "Compare shared use, solar, planting, structure and maintenance"
+  },
+  {
+    "k": "Homes",
+    "v": "Determine with household needs, floor plans and financial feasibility"
+  },
+  {
+    "k": "Transport",
+    "v": "Assess transit, walking, cycling, deliveries and accessible vehicle needs"
+  },
+  {
+    "k": "Tenure",
+    "v": "Compare cooperative, nonprofit rental and land-trust partnerships"
+  },
+  {
+    "k": "Affordability",
+    "v": "Name target incomes, entry costs, monthly charges and long-term protections"
+  },
+  {
+    "k": "Method",
+    "v": "Compare new build, reuse and resident-led preservation"
+  }
 ];
 
 const year = [
-  { n: '01', t: 'Gather 8–15 committed households. Not more; not a mailing list — households.' },
   {
-    n: '02',
-    t: 'Write the charter: money, exit, kids, cars, conflict, commerce. The hard conversations before the expensive ones.',
+    "n": "01",
+    "t": "Recruit an inclusive working group and a capable housing partner. Write whose needs the project serves and how decisions will be made."
   },
   {
-    n: '03',
-    t: 'Join or form the wrapper: a community land trust or an existing trust, plus a development co-op.',
+    "n": "02",
+    "t": "Document entry, exit, affordability, access, care work and conflict processes. Budget legal and facilitation support."
   },
   {
-    n: '04',
-    t: 'Walk every mixed-use parcel on the corridors. Map the deep lots, the tired walk-ups, the big roofs. Talk to owners before brokers.',
+    "n": "03",
+    "t": "Compare ownership and land arrangements with experienced local organizations. Avoid creating an entity before understanding its duties."
   },
   {
-    n: '05',
-    t: 'Commission the feasibility test on the best three candidates — and only then talk about buying anything.',
+    "n": "04",
+    "t": "Research candidate parcels and their existing residents and businesses. Seek permission for visits; involve affected people early."
   },
+  {
+    "n": "05",
+    "t": "Commission a feasibility comparison: zoning, safety, access, structure, climate, tenant impacts, finance and operations. Make site commitments conditional on the necessary checks."
+  }
 ];
 ---
 
@@ -61,19 +100,17 @@ const year = [
   <header class="mx-auto max-w-[920px] px-6 pt-20 sm:px-12">
     <p class="mb-4 font-sans text-xs uppercase tracking-[0.22em] text-terracotta">The proposal</p>
     <h1 class="text-[clamp(40px,5.5vw,68px)] font-medium leading-[1.05] tracking-[-0.015em]">
-      Berkeley first
+      A little more “neighbor” in Berkeley.
     </h1>
     <p class="mt-6 max-w-[65ch] text-[22px] leading-[1.55] text-ink/80">
-      A university town with BART, real commercial corridors, a downtown zoned for mid-rise, and a
-      political appetite for housing. Also: expensive land and neighbors who fight height. A fair
-      first test.
+      A working proposal for shared, useful space in an existing city. The ambition is real; the project is still a brief. No site, founding group, financing or approvals are claimed.
     </p>
   </header>
 
   <section class="mx-auto max-w-[920px] px-6 pt-16 sm:px-12">
-    <h2 class="mb-3 text-[34px] font-medium">Where it fits — in rough legal terms</h2>
+    <h2 class="mb-3 text-[34px] font-medium">Where to start looking</h2>
     <p class="mb-2 font-sans text-[13px] uppercase tracking-[0.12em] text-ink/50">
-      A summary of public zoning documents, not legal advice
+      Use the <a href="https://berkeleyca.gov/construction-development/permits-design-parameters/permit-types/zoning-permits">City’s zoning and building permit guide</a> and its <a href="https://berkeleyca.gov/construction-development/land-use-development/general-plan-and-area-plans/corridors-zoning-update">corridor planning materials</a>. The ideas below are a research brief, not parcel-specific legal conclusions.
     </p>
     <div class="mt-6 grid">
       {
@@ -92,10 +129,10 @@ const year = [
       <div class="flex flex-wrap items-baseline justify-between gap-6">
         <h2 class="text-4xl font-medium">The Berkeley prototype brief</h2>
         <p class="font-sans text-xs uppercase tracking-[0.18em] text-terracotta">
-          Specification · draft 01
+          Design intentions · draft 02 · all subject to feasibility
         </p>
       </div>
-      <div class="mt-7 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-x-12">
+      <div class="mt-7 grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-x-12">
         {
           spec.map((s) => (
             <div class="flex justify-between gap-4 border-b border-ink/10 py-3.5">
@@ -116,14 +153,12 @@ const year = [
       Every drawing below is illustrative — a diagram of a method, not a real site.
     </p>
 
-    <article class="grid grid-cols-[repeat(auto-fit,minmax(340px,1fr))] items-center gap-10 border-t border-ink/15 py-10">
+    <article class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] items-center gap-10 border-t border-ink/15 py-10">
       <div>
         <p class="font-sans text-sm text-terracotta">Scenario 1</p>
         <h3 class="mt-2 text-[28px] font-medium">New block on a corridor</h3>
         <p class="mt-3 text-lg leading-[1.6] text-ink/85">
-          University, San Pablo, Telegraph, Shattuck, or downtown proper. A deep lot or an assembled
-          pair, built to the sidewalk with shops below and a real Hof behind. The full brief — La
-          Borda's section on a Berkeley corridor. Slowest and most expensive; also the truest.
+          A deep lot or an assembled pair might support homes around a shared court. Compare unit layouts, accessible routes, a viable ground-floor program and outdoor comfort. Verify the permitted envelope, existing uses, land cost and delivery risks. A new building can follow the brief closely; that does not make it the best option on every site.
         </p>
       </div>
       <figure>
@@ -149,15 +184,12 @@ const year = [
       </figure>
     </article>
 
-    <article class="grid grid-cols-[repeat(auto-fit,minmax(340px,1fr))] items-center gap-10 border-t border-ink/15 py-10">
+    <article class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] items-center gap-10 border-t border-ink/15 py-10">
       <div>
         <p class="font-sans text-sm text-terracotta">Scenario 2</p>
         <h3 class="mt-2 text-[28px] font-medium">Warehouse or market reuse</h3>
         <p class="mt-3 text-lg leading-[1.6] text-ink/85">
-          The Sargfabrik and Swan's Market method: buy a big roof in West Berkeley or a deep
-          commercial parcel, carve courtyards out of it, wrap homes around them. Honest caveat: West
-          Berkeley's MU-R zoning tops out much lower (~3 stories), so reuse there is a shorter
-          cousin of the brief unless a rezone or variance opens the band.
+          A former commercial or industrial site could combine retained fabric with new housing, as the atlas explores at Swan’s Market and Sargfabrik. Investigate contamination, seismic work, daylight, permitted uses, accessibility and current tenants. Cutting a hole in a roof is an architectural move, not yet a feasible conversion.
         </p>
       </div>
       <figure>
@@ -182,15 +214,12 @@ const year = [
       </figure>
     </article>
 
-    <article class="grid grid-cols-[repeat(auto-fit,minmax(340px,1fr))] items-center gap-10 border-t border-b border-ink/15 py-10">
+    <article class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] items-center gap-10 border-t border-b border-ink/15 py-10">
       <div>
         <p class="font-sans text-sm text-terracotta">Scenario 3</p>
         <h3 class="mt-2 text-[28px] font-medium">Recode an existing apartment house</h3>
         <p class="mt-3 text-lg leading-[1.6] text-ink/85">
-          Buy a tired walk-up. Make the backyard a real Hof — dig out the parking, plant it, put the
-          long table in. Turn a ground-floor unit into the common kitchen; a storage room into the
-          workshop. Smaller and not seven stories, but a co-op can do it in two years, and it
-          teaches the group everything the big version needs.
+          Explore resident-led acquisition or improvements with the people already living there. A yard, laundry or underused nonresidential room might become a better shared resource. Protect housing and tenant rights; do not casually remove a dwelling for an amenity. Survey repairs and access needs, and build a realistic financing and work sequence with residents.
         </p>
       </div>
       <figure>
@@ -217,7 +246,7 @@ const year = [
   </section>
 
   <section class="mx-auto mt-22 max-w-[920px] px-6 sm:px-12">
-    <h2 class="mb-6 text-[34px] font-medium">The first year — before any land</h2>
+    <h2 class="mb-6 text-[34px] font-medium">The first set of decisions</h2>
     <div class="grid">
       {
         year.map((y) => (
@@ -229,11 +258,11 @@ const year = [
       }
     </div>
     <p class="mt-7 text-[19px] italic text-ink/70">
-      Rule one, borrowed from every successful Baugruppe: do not buy land first.
+      A useful stopping rule: do not take on a site commitment the group cannot understand, fund or exit. Timelines depend on the site and delivery route; this is not a two-year promise.
     </p>
   </section>
 
-  <section class="mx-auto mt-24 grid max-w-[1240px] grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 px-6 sm:px-12">
+  <section class="mx-auto mt-24 grid max-w-[1240px] grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-6 px-6 sm:px-12">
     <a href={withBase('/scale/')} class="border-2 border-ink bg-paper-raised px-10 py-9 no-underline">
       <p class="font-sans text-xs uppercase tracking-[0.2em] text-terracotta">Then</p>
       <p class="mt-2.5 text-[26px] font-medium leading-[1.25]">One building, two, three, a block →</p>

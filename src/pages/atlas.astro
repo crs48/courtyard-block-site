@@ -13,7 +13,7 @@ import { withBase } from '../lib/nav';
     </h1>
     <p class="mt-6 max-w-[65ch] text-[21px] leading-[1.55] text-ink/80">
       Case studies from Barcelona to Oakland. Facts are drawn from each project's published
-      record; approximate figures are marked. What to steal from each is the point.
+      record; approximate figures are marked. These are relatives, not identical twins: courtyard blocks, open clusters, retrofits, and a whole district. Borrow the useful questions.
     </p>
   </header>
 
@@ -22,6 +22,8 @@ import { withBase } from '../lib/nav';
       filterChips.map((chip) => (
         <button
           data-filter={chip}
+          aria-pressed={chip === 'all'}
+          aria-controls="atlas-grid"
           class:list={[
             'cursor-pointer rounded-full border px-4 py-2 font-sans text-[13px] uppercase tracking-[0.08em] transition-colors',
             chip === 'all'
@@ -35,14 +37,15 @@ import { withBase } from '../lib/nav';
     }
   </div>
 
+  <p id="atlas-count" aria-live="polite" class="mx-auto max-w-[1240px] px-6 pt-5 font-sans text-sm sm:px-12">13 places to borrow an idea from.</p>
   <section
-    class="mx-auto mt-9 grid max-w-[1240px] grid-cols-[repeat(auto-fill,minmax(340px,1fr))] gap-x-7 gap-y-10 px-6 sm:px-12"
+    class="mx-auto mt-9 grid max-w-[1240px] grid-cols-[repeat(auto-fill,minmax(min(100%,340px),1fr))] gap-x-7 gap-y-10 px-6 sm:px-12"
     id="atlas-grid"
   >
     {
       buildings.map((b) => (
         <article id={b.anchor} data-tags={b.tags.join('|')} class="flex flex-col">
-          <a href={withBase(`/${b.slug}/`)} class="block no-underline">
+          <div>
             <div class="h-[300px] w-full">
               <ImageSlot
                 src={b.src}
@@ -52,12 +55,12 @@ import { withBase } from '../lib/nav';
                 creditHref={b.creditHref}
               />
             </div>
-          </a>
-          <div class="mt-3.5 flex items-baseline justify-between gap-3">
+          </div>
+          <div class="mt-3.5 flex flex-wrap items-baseline justify-between gap-2">
             <a href={withBase(`/${b.slug}/`)} class="no-underline">
               <h2 class="text-[25px] font-medium">{b.name}</h2>
             </a>
-            <span class="flex-none font-sans text-xs uppercase tracking-[0.12em] text-ink/50">
+            <span class="font-sans text-xs uppercase tracking-[0.12em] text-ink/50">
               {b.meta}
             </span>
           </div>
@@ -81,8 +84,7 @@ import { withBase } from '../lib/nav';
   <section id="fabric" class="mx-auto mt-24 max-w-[1240px] px-6 sm:px-12">
     <h2 class="mb-2.5 text-[34px] font-medium">The anonymous fabric</h2>
     <p class="mb-8 max-w-[65ch] text-[19px] leading-[1.6] text-ink/80">
-      The strongest argument is not any single project. It is that whole cities are made of this
-      type — unsigned, repeated, ordinary.
+      Individual landmarks are only part of the story. These historic urban patterns give context; each has its own social history, ownership, and variation.
     </p>
     <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-7">
       {
@@ -112,7 +114,7 @@ import { withBase } from '../lib/nav';
     >
       <p class="font-sans text-xs uppercase tracking-[0.2em] text-terracotta">Next</p>
       <p class="mt-3 text-[clamp(26px,3vw,38px)] font-medium leading-[1.2]">
-        If it works this well, why don't American cities look like this? →
+        What makes this easier—or harder—to build in the US? →
       </p>
     </a>
   </section>
@@ -128,13 +130,16 @@ import { withBase } from '../lib/nav';
         const filter = chip.dataset.filter!;
         chips.forEach((c) => {
           const on = c === chip;
+          c.setAttribute('aria-pressed', String(on));
           c.classList.remove(...(on ? inactive : active));
           c.classList.add(...(on ? active : inactive));
         });
         cards.forEach((card) => {
           const tags = (card.dataset.tags ?? '').split('|');
-          card.style.display = filter === 'all' || tags.includes(filter) ? '' : 'none';
+          card.hidden = !(filter === 'all' || tags.includes(filter));
         });
+        const count = [...cards].filter(card => !card.hidden).length;
+        document.getElementById('atlas-count')!.textContent = `${count} ${count === 1 ? 'place' : 'places'} to explore${filter === 'all' ? '.' : ` · ${filter}`}`;
       });
     });
   </script>

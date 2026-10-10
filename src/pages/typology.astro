@@ -1,70 +1,96 @@
 ---
+import CourtyardLab from '../components/CourtyardLab.astro';
 import Base from '../layouts/Base.astro';
 import { withBase } from '../lib/nav';
 
 const parts = [
   {
-    n: '01',
-    title: 'The street wall',
-    body: 'The building meets the sidewalk. Shops one story high with tall ceilings, doors every few paces, no parking lot in front. The facade is the edge of a public room, not the back of a private object.',
+    "n": "01",
+    "title": "The street edge",
+    "body": "A door, a window, a stoop, a shop: the edge can give something to the sidewalk. Continuous retail is not essential everywhere. Match uses to foot traffic, local needs and realistic operating costs."
   },
   {
-    n: '02',
-    title: 'The Hof — the courtyard',
-    body: 'Not a light well. Forty to eighty feet across: big enough for trees, a long dinner table, a sandbox, and a hundred bicycles. Open to residents and their guests; sheltered from the street. In Barcelona it is a patio, in Berlin a Hof — the word matters less than the width.',
+    "n": "02",
+    "title": "The courtyard",
+    "body": "The shared middle might be planted, paved, open or covered. Its width, height, orientation and surrounding windows change how it feels. A generous plan alone does not guarantee sunlight, quiet or summer comfort."
   },
   {
-    n: '03',
-    title: 'The galleries',
-    body: 'Single-loaded open walkways facing the courtyard, so every front door looks into the shared middle. This — not programming, not an app — is why residents know their neighbors. The American sealed double-loaded corridor is its exact opposite.',
+    "n": "03",
+    "title": "The route home",
+    "body": "An exterior gallery can offer daylight and a chance to pause. An interior corridor can also be welcoming. Test privacy, acoustics, accessible travel and fire safety; neighbors need opportunities to meet and permission to keep walking."
   },
   {
-    n: '04',
-    title: 'The roof',
-    body: 'A second courtyard in the sky: greenhouse, play surface, a long table, photovoltaics. In dense fabric the roof is the cheapest open space the building will ever own.',
+    "n": "04",
+    "title": "The roof",
+    "body": "A roof may support a terrace, planting or solar panels. Those uses compete for room and require loading, access, drainage, waterproofing and maintenance. Lovely open space still has a cost."
   },
   {
-    n: '05',
-    title: 'The mix',
-    body: 'Housing over commerce, always. Some ground-floor rooms belong to the residents — a common kitchen, a workshop, laundry — and some belong to the neighborhood: a bakery, a clinic, a café. The block earns its street.',
+    "n": "05",
+    "title": "The mix",
+    "body": "Shared kitchens, guest rooms and workshops can expand what residents have access to. Shops, services or community rooms can connect to the street. Ask who will use each room, who opens it and who pays when it needs repair."
   },
   {
-    n: '06',
-    title: 'The tenure',
-    body: 'The architecture dies if every unit flips at market price. Limited-equity cooperative, cession of use, or a community land trust: ownership structures that keep homes permanently affordable and keep the courtyard cared for by people who plan to stay.',
+    "n": "06",
+    "title": "The ownership",
+    "body": "A courtyard describes a shape. A cooperative describes an ownership or governance arrangement. A land trust can steward land. Pairing them is a choice; durable affordability requires enforceable terms, funding and ongoing stewardship."
   },
   {
-    n: '07',
-    title: 'The restraint',
-    body: 'No private balcony bigger than the shared roof. No amenity that replaces the street. The building spends its budget on the courtyard, the galleries, and the ground floor — the parts everyone touches every day.',
-  },
+    "n": "07",
+    "title": "The everyday agreement",
+    "body": "Quiet hours. Children playing. Dogs. Deliveries. A chair left in the route. Design becomes lived space through small agreements. A good shared place also offers private retreat and welcomes residents with different abilities and appetites for company."
+  }
 ];
 
 const table = [
-  { k: 'Street', a: 'Setback + parking', h: 'Driveway', c: 'Shop + sidewalk' },
-  { k: 'Middle', a: 'Corridor', h: 'Private yard', c: 'Shared Hof' },
-  { k: 'Height', a: '3 stories or 20+', h: '1–2', c: '5–7' },
-  { k: 'Neighbors', a: 'Elevator strangers', h: 'Fences', c: 'Galleries + courtyard' },
-  { k: 'Daily needs', a: 'Car', h: 'Car', c: 'Same block' },
+  {
+    "k": "Shared outside space",
+    "a": "Possible garden or terrace",
+    "h": "Private or shared yard",
+    "c": "Central court, access varies"
+  },
+  {
+    "k": "Privacy question",
+    "a": "Neighbors above/below; hallways",
+    "h": "Street and adjoining homes",
+    "c": "Overlooking across the court"
+  },
+  {
+    "k": "Street relationship",
+    "a": "Depends on frontage and entry",
+    "h": "Depends on setback and doors",
+    "c": "Can form an active street edge"
+  },
+  {
+    "k": "Management",
+    "a": "Landlord, condo or co-op",
+    "h": "Owner, landlord or association",
+    "c": "Any of these; shape is not tenure"
+  },
+  {
+    "k": "Daily travel",
+    "a": "Location and transport matter",
+    "h": "Location and transport matter",
+    "c": "Location and transport matter"
+  }
 ];
 
 const nots = [
   {
-    t: 'Not an eco-village',
-    b: 'No one is leaving the grid. Autonomy here means ownership, gardens, shared rooms, and fewer cars — still on sewers, still on transit, still in a city.',
+    "t": "Courtyard ≠ cooperative",
+    "b": "A market-rate rental can have a courtyard; a cooperative can have none. We are interested in both design and stewardship, so we name them separately."
   },
   {
-    t: 'Not a luxury podium tower',
-    b: 'No amenity deck marketed as community. The courtyard is owned and run by residents, not a leasing office.',
+    "t": "Sharing ≠ compulsory sociability",
+    "b": "A quiet reader belongs here as much as the enthusiastic dinner host. Participation needs boundaries, choices and accessible alternatives."
   },
   {
-    t: 'Not suburban cohousing',
-    b: 'Not a cul-de-sac of houses around a common lawn. The type is urban: shops below, strangers walking past, a tram or a bus at the corner.',
+    "t": "Mid-rise ≠ one correct height",
+    "b": "This proposal explores mid-rise buildings. The atlas includes shorter cousins and entire districts because useful lessons ignore our tidy categories."
   },
   {
-    t: 'Not a hallway hotel',
-    b: 'No double-loaded corridor with sixty identical doors. Every home opens to daylight on the street side and the courtyard side.',
-  },
+    "t": "A drawing ≠ an outcome",
+    "b": "Shade, friendship, low bills and affordable rents are goals to investigate. None can be read directly from a square with a hole in it."
+  }
 ];
 ---
 
@@ -72,11 +98,10 @@ const nots = [
   <header class="mx-auto max-w-[920px] px-6 pt-20 sm:px-12">
     <p class="mb-4 font-sans text-xs uppercase tracking-[0.22em] text-terracotta">The type</p>
     <h1 class="text-[clamp(40px,5.5vw,68px)] font-medium leading-[1.05] tracking-[-0.015em]">
-      What the building is
+      Anatomy of a good hello.
     </h1>
     <p class="mt-6 max-w-[65ch] text-[22px] leading-[1.55] text-ink/80">
-      Seven parts, none of them exotic. Each exists in thousands of ordinary European buildings.
-      What is rare — in the United States — is finding them together.
+      Seven parts to notice on your next walk. Together they make a design brief—not a universal formula for a happy neighborhood.
     </p>
   </header>
 
@@ -173,48 +198,25 @@ const nots = [
       </g>
     </svg>
     <figcaption class="mt-3.5 font-sans text-xs uppercase tracking-[0.16em] text-ink/55">
-      Fig. 03 — Four plans, one lesson: only the perimeter block makes both a street and a shared
-      middle.
+      Fig. 03 — Four simplified plans. The perimeter form encloses a middle; each form can be designed well or badly. These are not exhaustive housing categories.
     </figcaption>
   </figure>
 
-  <section class="mx-auto max-w-[920px] px-6 pt-22 sm:px-12">
-    <h2 class="mb-6 text-[34px] font-medium">Three ways to live, compared</h2>
-    <div class="overflow-x-auto">
-      <div class="min-w-[640px]">
-        <div class="grid grid-cols-[1.1fr_1.3fr_1.3fr_1.5fr] border-t-2 border-ink">
-          <div class="py-3.5 pr-3"></div>
-          <div class="px-3 py-3.5 font-sans text-xs uppercase tracking-[0.14em] text-ink/60">
-            Typical US apartment
-          </div>
-          <div class="px-3 py-3.5 font-sans text-xs uppercase tracking-[0.14em] text-ink/60">
-            Typical US house
-          </div>
-          <div class="px-3 py-3.5 font-sans text-xs uppercase tracking-[0.14em] text-terracotta">
-            Courtyard block
-          </div>
-        </div>
-        {
-          table.map((r) => (
-            <div class="grid grid-cols-[1.1fr_1.3fr_1.3fr_1.5fr] border-t border-ink/15">
-              <div class="py-4 pr-3 font-sans text-[13px] uppercase tracking-[0.1em] text-ink/55">
-                {r.k}
-              </div>
-              <div class="px-3 py-4 text-[17px] text-ink/80">{r.a}</div>
-              <div class="px-3 py-4 text-[17px] text-ink/80">{r.h}</div>
-              <div class="px-3 py-4 text-[17px] font-medium">{r.c}</div>
-            </div>
-          ))
-        }
-      </div>
+  <section class="mx-auto mt-20 max-w-[1100px] px-6 sm:px-12">
+    <h2 class="text-3xl">Three forms, useful questions</h2>
+    <p class="mt-3 text-lg">Simplified comparisons. Each form has many variations; management and location matter as much as the outline.</p>
+    <div class="mt-6 overflow-x-auto" role="region" aria-label="Housing form comparison" tabindex="0">
+      <table class="w-full min-w-[660px] border-collapse text-left text-lg">
+        <thead><tr class="border-b-2 border-ink font-sans text-sm"><th scope="col" class="p-4">Question</th><th scope="col" class="p-4">Apartment building</th><th scope="col" class="p-4">Detached house</th><th scope="col" class="bg-moss/10 p-4">Courtyard block</th></tr></thead>
+        <tbody>{table.map(row => <tr class="border-b border-ink/20"><th scope="row" class="p-4 font-sans text-sm">{row.k}</th><td class="p-4">{row.a}</td><td class="p-4">{row.h}</td><td class="bg-moss/10 p-4">{row.c}</td></tr>)}</tbody>
+      </table>
     </div>
   </section>
 
   <section class="mx-auto max-w-[920px] px-6 pt-22 sm:px-12">
-    <h2 class="mb-3 text-[34px] font-medium">What it is not</h2>
+    <h2 class="mb-3 text-[34px] font-medium">A few useful distinctions</h2>
     <p class="mb-7 max-w-[65ch] text-[19px] leading-[1.6] text-ink/80">
-      The type is easiest to confuse with its neighbors. Four things this proposal is deliberately
-      not:
+      Architecture, ownership and everyday life interact. They are not interchangeable:
     </p>
     <div class="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-px border border-ink/15 bg-ink/15">
       {
@@ -236,4 +238,5 @@ const nots = [
       </p>
     </a>
   </section>
+<CourtyardLab />
 </Base>

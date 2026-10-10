@@ -4,7 +4,7 @@ import CaseStudy from '../layouts/CaseStudy.astro';
 const facts = [
   { k: 'City', v: 'Freiburg' },
   { k: 'Built', v: '1998–2010s' },
-  { k: 'Scale', v: 'A district, ~5,000 residents' },
+  { k: 'Scale', v: 'A district, ~5,500 residents' },
   { k: 'Transit', v: 'Tram in the street' },
   { k: 'Parking', v: 'Pushed to the edge' },
   { k: 'Method', v: 'Many Baugruppen' },
@@ -27,7 +27,7 @@ const gallery = [
   },
   {
     placeholder: 'Baugruppe facades — photo needed',
-    cap: 'Many small buildings, many small clients — a car-free Quartiersstrasse',
+    cap: 'Housing along a neighborhood street',
     src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Beispiel%20Quartiersstra%C3%9Fe%20Vauban.jpg?width=1400',
     credit: 'Dr. med. Mabuse · CC BY-SA 3.0',
     creditHref: 'https://commons.wikimedia.org/wiki/File:Beispiel_Quartiersstra%C3%9Fe_Vauban.jpg',
@@ -37,7 +37,7 @@ const gallery = [
 
 <CaseStudy
   title="Vauban"
-  subtitle="What a whole street of these buildings feels like."
+  subtitle="Zoom out. The whole neighborhood matters."
   heroSrc="https://commons.wikimedia.org/wiki/Special:FilePath/Freiburg%20-%20Vauban.jpg?width=1400"
   heroPlaceholder="Vauban hero"
   heroCredit="via Wikimedia Commons"
@@ -47,31 +47,20 @@ const gallery = [
   prev={{ href: '/swans-market/', label: "Swan's Market" }}
   next={{ href: '/hunziker-areal/', label: 'Hunziker Areal' }}
 >
-  <section class="mx-auto max-w-[760px] px-6 pt-16 sm:px-12">
-    <p class="text-[21px] leading-[1.62]">
-      Vauban is not one building — it is what happens when a city lets dozens of building groups
-      fill a district with mid-rise blocks: tram down the main street, shops at the ground floors,
-      children owning the pavement, cars parked in garages at the edge. A former barracks site
-      became the standing proof that the type, repeated, makes a neighborhood and not a project.
-    </p>
-    <p class="mt-6 text-[21px] leading-[1.62]">
-      What to steal: the parceling. Freiburg sold small lots to many Baugruppen instead of large
-      lots to few developers — variety, affordability, and speed came from the plural, not from any
-      single design.
-    </p>
+  <section class="case-reading mx-auto max-w-[820px] px-6 pt-12 sm:px-12">
+    <p>Vauban is a Freiburg district, not one cooperative or one courtyard. The city describes a roughly 41-hectare neighborhood for about 5,500 people, with housing, schools, services, green spaces and low-energy building requirements. Tram service reached the district in 2006. <a class="source-link" href="https://www.freiburg.de/pb/208736.html">[Project source]</a></p>
+    <p>Many households live without a private car; parking arrangements concentrate much private-car storage in district garages. That is different from claiming every vehicle is banned. Deliveries, emergency access and people with differing mobility needs remain parts of an inhabited neighborhood.</p>
+    <h2>A good block needs a way out.</h2>
+    <p>The courtyard may be the place to linger, but work, school, friends and appointments are elsewhere too. Reliable transport and useful nearby services determine whether lower car ownership is practical. A bicycle room is excellent; it cannot substitute for an accessible daily journey.</p>
+    <p>At district scale, the coordination work grows: street networks, transit funding, schools, utilities, land allocation and long-term public maintenance. A diagram of repeated courtyards should show those institutions, not make them disappear.</p>
+    <aside class="research-note mt-8">Reading lens: project publications document the place and its intended design. They are not independent evaluations of affordability, energy performance or how every resident experiences life there. The questions here are our interpretation.</aside>
   </section>
 
   <Fragment slot="lessons">
-    <li>Sell small parcels to many groups: variety and affordability come from the plural.</li>
-    <li>Parking at the district edge is what gives every block its courtyard back.</li>
-    <li>
-      The tram is the spine — Berkeley's corridors already have the transit; they lack the street
-      walls.
-    </li>
-    <li>One building first; Vauban is what the tenth one adds up to.</li>
-  </Fragment>
+<li>Plan daily trips with residents who have different ages, schedules and mobility needs.</li>
+<li>Treat public transport and services as funded projects, not labels on a master plan.</li>
+<li>Distinguish the district’s policies from the tenure or performance of any one building.</li>
+</Fragment>
 
-  <Fragment slot="sources">
-    Sources: City of Freiburg and Forum Vauban publications. Resident figure approximate.
-  </Fragment>
+  <Fragment slot="sources"><a href="https://www.freiburg.de/pb/208736.html">City of Freiburg · Vauban district overview</a>. Reviewed October 2026. Approximate counts are identified; population changes over time.</Fragment>
 </CaseStudy>
